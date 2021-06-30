@@ -1,0 +1,86 @@
+﻿<div class="modal-header">
+    <h4>News Notification</h4>
+</div>
+
+<div class="modal-body">
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <div class="form-group">
+                <label class="control-label">Title</label><br />
+                <input type="text" ng-model="notification.title" class="form-control" ng-disabled="(notification.status == 1 || notification.status == 2)" />
+                <div class="text-danger" ng-repeat="error in modelState['model.Title']">{{error}}</div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label">Content</label><label class="pull-right">{{(notification.content == undefined ? '0' : notification.content.length )}}/150</label><br />
+                <textarea maxlength="150" ng-model="notification.content" class="form-control" ng-disabled="(notification.status == 1 || notification.status == 2)"></textarea>
+                <div class="text-danger" ng-repeat="error in modelState['model.Content']">{{error}}</div>
+            </div>
+            @if (User.IsInRole("System_Admin")) {
+                <div ng-show="notification.contentSourceId == null" class="form-group">
+                    <label class="control-label">For</label><br />
+                    <select kendo-drop-down-list k-options="forTypeOptions" k-ng-model="forType" style="width:100%" ng-disabled="(notification.status == 1 || notification.status == 2)"></select>
+                    <div class="text-danger" ng-show="forError && forError.length > 0">{{forError}}</div>
+                </div>
+
+                <div class="form-group" ng-show="forType == 'school'">
+                    <label class="control-label">School</label><br />
+                    <select kendo-drop-down-list k-options="schoolOptions" k-ng-model="notification.schoolId" style="width:100%" ng-disabled="(notification.status == 1 || notification.status == 2)"></select>
+                    <div class="text-danger" ng-repeat="error in modelState['model.SchoolId']">{{error}}</div>
+                </div>
+
+                <div class="form-group" ng-show="forType=='team'">
+                    <label class="control-label">Team</label><br />
+                    <select kendo-drop-down-list k-options="teamOptions" k-ng-model="notification.teamId" style="width:100%" ng-disabled="(notification.status == 1 || notification.status == 2)"></select>
+                    <div class="text-danger" ng-repeat="error in modelState['model.TeamId']">{{error}}</div>
+                </div>
+
+                <div class="form-group" ng-show="forType == 'sport'">
+                    <label class="control-label">Sport</label><br />
+                    <select kendo-drop-down-list k-options="sportOptions" k-ng-model="notification.sportId" style="width:100%" ng-disabled="(notification.status == 1 || notification.status == 2)"></select>
+                    <div class="text-danger" ng-repeat="error in modelState['model.SportId']">{{error}}</div>
+                </div>
+            }
+            @if (User.IsInRole("TeamAdmin") && !User.IsInRole("System_Admin")) {
+                <div class="form-group">
+                    <label class="control-label">Team</label><br />
+                    <select kendo-drop-down-list k-options="teamOptions" k-ng-model="notification.teamId" style="width:100%" disabled ng-disabled="true"></select>
+                    <div class="text-danger" ng-repeat="error in modelState['model.TeamId']">{{error}}</div>
+                </div>
+            }
+
+            @if (User.IsInRole("SchoolAdmin") && !User.IsInRole("System_Admin")) {
+                <div class="form-group">
+                    <label class="control-label">School</label><br />
+                    <select kendo-drop-down-list k-options="schoolOptions" k-ng-model="notification.schoolId" style="width:100%" disabled ng-disabled="true"></select>
+                    <div class="text-danger" ng-repeat="error in modelState['model.SchoolId']">{{error}}</div>
+                </div>
+            }
+
+            <div class="form-group">
+                <label class="control-label">Push Date</label><i class="glyphicon glyphicon-question-sign" ng-click="dateHelp()" style="cursor: pointer"></i><br />
+                <input type="date" kendo-date-picker k-ng-model="notification.pushDateUtc" k-options="pushDateOptions" ng-disabled="(notification.status == 1 || notification.status == 2)" />
+            </div>
+
+            @if (User.IsInRole("System_Admin")) {
+                <div class="form-group">
+                    <label class="control-label">Change Status</label><br />
+                    <select kendo-drop-down-list k-options="statusOptions" k-ng-model="notification.status" style="width: 50%"></select>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+
+<div class="modal-footer">
+    <button type="button" class="btn btn-default pull-left" ng-click="cancel()">Close</button>
+    @if (User.IsInRole("System_Admin")) {
+        <button type="button" ng-show="notification.contentSourceId == null" class="btn btn-success" ng-click="saveAdmin()" promise-btn>Save</button>
+        <button type="button" ng-show="notification.contentSourceId != null" class="btn btn-success" ng-click="saveAdminApprove()" promise-btn>Save</button>
+    }
+    else {
+        <button type="button" class="btn btn-success" ng-click="save()" promise-btn ng-disabled="(notification.status == 1 || notification.status == 2)">Save</button>
+    }
+
+</div>

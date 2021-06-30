@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:id="@+id/relativeLayout1">
+        <ImageButton
+            android:src="@drawable/arrowleft"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:id="@+id/btnBack"
+            android:scaleType="fitCenter"
+            android:background="@drawable/buttonbackground"
+            android:padding="15dp" />
+        <TextView
+            android:text="Select your seasons"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView2"
+            android:layout_centerInParent="true"
+            android:textColor="#212121" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:id="@+id/relativeLayout3"
+        android:background="#f4f4f4" />
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:id="@+id/linearLayout1"
+        android:gravity="center_vertical">
+        <ffimageloading.views.ImageViewAsync
+            android:src="@android:drawable/ic_menu_gallery"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:id="@+id/imgProfile"
+            android:layout_marginLeft="10dp" />
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/linearLayout2"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1">
+            <TextView
+                android:text="Small Text"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/lblSchoolName"
+                android:textColor="#212121" />
+            <TextView
+                android:text="Small Text"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/lblSportName"
+                android:textColor="#909090" />
+        </LinearLayout>
+        <ImageButton
+            android:src="@drawable/trash"
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+            android:id="@+id/btnTrash"
+            android:background="#00000000"
+            android:scaleType="fitCenter"
+            android:layout_marginRight="10dp"
+            android:padding="8dp" />
+    </LinearLayout>
+    <RelativeLayout
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:id="@+id/relativeLayout4">
+        <LinearLayout
+            android:orientation="horizontal"
+            android:minWidth="25px"
+            android:minHeight="25px"
+            android:id="@+id/linearLayout3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <Button
+                android:text="From"
+                android:id="@+id/btnFrom"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="#ffffff"
+                android:textColor="#909090" />
+            <RelativeLayout
+                android:minWidth="25px"
+                android:minHeight="25px"
+                android:id="@+id/relativeLayout6"
+                android:background="#f4f4f4"
+                android:layout_width="1dp"
+                android:layout_height="match_parent" />
+            <Button
+                android:text="Until"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/btnUntil"
+                android:layout_weight="1"
+                android:background="#ffffff"
+                android:textColor="#909090" />
+        </LinearLayout>
+        <RelativeLayout
+            android:minWidth="25px"
+            android:minHeight="25px"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:id="@+id/relativeLayout5"
+            android:background="#f4f4f4" />
+        <RelativeLayout
+            android:minWidth="25px"
+            android:minHeight="25px"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:id="@+id/relativeLayout9"
+            android:layout_alignParentBottom="true"
+            android:background="#f4f4f4" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/relativeLayout10">
+        <Button
+            android:text="Done"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnDone"
+            android:layout_alignParentBottom="true"
+            android:background="#f4f4f4"
+            android:textColor="#909090" />
+        <LinearLayout
+            android:orientation="horizontal"
+            android:minWidth="25px"
+            android:minHeight="25px"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/linearLayout5">
+            <ListView
+                android:minWidth="25px"
+                android:minHeight="25px"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/lvFrom"
+                android:layout_weight="1" />
+            <RelativeLayout
+                android:minWidth="25px"
+                android:minHeight="25px"
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:id="@+id/rlDivider"
+                android:background="#f4f4f4" />
+            <ListView
+                android:minWidth="25px"
+                android:minHeight="25px"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/lvUntil"
+                android:layout_weight="1" />
+        </LinearLayout>
+    </RelativeLayout>
+</LinearLayout>

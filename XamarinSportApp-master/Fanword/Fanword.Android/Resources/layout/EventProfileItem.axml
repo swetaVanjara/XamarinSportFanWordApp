@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:minWidth="25px"
+    android:minHeight="25px"
+    android:background="#f4f4f4">
+    <LinearLayout
+        android:orientation="horizontal"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:id="@+id/linearLayout1"
+        android:layout_marginTop="15dp"
+        android:background="#ffffff">
+        <TextView
+            android:text="Small Text"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/lblSport"
+            android:textColor="#909090"
+            android:gravity="center_vertical"
+            android:layout_marginLeft="10dp" />
+        <TextView
+            android:text="•"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/textView2"
+            android:textColor="#909090"
+            android:gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp" />
+        <TextView
+            android:text="Small Text"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/lblTime"
+            android:textColor="#909090"
+            android:gravity="center_vertical" />
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/linearLayout5"
+        android:background="#ffffff">
+        <LinearLayout
+            android:orientation="vertical"
+            android:id="@+id/linearLayout2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/llTeam1"
+                android:layout_marginLeft="10dp">
+                <ffimageloading.views.ImageViewAsync
+                    android:src="@drawable/defprofpic"
+                    android:layout_width="38dp"
+                    android:layout_height="38dp"
+                    android:id="@+id/imgTeam1"
+                    android:padding="5dp" />
+                <TextView
+                    android:text="Small Text"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/lblTeam1"
+                    android:textColor="#212121"
+                    android:gravity="center_vertical" />
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/llTeam2"
+                android:layout_marginLeft="10dp"
+                android:layout_marginBottom="5dp">
+                <ffimageloading.views.ImageViewAsync
+                    android:src="@drawable/defprofpic"
+                    android:layout_width="38dp"
+                    android:layout_height="38dp"
+                    android:id="@+id/imgTeam2"
+                    android:padding="5dp" />
+                <TextView
+                    android:text="Small Text"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/lblTeam2"
+                    android:textColor="#212121"
+                    android:gravity="center_vertical" />
+            </LinearLayout>
+            <TextView
+                android:text="Small Text"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/lblEventName"
+                android:textColor="#212121"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="5dp" />
+        </LinearLayout>
+        <ImageView
+            android:src="@drawable/checkyes"
+            android:id="@+id/imgTagged"
+            android:layout_width="20dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
+            android:layout_marginRight="10dp" />
+    </LinearLayout>
+</LinearLayout>

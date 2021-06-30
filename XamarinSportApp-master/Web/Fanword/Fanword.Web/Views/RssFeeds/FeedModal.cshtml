@@ -1,0 +1,156 @@
+﻿@using Fanword.Data.Enums
+
+<div class="modal-header">
+    <h4 class="modal-title" id="myModalLabel">{{modalTitle}}</h4>
+</div>
+
+<div class="modal-body">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">Feed Details</h3>
+        </div>
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label class="control-label">Name:</label><br />
+                        <input type="text" ng-disabled="feed.rssFeedStatus == 1 || feed.rssFeedStatus == 2" ng-model="feed.name" class="form-control" />
+                        <div class="text-danger" ng-repeat="error in modelState['model.Name']">{{error}}</div>
+                    </div>
+                </div>
+                @if (User.IsInRole(AppRoles.SystemAdmin))
+                {
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label class="control-label">For:</label><br />
+                            <select kendo-drop-down-list ng-disabled="feed.rssFeedStatus == 1 || feed.rssFeedStatus == 2" k-options="forOptions" k-ng-model="forType" style="width:100%"></select>
+                            <div class="text-danger" ng-if="forError != undefined">{{forError}}</div>
+                        </div>
+                    </div>}
+            </div>
+            <div class="form-group">
+                <label class="control-label">Url:</label><br />
+                <input type="text" ng-disabled="feed.rssFeedStatus == 1 || feed.rssFeedStatus == 2" ng-model="feed.url" class="form-control" ng-change="onFeedUrlChange()" />
+            </div>
+
+            <div class="form-group" ng-show="forType === 'school'">
+                <label class="control-label">School:</label><br />
+                <select kendo-drop-down-list ng-disabled="feed.rssFeedStatus == 1 || feed.rssFeedStatus == 2" k-options="schoolOptions" k-ng-model="feed.schoolId" style="width:100%"></select>
+                <div class="text-danger" ng-repeat="error in modelState['model.SchoolId']">{{error}}</div>
+            </div>
+            @*@if (User.IsInRole("SchoolAdmin"))
+            {
+                <div class="form-group" ng-show="forType === 'school'">
+                    <label class="control-label">School:</label><br />
+                    <select kendo-drop-down-list ng-disabled="feed.rssFeedStatus == 1 || feed.rssFeedStatus == 2" k-options="schoolOptions" k-ng-model="feed.schoolId" style="width:100%"></select>
+                    <div class="text-danger" ng-repeat="error in modelState['model.SchoolId']">{{error}}</div>
+                </div>}
+            <div class="form-group" ng-show="forType === 'team'">
+                <label class="control-label">Team:</label><br />
+                <select kendo-drop-down-list ng-disabled="feed.rssFeedStatus == 1 || feed.rssFeedStatus == 2" k-options="teamOptions" k-ng-model="feed.teamId" style="width:100%"></select>
+                <div class="text-danger" ng-repeat="error in modelState['model.TeamId']">{{error}}</div>
+            </div>*@
+            @if (User.IsInRole("TeamAdmin") || User.IsInRole(AppRoles.SystemAdmin))
+            {
+                <div class="form-group" ng-show="forType === 'team'">
+                    <label class="control-label">Team:</label><br />
+                    <select kendo-drop-down-list ng-disabled="feed.rssFeedStatus == 1 || feed.rssFeedStatus == 2" k-options="teamOptions" k-ng-model="feed.teamId" style="width:100%"></select>
+                    <div class="text-danger" ng-repeat="error in modelState['model.TeamId']">{{error}}</div>
+                </div>}
+            <div class="form-group" ng-show="forType === 'sport'">
+                <label class="control-label">Sport:</label><br />
+                <select kendo-drop-down-list ng-disabled="feed.rssFeedStatus == 1 || feed.rssFeedStatus == 2" k-options="sportOptions" k-ng-model="feed.sportId" style="width: 100%"></select>
+                <div class="text-danger" ng-repeat="error in modelState['model.SportId']">{{error}}</div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="panel panel-default" ng-if="feed.url != undfined">
+        <div class="panel-heading">
+            <h3 class="panel-title">Feed Item Mappings</h3>
+        </div>
+        <div class="panel-body">
+            <!--<div class="alert alert-danger" ng-if="mappingOptionList.dataSource.total() == 0">The given URL is invalid</div>-->
+            <!--<div class="form-group">
+                <label class="control-label">Title:</label><br/>
+                <select kendo-drop-down-list k-options="mappingOptionList" k-ng-model="feed.mappedTitle" style="width:100%"></select>
+                <div class="text-danger" ng-repeat="error in modelState['model.MappedTitle']">{{error}}</div>
+            </div>-->
+            <div class="form-group">
+                <label class="control-label">Body:</label><br />
+                <select kendo-drop-down-list ng-disabled="feed.rssFeedStatus == 1 || feed.rssFeedStatus == 2" k-options="mappingOptionList" k-ng-model="feed.mappedBody" style="width:100%"></select>
+                <div class="text-danger" ng-repeat="error in modelState['model.MappedBody']">{{error}}</div>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Date Created:</label><br />
+                <select kendo-drop-down-list ng-disabled="feed.rssFeedStatus == 1 || feed.rssFeedStatus == 2" k-options="mappingOptionList" k-ng-model="feed.mappedCreatedAt" style="width:100%"></select>
+                <div class="text-danger" ng-repeat="error in modelState['model.MappedCreatedAt']">{{error}}</div>
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-default" ng-if="feed.url != undfined">
+        <div class="panel-heading">
+            <h3 class="panel-title">Feed Keywords</h3>
+        </div>
+        <div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="form-group col-sm-6">
+                        <label class="control-label">Keyword:</label>
+                        <input type="text" ng-disabled="feed.rssFeedStatus == 1 || feed.rssFeedStatus == 2" ng-model="feed.newKeyword" class="form-control" style="width: 100%" required />
+                    </div>
+                    <div class="form-group col-sm-4">
+                        <label class="control-label">Type:</label><br />
+                        <input kendo-drop-down-list ng-disabled="feed.rssFeedStatus == 1 || feed.rssFeedStatus == 2" k-options="keywordTypeList" ng-model="feed.newType" style="width: 100%; height: 100%" required />
+                    </div>
+                    <div class="form-group col-sm-2">
+                        <label class="control-label"></label><br />
+                        <button type="button" ng-disabled="feed.rssFeedStatus == 1 || feed.rssFeedStatus == 2" ng-click="addKeyword()" class="btn btn-success" style="width: 100%; margin-top: 6px">Add Keyword</button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div ng-repeat="keyword in feed.rssKeywords">
+                        <div class="form-group pull-left">
+                            <a id="deleteKeyword" ng-disabled="feed.rssFeedStatus == 1 || feed.rssFeedStatus == 2" ng-click="deleteKeyword(keyword)">
+                                <i class="glyphicon glyphicon-ban-circle" aria-hidden="true" style="padding-right: 10px; padding-left: 10px; color: red"></i>
+                            </a>
+                        </div>
+                        {{keyword.keyword}}
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    @if (User.IsInRole("System_Admin"))
+    {
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Change Rss Feed Status</h3>
+            </div>
+            <div class="panel-body">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label>Status:</label><br />
+                        <select kendo-drop-down-list k-options="statusOptions" k-ng-model="feed.rssFeedStatus"></select>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-default" ng-click="cancel()">Close</button>
+    @if (User.IsInRole(AppRoles.SystemAdmin)) {
+        <button type="button" class="btn btn-primary" ng-click="syncNow()" promise-btn ng-if="feed.id !== 'NEW' && feed.isActive && feed.rssFeedStatus == 1">Sync Now</button>
+    }
+    <button type="button" class="btn btn-danger" ng-click="deleteFeed()" ng-if="feed.id != 'NEW'">Delete</button>
+    <button type="button" class="btn btn-danger" ng-click="enableDisable()" ng-if="feed.isActive && feed.id !== 'NEW'">Disable</button>
+    <button type="button" class="btn btn-warning" ng-click="enableDisable()" ng-if="!feed.isActive && feed.id !== 'NEW'">Enable</button>
+  
+    <button type="button" class="btn btn-success" promise-btn ng-click="save()">Save</button>
+    
+
+</div>

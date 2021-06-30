@@ -1,0 +1,19 @@
+﻿
+
+<div class="page-bar">
+    <ul class="page-breadcrumb">
+        <li ng-repeat="crumb in crumbs">
+            <a href="{{crumb.url}}" ng-if="crumb.url">{{crumb.name}}</a>
+            <span ng-if="!crumb.url">{{crumb.name}}</span>
+            <i class="fa fa-circle" ng-hide="$index == (crumbs.length-1)"></i>
+        </li>
+    </ul>
+    @*<div class="page-toolbar">
+            <div class="pull-right col-xs-12 col-sm-auto" style="margin-top: 10px;">
+                <a href="javascript:;" ng-click="newTicket()" class="btn btn-primary"><i class="icon-plus"></i>&nbsp;New Ticket</a>
+                @*<a href="#defaultModal" class="btn btn-primary" data-toggle="modal" data-backdrop="static" data-remote="@Url.Action("AddTicket", "SupportTickets")">
+                        <i class="icon-plus"></i>&nbsp;New Ticket
+                    </a>
+            </div>
+        </div>*@
+</div>

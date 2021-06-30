@@ -1,0 +1,24 @@
+﻿
+@{
+    ViewBag.Title = "User Management";
+}
+
+@section StyleSheets {
+    <style>
+        .k-selectable tbody tr {
+            cursor: pointer !important;
+        }
+    </style>
+}
+
+@section Breadcrumb {
+    <div ui-view="breadcrumbview"></div>
+}
+
+<div ui-view="mainview">
+
+</div>
+
+@section CustomScripts {
+    @Scripts.Render("~/Bundles/UserManagement")
+}

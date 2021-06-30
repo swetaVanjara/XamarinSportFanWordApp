@@ -1,0 +1,52 @@
+﻿
+<div class="row" style="margin-top: 15px;">
+    <div class="col-sm-6">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                Edit Post <span class="pull-right"><small>Created By: &nbsp;</small>{{post.createdByName}} - {{getMomentDate()}}</span>
+            </div>
+            <div class="panel-body">
+                <div class="form-group text-center" ng-if="post.postSource != 'Unknown'">
+                    <img ng-src="{{post.contentSourceUrl}}" alt="" ng-if="post.postSource =='Image' || post.postSource == 'Link'" />
+                    <video ng-if="post.postSource =='Video'" style="max-width: 600px">
+                        <source ng-src="{{post.contentSourceUrl}}"/>
+                    </video>
+                </div>
+                <div class="form-group pull-right" ng-show="showRemovalLink()">
+                    <div class="md-checkbox">
+                        <input type="checkbox" id="checkbox2" class="md-check" ng-model="post.removeContentSource">
+                        <label for="checkbox2">
+                            <span class="inc"></span>
+                            <span class="check"></span>
+                            <span class="box"></span> Remove {{post.postSource}}
+                        </label>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+                <div class="form-group">
+                    <label class="control-label">User Generated Content</label>
+                    <textarea ng-model="post.content" class="form-control" msd-elastic style="max-height: 300px;" rows="2"></textarea>
+                </div>
+                <div class="form-group" ng-if="post.postSource == 'Link'">
+                    <label class="control-label">Link</label>
+                    <input type="text" class="form-control" ng-model="post.postLink.linkUrl" />
+                </div>
+                <div class="form-group" ng-if="post.postSource == 'Link'">
+                    <label class="control-label">Link Title</label>
+                    <input type="text" class="form-control"  ng-model="post.postLink.title"/>
+                </div>
+              
+                <div class="form-group" ng-if="post.postSource == 'Link'">
+                    <label class="control-label">Link Content</label>
+                    <input type="text" class="form-control" ng-model="post.postLink.content" />
+                </div>
+            </div>
+            <div class="panel-footer">
+                <button type="button" class="btn btn-default" ng-click="cancel()">Cancel</button>
+                <button type="button" class="btn btn-danger" ng-click="delete()">Delete</button>
+                <button type="button" class="btn btn-success" promise-btn ng-click="save()">Save</button>
+
+            </div>
+        </div>
+    </div>
+</div>

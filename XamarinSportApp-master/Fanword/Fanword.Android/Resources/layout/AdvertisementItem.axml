@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#e3e4e6">
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/linearLayout1"
+        android:background="#ffffff">
+        <ffimageloading.views.ImageViewAsync
+            android:src="@drawable/defprofpic"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:id="@+id/imgProfile"
+            android:padding="10dp" />
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/linearLayout2"
+            android:gravity="center_vertical">
+            <TextView
+                android:text="Fanword"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/lblName"
+                android:textColor="#212121" />
+            <TextView
+                android:text="Advertisement"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView3"
+                android:textColor="#909090"
+                android:textSize="11dp" />
+        </LinearLayout>
+    </LinearLayout>
+    <RelativeLayout
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:id="@+id/relativeLayout1"
+        android:background="#f4f4f4" />
+    <TextView
+        android:text="Small Text"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/lblContent"
+        android:textColor="#212121"
+        android:padding="10dp"
+        android:background="#ffffff" />
+    <ffimageloading.views.ImageViewAsync
+        android:src="@drawable/noimagegraphic"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/imgImage"
+        android:scaleType="fitCenter"
+        android:background="#ffffff" />
+    <RelativeLayout
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:id="@+id/relativeLayout2"
+        android:background="#c6c6c6"
+        android:layout_marginBottom="30dp" />
+</LinearLayout>

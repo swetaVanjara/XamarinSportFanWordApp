@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <MinimumVisualStudioVersion>10.0</MinimumVisualStudioVersion>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E29F1562-7674-43C1-84AA-D819552E825F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Fanword.Poco</RootNamespace>
+    <AssemblyName>Fanword.Poco</AssemblyName>
+    <DefaultLanguage>en-US</DefaultLanguage>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <TargetFrameworkProfile>Profile49</TargetFrameworkProfile>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\Fanword.Poco.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Release\Fanword.Poco.XML</DocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <!-- A reference to the entire .NET Framework is automatically included -->
+    <None Include="FanwordPoco.nuspec" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Interfaces\IFollowing.cs" />
+    <Compile Include="Models\Athlete.cs" />
+    <Compile Include="Models\AthleteItem.cs" />
+    <Compile Include="Models\AthleteTeam.cs" />
+    <Compile Include="Models\AthleteTeamSearch.cs" />
+    <Compile Include="Models\AthleteUser.cs" />
+    <Compile Include="Models\Comment.cs" />
+    <Compile Include="Models\ContentSourceProfile.cs" />
+    <Compile Include="Models\DateFilter.cs" />
+    <Compile Include="Models\EventSearch.cs" />
+    <Compile Include="Models\EventProfile.cs" />
+    <Compile Include="Models\EventTeam.cs" />
+    <Compile Include="Models\FavoriteItem.cs" />
+    <Compile Include="Models\Favorites.cs" />
+    <Compile Include="Models\FeedItem.cs" />
+    <Compile Include="Models\FeedType.cs" />
+    <Compile Include="Models\Follower.cs" />
+    <Compile Include="Models\FollowingFilterModel.cs" />
+    <Compile Include="Models\GlobalSearch.cs" />
+    <Compile Include="Models\GlobalSearchItem.cs" />
+    <Compile Include="Models\MetaDataKeys.cs" />
+    <Compile Include="Models\MyProfileDetails.cs" />
+    <Compile Include="Models\PostShare.cs" />
+    <Compile Include="Models\PostTag.cs" />
+    <Compile Include="Models\UserNotificationType.cs" />
+    <Compile Include="Models\Post.cs" />
+    <Compile Include="Models\PostImage.cs" />
+    <Compile Include="Models\PostLike.cs" />
+    <Compile Include="Models\PostLink.cs" />
+    <Compile Include="Models\PostVideo.cs" />
+    <Compile Include="Models\Profile.cs" />
+    <Compile Include="Models\ProfileSearch.cs" />
+    <Compile Include="Models\Ranking.cs" />
+    <Compile Include="Models\SchoolProfile.cs" />
+    <Compile Include="Models\ScoreModel.cs" />
+    <Compile Include="Models\ScoresFilterModel.cs" />
+    <Compile Include="Models\SportProfile.cs" />
+    <Compile Include="Models\TeamProfile.cs" />
+    <Compile Include="Models\TeamRanking.cs" />
+    <Compile Include="Models\User.cs" />
+    <Compile Include="Models\UserProfile.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

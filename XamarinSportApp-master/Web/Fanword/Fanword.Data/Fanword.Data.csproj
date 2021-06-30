@@ -1,0 +1,746 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{FC7059F9-9DC2-4A90-83D1-F7B4B26BA731}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Fanword.Data</RootNamespace>
+    <AssemblyName>Fanword.Data</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Beta|AnyCPU'">
+    <OutputPath>bin\Beta\</OutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="GenericRepository">
+      <HintPath>..\packages\GenericRepository.2017.1.27.1\lib\net46\GenericRepository.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.1\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.2.1\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin, Version=3.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.3.1.0\lib\net45\Microsoft.Owin.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security, Version=3.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.3.1.0\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies, Version=3.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.3.1.0\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth, Version=3.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.3.1.0\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Context\ApplicationDbContext.cs" />
+    <Compile Include="Entities\EventManagementPin.cs" />
+    <Compile Include="Entities\PostShare.cs" />
+    <Compile Include="Entities\SchoolAdmin.cs" />
+    <Compile Include="Entities\TeamAdmin.cs" />
+    <Compile Include="Entities\Advertiser.cs" />
+    <Compile Include="Entities\AdvertiserRegistrationRequest.cs" />
+    <Compile Include="Entities\Athelete.cs" />
+    <Compile Include="Entities\Campaign.cs" />
+    <Compile Include="Entities\Comment.cs" />
+    <Compile Include="Entities\CommentLike.cs" />
+    <Compile Include="Entities\ContentSource.cs" />
+    <Compile Include="Entities\ContentSourceRegistrationRequest.cs" />
+    <Compile Include="Entities\Event.cs" />
+    <Compile Include="Entities\EventTeam.cs" />
+    <Compile Include="Entities\Facility.cs" />
+    <Compile Include="Entities\NewsNotification.cs" />
+    <Compile Include="Entities\Post.cs" />
+    <Compile Include="Entities\PostImage.cs" />
+    <Compile Include="Entities\PostLike.cs" />
+    <Compile Include="Entities\PostLink.cs" />
+    <Compile Include="Entities\PostVideo.cs" />
+    <Compile Include="Entities\Ranking.cs" />
+    <Compile Include="Entities\RankingTeam.cs" />
+    <Compile Include="Entities\RssFeed.cs" />
+    <Compile Include="Entities\RssKeyword.cs" />
+    <Compile Include="Entities\RssKeywordType.cs" />
+    <Compile Include="Entities\School.cs" />
+    <Compile Include="Entities\Sport.cs" />
+    <Compile Include="Entities\Team.cs" />
+    <Compile Include="Entities\UserNotification.cs" />
+    <Compile Include="Enums\AdminStatus.cs" />
+    <Compile Include="Enums\CampaignStatus.cs" />
+    <Compile Include="Enums\NewsNotificationStatus.cs" />
+    <Compile Include="Enums\RssFeedStatus.cs" />
+    <Compile Include="Enums\WinLossTieEnum.cs" />
+    <Compile Include="IdentityConfig\Enums\AppClaimTypes.cs" />
+    <Compile Include="IdentityConfig\Enums\AppRoles.cs" />
+    <Compile Include="IdentityConfig\Enums\AppRules.cs" />
+    <Compile Include="IdentityConfig\Managers\ApplicationRoleManager.cs" />
+    <Compile Include="IdentityConfig\Managers\ApplicationSignInManager.cs" />
+    <Compile Include="IdentityConfig\Managers\ApplicationUserManager.cs" />
+    <Compile Include="IdentityConfig\RefreshTokens\RefreshToken.cs" />
+    <Compile Include="IdentityConfig\Roles\ApplicationRole.cs" />
+    <Compile Include="IdentityConfig\Roles\ApplicationRule.cs" />
+    <Compile Include="IdentityConfig\Services\EmailService.cs" />
+    <Compile Include="IdentityConfig\Services\SmsService.cs" />
+    <Compile Include="IdentityConfig\Stores\ApplicationRoleStore.cs" />
+    <Compile Include="IdentityConfig\Stores\ApplicationUserStore.cs" />
+    <Compile Include="IdentityConfig\User\ApplicationUser.cs" />
+    <Compile Include="Migrations\201702231702352_InitialCreate.cs" />
+    <Compile Include="Migrations\201702231702352_InitialCreate.Designer.cs">
+      <DependentUpon>201702231702352_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702271537350_Sports.cs" />
+    <Compile Include="Migrations\201702271537350_Sports.Designer.cs">
+      <DependentUpon>201702271537350_Sports.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702271910442_AddProfileUrlFields.cs" />
+    <Compile Include="Migrations\201702271910442_AddProfileUrlFields.Designer.cs">
+      <DependentUpon>201702271910442_AddProfileUrlFields.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702281452559_AddSchoolsTable.cs" />
+    <Compile Include="Migrations\201702281452559_AddSchoolsTable.Designer.cs">
+      <DependentUpon>201702281452559_AddSchoolsTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702281839254_AddedTeamsTable.cs" />
+    <Compile Include="Migrations\201702281839254_AddedTeamsTable.Designer.cs">
+      <DependentUpon>201702281839254_AddedTeamsTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201703091724512_ExtraFieldsToUserProfile.cs" />
+    <Compile Include="Migrations\201703091724512_ExtraFieldsToUserProfile.Designer.cs">
+      <DependentUpon>201703091724512_ExtraFieldsToUserProfile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201703151328300_ChangeEnabledToActive.cs" />
+    <Compile Include="Migrations\201703151328300_ChangeEnabledToActive.Designer.cs">
+      <DependentUpon>201703151328300_ChangeEnabledToActive.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201703151447289_RemoveGender.cs" />
+    <Compile Include="Migrations\201703151447289_RemoveGender.Designer.cs">
+      <DependentUpon>201703151447289_RemoveGender.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201703201442334_AddRssFeedTable.cs" />
+    <Compile Include="Migrations\201703201442334_AddRssFeedTable.Designer.cs">
+      <DependentUpon>201703201442334_AddRssFeedTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201703201443423_FixRssTable.cs" />
+    <Compile Include="Migrations\201703201443423_FixRssTable.Designer.cs">
+      <DependentUpon>201703201443423_FixRssTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201703201803340_AddNameToRssFeed.cs" />
+    <Compile Include="Migrations\201703201803340_AddNameToRssFeed.Designer.cs">
+      <DependentUpon>201703201803340_AddNameToRssFeed.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201703201957278_AddRequiredFieldsToRssFeed.cs" />
+    <Compile Include="Migrations\201703201957278_AddRequiredFieldsToRssFeed.Designer.cs">
+      <DependentUpon>201703201957278_AddRequiredFieldsToRssFeed.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201703202019213_ForgotUrl.cs" />
+    <Compile Include="Migrations\201703202019213_ForgotUrl.Designer.cs">
+      <DependentUpon>201703202019213_ForgotUrl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201703211326120_AddPostsTable.cs" />
+    <Compile Include="Migrations\201703211326120_AddPostsTable.Designer.cs">
+      <DependentUpon>201703211326120_AddPostsTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201703211422357_PostImages.cs" />
+    <Compile Include="Migrations\201703211422357_PostImages.Designer.cs">
+      <DependentUpon>201703211422357_PostImages.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201703211524471_NotificationsAndRankingTables.cs" />
+    <Compile Include="Migrations\201703211524471_NotificationsAndRankingTables.Designer.cs">
+      <DependentUpon>201703211524471_NotificationsAndRankingTables.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201703211744050_FixTablesForNullFields.cs" />
+    <Compile Include="Migrations\201703211744050_FixTablesForNullFields.Designer.cs">
+      <DependentUpon>201703211744050_FixTablesForNullFields.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201703221320207_NewsNotificationChanges.cs" />
+    <Compile Include="Migrations\201703221320207_NewsNotificationChanges.Designer.cs">
+      <DependentUpon>201703221320207_NewsNotificationChanges.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201703271223228_AddEvents.cs" />
+    <Compile Include="Migrations\201703271223228_AddEvents.Designer.cs">
+      <DependentUpon>201703271223228_AddEvents.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201703271712483_AddDateDeleted.cs" />
+    <Compile Include="Migrations\201703271712483_AddDateDeleted.Designer.cs">
+      <DependentUpon>201703271712483_AddDateDeleted.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201703271819339_RemoveFacilities.cs" />
+    <Compile Include="Migrations\201703271819339_RemoveFacilities.Designer.cs">
+      <DependentUpon>201703271819339_RemoveFacilities.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201703272013144_RemoveTimeZoneDate.cs" />
+    <Compile Include="Migrations\201703272013144_RemoveTimeZoneDate.Designer.cs">
+      <DependentUpon>201703272013144_RemoveTimeZoneDate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201703281408114_AddRegistrationForAdvertisers.cs" />
+    <Compile Include="Migrations\201703281408114_AddRegistrationForAdvertisers.Designer.cs">
+      <DependentUpon>201703281408114_AddRegistrationForAdvertisers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201703281712144_AddAdvertiserTable.cs" />
+    <Compile Include="Migrations\201703281712144_AddAdvertiserTable.Designer.cs">
+      <DependentUpon>201703281712144_AddAdvertiserTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201703291408176_AddRefreshTokens.cs" />
+    <Compile Include="Migrations\201703291408176_AddRefreshTokens.Designer.cs">
+      <DependentUpon>201703291408176_AddRefreshTokens.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201703301949140_AddANewFieldForAdvertisers.cs" />
+    <Compile Include="Migrations\201703301949140_AddANewFieldForAdvertisers.Designer.cs">
+      <DependentUpon>201703301949140_AddANewFieldForAdvertisers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201703311242026_AddCampaignTable.cs" />
+    <Compile Include="Migrations\201703311242026_AddCampaignTable.Designer.cs">
+      <DependentUpon>201703311242026_AddCampaignTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201703311807138_AddMoreFieldsToCampaigns.cs" />
+    <Compile Include="Migrations\201703311807138_AddMoreFieldsToCampaigns.Designer.cs">
+      <DependentUpon>201703311807138_AddMoreFieldsToCampaigns.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201704031418029_Atheletes.cs" />
+    <Compile Include="Migrations\201704031418029_Atheletes.Designer.cs">
+      <DependentUpon>201704031418029_Atheletes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201704041530371_AddPostLinksAndVideosRemovedTitleFromPosts.cs" />
+    <Compile Include="Migrations\201704041530371_AddPostLinksAndVideosRemovedTitleFromPosts.Designer.cs">
+      <DependentUpon>201704041530371_AddPostLinksAndVideosRemovedTitleFromPosts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201704051227406_SoftDeleteForPostObjects.cs" />
+    <Compile Include="Migrations\201704051227406_SoftDeleteForPostObjects.Designer.cs">
+      <DependentUpon>201704051227406_SoftDeleteForPostObjects.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201704051244094_RemoveRequiredImageUrl.cs" />
+    <Compile Include="Migrations\201704051244094_RemoveRequiredImageUrl.Designer.cs">
+      <DependentUpon>201704051244094_RemoveRequiredImageUrl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201704131651140_AddCommentsAndLikes.cs" />
+    <Compile Include="Migrations\201704131651140_AddCommentsAndLikes.Designer.cs">
+      <DependentUpon>201704131651140_AddCommentsAndLikes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201704171329011_AddCommentDateCreatedField.cs" />
+    <Compile Include="Migrations\201704171329011_AddCommentDateCreatedField.Designer.cs">
+      <DependentUpon>201704171329011_AddCommentDateCreatedField.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201704181154302_RemoveUrlsFromSchool.cs" />
+    <Compile Include="Migrations\201704181154302_RemoveUrlsFromSchool.Designer.cs">
+      <DependentUpon>201704181154302_RemoveUrlsFromSchool.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201704181206286_AddSecondaryToTeam.cs" />
+    <Compile Include="Migrations\201704181206286_AddSecondaryToTeam.Designer.cs">
+      <DependentUpon>201704181206286_AddSecondaryToTeam.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201704181549508_AddVerification.cs" />
+    <Compile Include="Migrations\201704181549508_AddVerification.Designer.cs">
+      <DependentUpon>201704181549508_AddVerification.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201704271411289_AddFollows.cs" />
+    <Compile Include="Migrations\201704271411289_AddFollows.Designer.cs">
+      <DependentUpon>201704271411289_AddFollows.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201705011614207_AddedRssKeywordTable.cs" />
+    <Compile Include="Migrations\201705011614207_AddedRssKeywordTable.Designer.cs">
+      <DependentUpon>201705011614207_AddedRssKeywordTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201705011645336_ConnectedRssFeedToRssKeyword.cs" />
+    <Compile Include="Migrations\201705011645336_ConnectedRssFeedToRssKeyword.Designer.cs">
+      <DependentUpon>201705011645336_ConnectedRssFeedToRssKeyword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201705081445432_AddedRssKeywordTypeTable.cs" />
+    <Compile Include="Migrations\201705081445432_AddedRssKeywordTypeTable.Designer.cs">
+      <DependentUpon>201705081445432_AddedRssKeywordTypeTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201705081457463_SeedKeywordType.cs" />
+    <Compile Include="Migrations\201705081457463_SeedKeywordType.Designer.cs">
+      <DependentUpon>201705081457463_SeedKeywordType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201705082052552_AddRequiredKeywordType.cs" />
+    <Compile Include="Migrations\201705082052552_AddRequiredKeywordType.Designer.cs">
+      <DependentUpon>201705082052552_AddRequiredKeywordType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201705091358221_AddedDateDeletedToRssFeedAndNavPropsToPosts.cs" />
+    <Compile Include="Migrations\201705091358221_AddedDateDeletedToRssFeedAndNavPropsToPosts.Designer.cs">
+      <DependentUpon>201705091358221_AddedDateDeletedToRssFeedAndNavPropsToPosts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201705091400534_ForgotToMakeDateDeletedNullable.cs" />
+    <Compile Include="Migrations\201705091400534_ForgotToMakeDateDeletedNullable.Designer.cs">
+      <DependentUpon>201705091400534_ForgotToMakeDateDeletedNullable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201705091713047_ConnectedRssFeedAndSport.cs" />
+    <Compile Include="Migrations\201705091713047_ConnectedRssFeedAndSport.Designer.cs">
+      <DependentUpon>201705091713047_ConnectedRssFeedAndSport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201705102056012_AddedDateModifiedUtcToRanking.cs" />
+    <Compile Include="Migrations\201705102056012_AddedDateModifiedUtcToRanking.Designer.cs">
+      <DependentUpon>201705102056012_AddedDateModifiedUtcToRanking.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201705111703516_AddedContentSourceAndContentSourceRegistration.cs" />
+    <Compile Include="Migrations\201705111703516_AddedContentSourceAndContentSourceRegistration.Designer.cs">
+      <DependentUpon>201705111703516_AddedContentSourceAndContentSourceRegistration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201705111736116_FixedContentSources.cs" />
+    <Compile Include="Migrations\201705111736116_FixedContentSources.Designer.cs">
+      <DependentUpon>201705111736116_FixedContentSources.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201705111822114_AddedContentSourcesAndRegistrationRequestsToContext.cs" />
+    <Compile Include="Migrations\201705111822114_AddedContentSourcesAndRegistrationRequestsToContext.Designer.cs">
+      <DependentUpon>201705111822114_AddedContentSourcesAndRegistrationRequestsToContext.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201705112000484_AddedContentSourceToRssFeed.cs" />
+    <Compile Include="Migrations\201705112000484_AddedContentSourceToRssFeed.Designer.cs">
+      <DependentUpon>201705112000484_AddedContentSourceToRssFeed.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201705121909529_AddedNameFieldsToContentSource.cs" />
+    <Compile Include="Migrations\201705121909529_AddedNameFieldsToContentSource.Designer.cs">
+      <DependentUpon>201705121909529_AddedNameFieldsToContentSource.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201705121923094_ChangedNameFieldsToContactName.cs" />
+    <Compile Include="Migrations\201705121923094_ChangedNameFieldsToContactName.Designer.cs">
+      <DependentUpon>201705121923094_ChangedNameFieldsToContactName.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201705151527375_AddedInteractionFieldsToContentSource.cs" />
+    <Compile Include="Migrations\201705151527375_AddedInteractionFieldsToContentSource.Designer.cs">
+      <DependentUpon>201705151527375_AddedInteractionFieldsToContentSource.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201705151715044_AddedLogoFieldsToContentSource.cs" />
+    <Compile Include="Migrations\201705151715044_AddedLogoFieldsToContentSource.Designer.cs">
+      <DependentUpon>201705151715044_AddedLogoFieldsToContentSource.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201705171649382_AddedRssFeedStatusToRssFeed.cs" />
+    <Compile Include="Migrations\201705171649382_AddedRssFeedStatusToRssFeed.Designer.cs">
+      <DependentUpon>201705171649382_AddedRssFeedStatusToRssFeed.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201705181618036_AddedNewsNotificationStatusToNewsNotification.cs" />
+    <Compile Include="Migrations\201705181618036_AddedNewsNotificationStatusToNewsNotification.Designer.cs">
+      <DependentUpon>201705181618036_AddedNewsNotificationStatusToNewsNotification.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201705181808072_AddedContentSourceToNewsNotification.cs" />
+    <Compile Include="Migrations\201705181808072_AddedContentSourceToNewsNotification.Designer.cs">
+      <DependentUpon>201705181808072_AddedContentSourceToNewsNotification.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201705221719316_AddedVideoFields.cs" />
+    <Compile Include="Migrations\201705221719316_AddedVideoFields.Designer.cs">
+      <DependentUpon>201705221719316_AddedVideoFields.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201705251924114_AddedContentSourceToPosts.cs" />
+    <Compile Include="Migrations\201705251924114_AddedContentSourceToPosts.Designer.cs">
+      <DependentUpon>201705251924114_AddedContentSourceToPosts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201705261922166_AllowNullLinkTitle.cs" />
+    <Compile Include="Migrations\201705261922166_AllowNullLinkTitle.Designer.cs">
+      <DependentUpon>201705261922166_AllowNullLinkTitle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201705301305004_AddDateDeletedToComment.cs" />
+    <Compile Include="Migrations\201705301305004_AddDateDeletedToComment.Designer.cs">
+      <DependentUpon>201705301305004_AddDateDeletedToComment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201706051353242_AddedIsApprovedToContentSource.cs" />
+    <Compile Include="Migrations\201706051353242_AddedIsApprovedToContentSource.Designer.cs">
+      <DependentUpon>201706051353242_AddedIsApprovedToContentSource.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201706051432176_AddUserAndContentSourceFollows.cs" />
+    <Compile Include="Migrations\201706051432176_AddUserAndContentSourceFollows.Designer.cs">
+      <DependentUpon>201706051432176_AddUserAndContentSourceFollows.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201706051614173_AddedSchoolAndTeamAdminTables.cs" />
+    <Compile Include="Migrations\201706051614173_AddedSchoolAndTeamAdminTables.Designer.cs">
+      <DependentUpon>201706051614173_AddedSchoolAndTeamAdminTables.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201706052052538_AddedForeignKeysAndNavigationToSchoolAndTeamAdmin.cs" />
+    <Compile Include="Migrations\201706052052538_AddedForeignKeysAndNavigationToSchoolAndTeamAdmin.Designer.cs">
+      <DependentUpon>201706052052538_AddedForeignKeysAndNavigationToSchoolAndTeamAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201706071817495_AllowPostingAsTeamOrSchool.cs" />
+    <Compile Include="Migrations\201706071817495_AllowPostingAsTeamOrSchool.Designer.cs">
+      <DependentUpon>201706071817495_AllowPostingAsTeamOrSchool.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201706081607118_AddedCreatedByToNewsNotification.cs" />
+    <Compile Include="Migrations\201706081607118_AddedCreatedByToNewsNotification.Designer.cs">
+      <DependentUpon>201706081607118_AddedCreatedByToNewsNotification.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201706081709054_RenamedCreatedByToCreatedById.cs" />
+    <Compile Include="Migrations\201706081709054_RenamedCreatedByToCreatedById.Designer.cs">
+      <DependentUpon>201706081709054_RenamedCreatedByToCreatedById.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201706081806109_MadeCreatedByIdRequired.cs" />
+    <Compile Include="Migrations\201706081806109_MadeCreatedByIdRequired.Designer.cs">
+      <DependentUpon>201706081806109_MadeCreatedByIdRequired.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201707061838187_EventLocation.cs" />
+    <Compile Include="Migrations\201707061838187_EventLocation.Designer.cs">
+      <DependentUpon>201707061838187_EventLocation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201707111639162_AddedEventManagementPin.cs" />
+    <Compile Include="Migrations\201707111639162_AddedEventManagementPin.Designer.cs">
+      <DependentUpon>201707111639162_AddedEventManagementPin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201707111649534_DeletableAdmins.cs" />
+    <Compile Include="Migrations\201707111649534_DeletableAdmins.Designer.cs">
+      <DependentUpon>201707111649534_DeletableAdmins.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201707181753379_AddPostShares.cs" />
+    <Compile Include="Migrations\201707181753379_AddPostShares.Designer.cs">
+      <DependentUpon>201707181753379_AddPostShares.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201707241838214_AddDateCreatedUtcToEventTeam.cs" />
+    <Compile Include="Migrations\201707241838214_AddDateCreatedUtcToEventTeam.Designer.cs">
+      <DependentUpon>201707241838214_AddDateCreatedUtcToEventTeam.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201707251524345_AddPurchaseTicketsUrlToEvents.cs" />
+    <Compile Include="Migrations\201707251524345_AddPurchaseTicketsUrlToEvents.Designer.cs">
+      <DependentUpon>201707251524345_AddPurchaseTicketsUrlToEvents.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708141616372_AddDisplayOrderToEventTeams.cs" />
+    <Compile Include="Migrations\201708141616372_AddDisplayOrderToEventTeams.Designer.cs">
+      <DependentUpon>201708141616372_AddDisplayOrderToEventTeams.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708141708558_RemoveDisplayOrderFromEventTeams.cs" />
+    <Compile Include="Migrations\201708141708558_RemoveDisplayOrderFromEventTeams.Designer.cs">
+      <DependentUpon>201708141708558_RemoveDisplayOrderFromEventTeams.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708211400119_AddSportIdToPost.cs" />
+    <Compile Include="Migrations\201708211400119_AddSportIdToPost.Designer.cs">
+      <DependentUpon>201708211400119_AddSportIdToPost.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708221242455_AddedAspectRatio.cs" />
+    <Compile Include="Migrations\201708221242455_AddedAspectRatio.Designer.cs">
+      <DependentUpon>201708221242455_AddedAspectRatio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709111840188_AddPostShareData.cs" />
+    <Compile Include="Migrations\201709111840188_AddPostShareData.Designer.cs">
+      <DependentUpon>201709111840188_AddPostShareData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709141639122_SeedDefaultContentSource.cs" />
+    <Compile Include="Migrations\201709141639122_SeedDefaultContentSource.Designer.cs">
+      <DependentUpon>201709141639122_SeedDefaultContentSource.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801192310190_20180119.cs" />
+    <Compile Include="Migrations\201801192310190_20180119.Designer.cs">
+      <DependentUpon>201801192310190_20180119.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\ApplicationRepository.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201702231702352_InitialCreate.resx">
+      <DependentUpon>201702231702352_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702271537350_Sports.resx">
+      <DependentUpon>201702271537350_Sports.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702271910442_AddProfileUrlFields.resx">
+      <DependentUpon>201702271910442_AddProfileUrlFields.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702281452559_AddSchoolsTable.resx">
+      <DependentUpon>201702281452559_AddSchoolsTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702281839254_AddedTeamsTable.resx">
+      <DependentUpon>201702281839254_AddedTeamsTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703091724512_ExtraFieldsToUserProfile.resx">
+      <DependentUpon>201703091724512_ExtraFieldsToUserProfile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703151328300_ChangeEnabledToActive.resx">
+      <DependentUpon>201703151328300_ChangeEnabledToActive.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703151447289_RemoveGender.resx">
+      <DependentUpon>201703151447289_RemoveGender.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703201442334_AddRssFeedTable.resx">
+      <DependentUpon>201703201442334_AddRssFeedTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703201443423_FixRssTable.resx">
+      <DependentUpon>201703201443423_FixRssTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703201803340_AddNameToRssFeed.resx">
+      <DependentUpon>201703201803340_AddNameToRssFeed.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703201957278_AddRequiredFieldsToRssFeed.resx">
+      <DependentUpon>201703201957278_AddRequiredFieldsToRssFeed.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703202019213_ForgotUrl.resx">
+      <DependentUpon>201703202019213_ForgotUrl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703211326120_AddPostsTable.resx">
+      <DependentUpon>201703211326120_AddPostsTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703211422357_PostImages.resx">
+      <DependentUpon>201703211422357_PostImages.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703211524471_NotificationsAndRankingTables.resx">
+      <DependentUpon>201703211524471_NotificationsAndRankingTables.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703211744050_FixTablesForNullFields.resx">
+      <DependentUpon>201703211744050_FixTablesForNullFields.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703221320207_NewsNotificationChanges.resx">
+      <DependentUpon>201703221320207_NewsNotificationChanges.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703271223228_AddEvents.resx">
+      <DependentUpon>201703271223228_AddEvents.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703271712483_AddDateDeleted.resx">
+      <DependentUpon>201703271712483_AddDateDeleted.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703271819339_RemoveFacilities.resx">
+      <DependentUpon>201703271819339_RemoveFacilities.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703272013144_RemoveTimeZoneDate.resx">
+      <DependentUpon>201703272013144_RemoveTimeZoneDate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703281408114_AddRegistrationForAdvertisers.resx">
+      <DependentUpon>201703281408114_AddRegistrationForAdvertisers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703281712144_AddAdvertiserTable.resx">
+      <DependentUpon>201703281712144_AddAdvertiserTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703291408176_AddRefreshTokens.resx">
+      <DependentUpon>201703291408176_AddRefreshTokens.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703301949140_AddANewFieldForAdvertisers.resx">
+      <DependentUpon>201703301949140_AddANewFieldForAdvertisers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703311242026_AddCampaignTable.resx">
+      <DependentUpon>201703311242026_AddCampaignTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703311807138_AddMoreFieldsToCampaigns.resx">
+      <DependentUpon>201703311807138_AddMoreFieldsToCampaigns.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201704031418029_Atheletes.resx">
+      <DependentUpon>201704031418029_Atheletes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201704041530371_AddPostLinksAndVideosRemovedTitleFromPosts.resx">
+      <DependentUpon>201704041530371_AddPostLinksAndVideosRemovedTitleFromPosts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201704051227406_SoftDeleteForPostObjects.resx">
+      <DependentUpon>201704051227406_SoftDeleteForPostObjects.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201704051244094_RemoveRequiredImageUrl.resx">
+      <DependentUpon>201704051244094_RemoveRequiredImageUrl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201704131651140_AddCommentsAndLikes.resx">
+      <DependentUpon>201704131651140_AddCommentsAndLikes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201704171329011_AddCommentDateCreatedField.resx">
+      <DependentUpon>201704171329011_AddCommentDateCreatedField.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201704181154302_RemoveUrlsFromSchool.resx">
+      <DependentUpon>201704181154302_RemoveUrlsFromSchool.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201704181206286_AddSecondaryToTeam.resx">
+      <DependentUpon>201704181206286_AddSecondaryToTeam.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201704181549508_AddVerification.resx">
+      <DependentUpon>201704181549508_AddVerification.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201704271411289_AddFollows.resx">
+      <DependentUpon>201704271411289_AddFollows.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705011614207_AddedRssKeywordTable.resx">
+      <DependentUpon>201705011614207_AddedRssKeywordTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705011645336_ConnectedRssFeedToRssKeyword.resx">
+      <DependentUpon>201705011645336_ConnectedRssFeedToRssKeyword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705081445432_AddedRssKeywordTypeTable.resx">
+      <DependentUpon>201705081445432_AddedRssKeywordTypeTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705081457463_SeedKeywordType.resx">
+      <DependentUpon>201705081457463_SeedKeywordType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705082052552_AddRequiredKeywordType.resx">
+      <DependentUpon>201705082052552_AddRequiredKeywordType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705091358221_AddedDateDeletedToRssFeedAndNavPropsToPosts.resx">
+      <DependentUpon>201705091358221_AddedDateDeletedToRssFeedAndNavPropsToPosts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705091400534_ForgotToMakeDateDeletedNullable.resx">
+      <DependentUpon>201705091400534_ForgotToMakeDateDeletedNullable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705091713047_ConnectedRssFeedAndSport.resx">
+      <DependentUpon>201705091713047_ConnectedRssFeedAndSport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705102056012_AddedDateModifiedUtcToRanking.resx">
+      <DependentUpon>201705102056012_AddedDateModifiedUtcToRanking.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705111703516_AddedContentSourceAndContentSourceRegistration.resx">
+      <DependentUpon>201705111703516_AddedContentSourceAndContentSourceRegistration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705111736116_FixedContentSources.resx">
+      <DependentUpon>201705111736116_FixedContentSources.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705111822114_AddedContentSourcesAndRegistrationRequestsToContext.resx">
+      <DependentUpon>201705111822114_AddedContentSourcesAndRegistrationRequestsToContext.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705112000484_AddedContentSourceToRssFeed.resx">
+      <DependentUpon>201705112000484_AddedContentSourceToRssFeed.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705121909529_AddedNameFieldsToContentSource.resx">
+      <DependentUpon>201705121909529_AddedNameFieldsToContentSource.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705121923094_ChangedNameFieldsToContactName.resx">
+      <DependentUpon>201705121923094_ChangedNameFieldsToContactName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705151527375_AddedInteractionFieldsToContentSource.resx">
+      <DependentUpon>201705151527375_AddedInteractionFieldsToContentSource.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705151715044_AddedLogoFieldsToContentSource.resx">
+      <DependentUpon>201705151715044_AddedLogoFieldsToContentSource.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705171649382_AddedRssFeedStatusToRssFeed.resx">
+      <DependentUpon>201705171649382_AddedRssFeedStatusToRssFeed.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705181618036_AddedNewsNotificationStatusToNewsNotification.resx">
+      <DependentUpon>201705181618036_AddedNewsNotificationStatusToNewsNotification.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705181808072_AddedContentSourceToNewsNotification.resx">
+      <DependentUpon>201705181808072_AddedContentSourceToNewsNotification.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705221719316_AddedVideoFields.resx">
+      <DependentUpon>201705221719316_AddedVideoFields.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705251924114_AddedContentSourceToPosts.resx">
+      <DependentUpon>201705251924114_AddedContentSourceToPosts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705261922166_AllowNullLinkTitle.resx">
+      <DependentUpon>201705261922166_AllowNullLinkTitle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705301305004_AddDateDeletedToComment.resx">
+      <DependentUpon>201705301305004_AddDateDeletedToComment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706051353242_AddedIsApprovedToContentSource.resx">
+      <DependentUpon>201706051353242_AddedIsApprovedToContentSource.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706051432176_AddUserAndContentSourceFollows.resx">
+      <DependentUpon>201706051432176_AddUserAndContentSourceFollows.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706051614173_AddedSchoolAndTeamAdminTables.resx">
+      <DependentUpon>201706051614173_AddedSchoolAndTeamAdminTables.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706052052538_AddedForeignKeysAndNavigationToSchoolAndTeamAdmin.resx">
+      <DependentUpon>201706052052538_AddedForeignKeysAndNavigationToSchoolAndTeamAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706071817495_AllowPostingAsTeamOrSchool.resx">
+      <DependentUpon>201706071817495_AllowPostingAsTeamOrSchool.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706081607118_AddedCreatedByToNewsNotification.resx">
+      <DependentUpon>201706081607118_AddedCreatedByToNewsNotification.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706081709054_RenamedCreatedByToCreatedById.resx">
+      <DependentUpon>201706081709054_RenamedCreatedByToCreatedById.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706081806109_MadeCreatedByIdRequired.resx">
+      <DependentUpon>201706081806109_MadeCreatedByIdRequired.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201707061838187_EventLocation.resx">
+      <DependentUpon>201707061838187_EventLocation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201707111639162_AddedEventManagementPin.resx">
+      <DependentUpon>201707111639162_AddedEventManagementPin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201707111649534_DeletableAdmins.resx">
+      <DependentUpon>201707111649534_DeletableAdmins.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201707181753379_AddPostShares.resx">
+      <DependentUpon>201707181753379_AddPostShares.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201707241838214_AddDateCreatedUtcToEventTeam.resx">
+      <DependentUpon>201707241838214_AddDateCreatedUtcToEventTeam.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201707251524345_AddPurchaseTicketsUrlToEvents.resx">
+      <DependentUpon>201707251524345_AddPurchaseTicketsUrlToEvents.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708141616372_AddDisplayOrderToEventTeams.resx">
+      <DependentUpon>201708141616372_AddDisplayOrderToEventTeams.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708141708558_RemoveDisplayOrderFromEventTeams.resx">
+      <DependentUpon>201708141708558_RemoveDisplayOrderFromEventTeams.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708211400119_AddSportIdToPost.resx">
+      <DependentUpon>201708211400119_AddSportIdToPost.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708221242455_AddedAspectRatio.resx">
+      <DependentUpon>201708221242455_AddedAspectRatio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709111840188_AddPostShareData.resx">
+      <DependentUpon>201709111840188_AddPostShareData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709141639122_SeedDefaultContentSource.resx">
+      <DependentUpon>201709141639122_SeedDefaultContentSource.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801192310190_20180119.resx">
+      <DependentUpon>201801192310190_20180119.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

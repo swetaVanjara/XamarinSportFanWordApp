@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+    <metadata minClientVersion="2.8.1">
+        <id>Fanword.Poco</id>
+        <version>REPLACEWITHBUILD</version>
+        <title>Fanword.Poco</title>
+        <authors>Jacob Krings</authors>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>
+          Fanword.Poco
+        </description>
+        <summary>Fanword.Poco</summary>
+        <releaseNotes>
+            V1
+        </releaseNotes>
+    </metadata>
+    <files>
+        <file src="bin\Release\Fanword.Poco.dll" target="lib\portable45\Fanword.Poco.dll" />
+        <file src="bin\Release\Fanword.Poco.XML" target="lib\portable45\Fanword.Poco.XML" />
+	</files>
+</package>

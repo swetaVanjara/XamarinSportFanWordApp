@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:id="@+id/linearLayout1"
+        android:background="#f4f4f4">
+        <TextView xmlns:tools="http://schemas.android.com/tools"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/lblDate"
+            android:textColor="#909090"
+            android:layout_weight="1"
+            android:gravity="center"
+            tools:text="Small Text" />
+        <RelativeLayout
+            android:minWidth="25px"
+            android:minHeight="25px"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:id="@+id/relativeLayout1"
+            android:background="#e3e4e6" />
+    </LinearLayout>
+    <TextView xmlns:tools="http://schemas.android.com/tools"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/lblName"
+        android:textColor="#212121"
+        android:gravity="center"
+        android:layout_marginTop="10dp"
+        tools:text="Small Text" />
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/linearLayout2"
+        android:gravity="center"
+        android:layout_marginTop="10dp">
+        <TextView xmlns:tools="http://schemas.android.com/tools"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/lblTime"
+            android:textColor="#212121"
+            tools:text="Small Text" />
+        <TextView
+            android:text="at"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/textView3"
+            android:textColor="#909090"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp" />
+        <TextView xmlns:tools="http://schemas.android.com/tools"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/lblLocation"
+            android:textColor="#212121"
+            tools:text="Small Text" />
+    </LinearLayout>
+    <RelativeLayout
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:id="@+id/relativeLayout2"
+        android:background="#f4f4f4"
+        android:layout_marginTop="10dp" />
+    <LinearLayout
+        android:orientation="horizontal"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/linearLayout21"
+        android:gravity="center_vertical">
+        <LinearLayout xmlns:tools="http://schemas.android.com/tools"
+            android:orientation="vertical"
+            android:minWidth="25px"
+            android:minHeight="25px"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/llTwoTeams"
+            android:layout_weight="1"
+            android:visibility="gone"
+            tools:visibility="visible">
+            <LinearLayout
+                android:orientation="horizontal"
+                android:minWidth="25px"
+                android:minHeight="25px"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/linearLayout6">
+                <ffimageloading.views.ImageViewAsync
+                    android:src="@drawable/defprofpic"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:id="@+id/imgTeam1"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginBottom="10dp" />
+                <TextView
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/lblTeam1Name"
+                    android:textColor="#212121"
+                    android:gravity="center_vertical"
+                    android:layout_marginLeft="10dp"
+                    tools:text="Nebraska"
+                    android:layout_weight="1" />
+                <TextView
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:id="@+id/lblTeam1Score"
+                    android:textColor="#000000"
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:text="0" />
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="horizontal"
+                android:minWidth="25px"
+                android:minHeight="25px"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/linearLayout6">
+                <ffimageloading.views.ImageViewAsync
+                    android:src="@drawable/defprofpic"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:id="@+id/imgTeam2"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginBottom="10dp" />
+                <TextView
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/lblTeam2Name"
+                    android:textColor="#212121"
+                    android:gravity="center_vertical"
+                    android:layout_marginLeft="10dp"
+                    tools:text="Nebraska"
+                    android:layout_weight="1" />
+                <TextView
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:id="@+id/lblTeam2Score"
+                    android:textColor="#000000"
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:text="0" />
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout xmlns:tools="http://schemas.android.com/tools"
+            android:orientation="vertical"
+            android:minWidth="25px"
+            android:minHeight="25px"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/llManyTeams"
+            android:layout_weight="1"
+            tools:visibility="visible"
+            android:visibility="gone">
+            <TextView
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/lblEventName"
+                android:textColor="#212121"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                tools:text="Event anme" />
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/linearLayout9">
+                <ImageView
+                    android:src="@drawable/dots"
+                    android:layout_width="30dp"
+                    android:layout_height="match_parent"
+                    android:id="@+id/imageView1"
+                    android:scaleType="fitCenter"
+                    android:layout_marginLeft="10dp" />
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/btnShowTeams"
+                    android:textAllCaps="false"
+                    android:background="@drawable/buttonbackground"
+                    android:textColor="#212121"
+                    android:paddingLeft="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:gravity="center_vertical"
+                    tools:text="Teams"
+                    android:textSize="14dp" />
+            </LinearLayout>
+        </LinearLayout>
+        <ffimageloading.views.ImageViewAsync
+            android:src="@drawable/ticket"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:id="@+id/imgRight"
+            android:padding="10dp" />
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:id="@+id/linearLayout2">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/linearLayout3"
+            android:background="#f4f4f4"
+            android:layout_weight="1"
+            android:visibility="visible"
+            android:gravity="center_vertical">
+            <TextView
+                android:text="Posts"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView1"
+                android:textColor="#909090"
+                android:gravity="center" />
+            <TextView
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/lblPosts"
+                android:textColor="#212121"
+                android:gravity="center" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

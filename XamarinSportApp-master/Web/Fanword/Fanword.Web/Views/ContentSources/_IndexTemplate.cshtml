@@ -1,0 +1,99 @@
+﻿@using Fanword.Data.Enums
+<div style="margin-top: 15px;">
+    <div class="form-group">
+        <label class="control-label">Account Picture:</label><br />
+        <img style="width: 200px; height: 200px;" alt="" ng-src="{{profileImageSource}}" id="profileImage" /><br /><br />
+        <div class="text-danger" ng-repeat="error in modelState['model.LogoUrl']">{{error}}</div>
+        <button type="button" class="btn btn-default" ng-click="openUpload()" ng-disabled="isSaving">Upload</button>
+    </div>
+
+    <div style="display: none;">
+        <input type="file" kendo-upload k-options="contentSourceUploadOptions" id="files" />
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <div class="form-group">
+                <label class="control-label">Name:</label>
+                <input type="text" ng-model="contentSource.contentSourceName" class="form-control" />
+                <div class="text-danger" ng-repeat="error in modelState['model.ContentSourceName']">{{error}}</div>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Description:</label>
+                <input type="text" ng-model="contentSource.contentSourceDescription" class="form-control"/>
+                <div class="text-danger" ng-repeat="error in modelState['model.ContentSourceDescription']">{{error}}</div>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Primary Color:</label><br />
+                <div kendo-color-picker k-ng-model="contentSource.primaryColor" k-preview="true"></div>
+                <div class="text-danger" ng-repeat="error in modelState['model.PrimaryColor']">{{error}}</div>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Action Button Text:</label>
+                <input type="text" ng-model="contentSource.actionText" class="form-control" />
+                <div class="text-danger" ng-repeat="error in modelState['model.ActionText']">{{error}}</div>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Action Button Link:</label>
+                <input type="text" ng-model="contentSource.actionLink" class="form-control" />
+                <div class="text-danger" ng-repeat="error in modelState['model.ActionLink']">{{error}}</div>
+            </div>
+            @*<div class="form-group">
+                <label class="control-label">Secondary Color:</label><br />
+                <div kendo-color-picker ng-model="team.secondaryColor" k-preview="false"></div>
+                <div class="text-danger" ng-repeat="error in modelState['model.Secondary']">{{error}}</div>
+            </div>*@
+        </div>
+        <div class="col-md-4">
+            <div class="form-group">
+                <label class="control-label">Facebook Link:</label>
+            @if (User.IsInRole(AppRoles.SystemAdmin))
+            {
+                <div class="checkbox pull-right">
+                    <input type="checkbox" ng-model="contentSource.facebookShow"/>
+                    <label class="control-label">Show on profile?</label>
+                </div>
+            }
+                <input type="text" ng-model="contentSource.facebookLink" class="form-control" placeholder="Insert Link" />
+                <div class="text-danger" ng-repeat="error in modelState['model.FacebookLink']">{{error}}</div>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Twitter Link:</label>
+            @if (User.IsInRole(AppRoles.SystemAdmin))
+            {
+                <div class="checkbox pull-right">
+                    <input type="checkbox" ng-model="contentSource.twitterShow"/>
+                    <label class="control-label">Show on profile?</label>
+                </div>
+            }
+                <input type="text" ng-model="contentSource.twitterLink" class="form-control" placeholder="Insert Link" />
+                <div class="text-danger" ng-repeat="error in modelState['model.TwitterLink']">{{error}}</div>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Instagram Link:</label>
+            @if (User.IsInRole(AppRoles.SystemAdmin))
+            {
+                <div class="checkbox pull-right">
+                    <input type="checkbox" ng-model="contentSource.instagramShow"/>
+                    <label class="control-label">Show on profile?</label>
+                </div>
+            }
+                <input type="text" ng-model="contentSource.instagramLink" class="form-control" placeholder="Insert Link" />
+                <div class="text-danger" ng-repeat="error in modelState['model.InstagramLink']">{{error}}</div>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Website:</label>
+                <input type="text" ng-model="contentSource.websiteLink" class="form-control" placeholder="Insert Link" />
+                <div class="text-danger" ng-repeat="error in modelState['model.WebsiteLink']">{{error}}</div>
+            </div>    
+        </div>
+        
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="form-group">
+                <button type="button" class="btn btn-success" ng-disabled="isSaving" ng-click="save()">{{saveText}}</button>
+            </div>
+        </div>
+    </div>
+</div>

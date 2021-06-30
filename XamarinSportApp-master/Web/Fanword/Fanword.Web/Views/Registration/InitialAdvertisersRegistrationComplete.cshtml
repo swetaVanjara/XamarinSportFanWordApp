@@ -1,0 +1,57 @@
+﻿
+
+@{
+    ViewBag.Title = "Registration Complete";
+    Layout = "~/Views/Shared/_AnonymousLayout.cshtml";
+}
+
+@section MetronicPageLevelStyles {
+    <link href="/Theme/assets/pages/css/login.min.css" rel="stylesheet" type="text/css" />
+<link href="~/Content/Registration.css" rel="stylesheet" />
+}
+
+<div class="logo hidden-until-load">
+    <a href="javascript:;">
+        <img src="~/Images/Logos/fanword-white.png" alt="" />
+    </a>
+</div>
+
+
+<div class="content hidden-until-load" style="padding: 10px 30px 0px;">
+    <div class="form-group">
+        <div class="note note-success">
+            <h4>Success!</h4>
+            <p>Thank you for your interest in Advertising on Fanword.  Please check your email to complete your Advertising Registration.</p>
+        </div>
+    </div>
+        <div class="form-actions" style="padding-top: 0px;  margin-bottom: -2px;">
+            <button type="button" class="btn green uppercase" data-loading-text="Sending Registration..." style="width:100%" onclick="window.location = '/Home'">OK</button>
+        </div>
+    
+
+</div>
+
+@section MetronicPagePlugins {
+    <script src="/Theme/assets/global/plugins/jquery-validation/js/additional-methods.min.js" type="text/javascript"></script>
+    <script src="/Theme/assets/global/plugins/backstretch/jquery.backstretch.min.js" type="text/javascript"></script>
+}
+
+@section CustomScripts {
+    <script>
+
+        
+        $(document).on('ready', function () {
+            $('body').addClass('login');
+            $('.hidden-until-load').show();
+            $.backstretch([
+                    "/Images/Backgrounds/fanword-background.jpg"
+                ], {
+                    fade: 1000,
+                    duration: 8000
+                }
+            );
+        });
+        
+
+    </script>
+}

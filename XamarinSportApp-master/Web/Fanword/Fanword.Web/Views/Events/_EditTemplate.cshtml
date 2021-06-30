@@ -1,0 +1,113 @@
+﻿
+    <div class="form-group pull-left" style="margin-right: 15px;">
+        <label class="control-label">Date:</label><br />
+        <input kendo-date-time-picker k-ng-model="event.dateOfEventInTimezone" />
+        <div class="has-error text-danger" ng-repeat="errorMessage in modelState['model.tateOfEventInTimezone']">{{errorMessage}}</div>
+    </div>
+
+    <div class="form-group pull-left" style="margin-right: 15px;">
+        <label class="control-label">Time Zone:</label><br />
+        <select kendo-drop-down-list k-options="timezoneOptions" k-ng-model="event.timezoneId" style="width: 300px;"></select>
+        <div class="has-error text-danger" ng-repeat="errorMessage in modelState['model.timezoneId']">{{errorMessage}}</div>
+    </div>
+
+    <div class="form-group pull-left" style="margin-right: 15px;">
+        <label class="control-label">Name:</label><br />
+        <input type="text" class="k-textbox" ng-model="event.name" style="width: 300px;" />
+    </div>
+
+    <div class="form-group pull-left" style="margin-right: 15px;">
+        <label class="control-label">Location:</label><br />
+        <input type="text" class="k-textbox" ng-model="event.location" style="width: 300px;" />
+        <div class="has-error text-danger" ng-repeat="errorMessage in modelState['model.Location']">{{errorMessage}}</div>
+    </div>
+
+    @*<div class="form-group pull-left" style="margin-right: 15px;">
+            <label class="control-label">Facility:</label><br />
+            <select kendo-drop-down-list k-options="facilitiesOptions" k-ng-model="event.facilityId" style="width: 200px;"></select>
+        </div>*@
+
+
+    <div class="form-group pull-left" style="margin-right: 15px;">
+        <label class="control-label">Sport:</label><br />
+        <select kendo-drop-down-list k-options="sportOptions" k-ng-model="event.sportId" style="width: 200px;"></select>
+        <div class="has-error text-danger" ng-repeat="errorMessage in modelState['model.SportId']">{{errorMessage}}</div>
+    </div>
+
+    <div class="form-group pull-left" style="margin-right: 15px; margin-top: 7px">
+        <label class="control-label"></label><br />
+        <button type="button" class="btn btn-warning" ng-click="setTicketLink()"><i class="fa fa-ticket"></i></button>
+    </div>
+
+
+<div class="clearfix"></div>
+
+<div ng-show="event.sportId != undefined && event.sportId !== ''">
+    <div class="panel panel-default" style="margin-top: 15px; width: 900px;">
+        <div class="panel-heading">
+            <div class="form-group pull-left" style="margin-right:15px">
+                <label class="control-label">Team:</label><br/>
+                <select kendo-drop-down-list k-options="teamOptions" k-ng-model="newEventTeam.teamId" style="width: 400px;"></select>
+            </div>
+            <div class="form-group pull-left">
+                <button type="button" class="btn btn-primary" ng-click="addTeamRow()" style="margin-top: 27px;">Add</button>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+        <div class="panel-body">
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th>Team</th>
+                    <th style="width: 200px;">Result</th>
+                    <th style="width: 160px;">Score / Points / Place</th>
+                    <th style="width: 50px;"></th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="team in event.eventTeams | orderBy: 'team.dateCreatedUtc' " ng-hide="team.isDeleted">
+                    <td>
+                        <select kendo-drop-down-list k-options="teamOptions" k-ng-model="team.teamId" style="width:100%"></select>
+                    </td>
+                    <td>
+                        <div class="md-radio-inline">
+                            <div class="md-radio has-success">
+                                <input type="radio" id="{{(team.id + '1')}}"  name="{{team.id}}" ng-model="team.winLossTie" ng-value="0"class="md-radiobtn" ng-click="checkValue(team)">
+                                <label for="{{(team.id + '1')}}" class="bold" style="color: #27a4b0;">
+                                    <span></span>
+                                    <span class="check"></span>
+                                    <span class="box"></span> W </label>
+                            </div>
+                            <div class="md-radio has-error">
+                                <input type="radio" id="{{(team.id + '2')}}" name="{{team.id}}" class="md-radiobtn"  ng-model="team.winLossTie" ng-value="1" ng-click="checkValue(team)">
+                                <label for="{{(team.id + '2')}}" class="bold" style="color: #e73d4a;">
+                                    <span></span>
+                                    <span class="check"></span>
+                                    <span class="box"></span> L </label>
+                            </div>
+                            <div class="md-radio">
+                                <input type="radio"  id="{{(team.id + '3')}}" name="{{team.id}}" ng-model="team.winLossTie" ng-value="2" class="md-radiobtn" ng-click="checkValue(team)">
+                                <label for="{{(team.id + '3')}}" class="bold">
+                                    <span></span>
+                                    <span class="check" style="background: #666;"></span>
+                                    <span class="box"></span> T</label>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <input type="text" ng-model="team.scorePointsOrPlace" class="form-control"/>
+                    </td>
+                    <td>
+                        <button type="button" class="btn btn-danger" ng-click="removeTeam(team)"><i class="icon-trash"></i></button>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<div class="form-group">
+    <button type="button" class="btn btn-default" ng-click="cancel()">Cancel</button>
+    <button type="button" ng-click="save()" promise-btn class="btn btn-success">Save</button>
+</div>

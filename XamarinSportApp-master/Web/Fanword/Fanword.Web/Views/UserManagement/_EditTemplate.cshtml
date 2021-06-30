@@ -1,0 +1,81 @@
+﻿
+
+<div style="margin-top: 15px;">
+    <div class="row">
+        <div class="col-sm-4">
+            <div class="form-group">
+                <label class="control-label">Profile Picture:</label><br />
+                <img style="width: 200px; height: 200px;" alt="" ng-src="{{profileImageSource}}" id="profileImage" /><br /><br />
+                <div class="text-danger" ng-repeat="error in modelState['model.ProfileUrl']">{{error}}</div>
+                <button type="button" class="btn btn-default" ng-click="openUpload()" ng-disabled="isSaving">Upload</button>
+            </div>
+
+            <div style="display: none;">
+                <input type="file" kendo-upload k-options="profileUploadOptions" id="files" />
+            </div>
+            <div class="form-group alert alert-danger" ng-if="modelState[''].length >0">
+                <div ng-repeat="error in modelState['']">{{error}}</div>
+            </div>
+            <div class="form-group">
+                <label class="control-label">First Name:</label>
+                <input type="text" ng-model="user.firstName" class="form-control" />
+                <div class="text-danger" ng-repeat="error in modelState['model.FirstName']">{{error}}</div>
+            </div>
+    
+            <div class="form-group">
+                <label class="control-label">Last Name:</label>
+                <input type="text" ng-model="user.lastName" class="form-control" />
+                <div class="text-danger" ng-repeat="error in modelState['model.LastName']">{{error}}</div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label">Email:</label>
+                <input type="text" ng-model="user.email" class="form-control" />
+                <div class="text-danger" ng-repeat="error in modelState['model.Email']">{{error}}</div>
+            </div>
+    
+            <div class="form-group">
+                <label class="control-label">Set New Password:</label>
+                <input type="password" ng-model="user.password" class="form-control " />
+                <div class="text-danger" ng-repeat="error in modelState['model.Password']">{{error}}</div>
+            </div>
+    
+            <div class="form-group">
+                <label class="control-label">Confirm New Password:</label>
+                <input type="password" ng-model="user.confirmPassword" class="form-control" />
+                <div class="text-danger" ng-repeat="error in modelState['model.ConfirmPassword']">{{error}}</div>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Content Source:</label>
+                <select kendo-drop-down-list k-options="contentSourceList" k-ng-model="user.contentSourceId" style="width:100%"></select>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Date Added: </label><br/>
+                <span>{{getDateAdded()}}</span>
+            </div>
+            <div class="form-group">
+                <div class="md-checkbox">
+                    <input type="checkbox" id="checkbox2" class="md-check" ng-model="user.isActive" ng-disabled="sport.id=='NEW'">
+                    <label for="checkbox2">
+                        <span class="inc"></span>
+                        <span class="check"></span>
+                        <span class="box"></span> Is Active
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <h4>Athlete - Teams/Years</h4>
+            <div kendo-grid k-options="athleteYearOptions"></div>
+        </div>
+    </div>
+    <div class="form-group">
+        <button type="button" class="btn btn-default" ng-disabled="isSaving" ng-click="cancel()">Cancel</button>
+        <button type="button" class="btn btn-danger" ng-disabled="isSaving" ng-click="delete()" ng-if="user.dateDeletedUtc == undefined && user.id != 'NEW'">Delete</button>
+        <button type="button" class="btn btn-success" ng-disabled="isSaving" ng-click="save()">{{saveText}}</button>
+        
+
+        <button type="button" class="btn btn-warning" ng-disabled="isSaving" ng-click="reinstate()" ng-if="user.dateDeletedUtc != undefined">Reinstate</button>
+
+    </div>
+</div>

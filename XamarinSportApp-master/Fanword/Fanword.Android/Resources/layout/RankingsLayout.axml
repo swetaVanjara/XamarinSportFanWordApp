@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#e3e4e6">
+    <RelativeLayout
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/relativeLayout1">
+        <ImageButton
+            android:src="@drawable/filter"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:id="@+id/btnFilter"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/buttonbackground"
+            android:scaleType="fitCenter"
+            android:padding="10dp" />
+    </RelativeLayout>
+  <android.support.v4.widget.SwipeRefreshLayout
+    android:id="@+id/slRefresh"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <ListView xmlns:tools="http://schemas.android.com/tools"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/lvRankings"
+        tools:listitem="@layout/rankingitem" />
+  </android.support.v4.widget.SwipeRefreshLayout>
+</LinearLayout>

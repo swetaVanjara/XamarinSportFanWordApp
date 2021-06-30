@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff">
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:id="@+id/linearLayout1"
+        android:background="#212121">
+        <ImageButton
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:id="@+id/btnBack"
+            android:background="@drawable/buttonbackground"
+            android:src="@drawable/arrowleftwhite"
+            android:scaleType="fitCenter"
+            android:padding="15dp" />
+        <ImageView
+            android:src="@drawable/searchwhite"
+            android:layout_width="20dp"
+            android:layout_height="match_parent"
+            android:id="@+id/imgSearch" />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/txtSearch"
+            android:textColor="#ffffff"
+            android:textColorHint="#909090"
+            android:hint="Search"
+            android:background="#00000000"
+            android:layout_marginLeft="10dp" />
+    </LinearLayout>
+    <ListView xmlns:tools="http://schemas.android.com/tools"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/lvSearch"
+        tools:listitem="@layout/searchitem" />
+</LinearLayout>

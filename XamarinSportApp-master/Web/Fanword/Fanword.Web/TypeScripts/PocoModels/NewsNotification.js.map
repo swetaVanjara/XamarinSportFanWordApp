@@ -1,0 +1,1 @@
+{"version":3,"file":"NewsNotification.js","sourceRoot":"","sources":["NewsNotification.ts"],"names":[],"mappings":"AAAA;IAWI;QACI,IAAI,CAAC,WAAW,GAAG,IAAI,IAAI,EAAE,CAAC;QAC9B,IAAI,CAAC,WAAW,CAAC,QAAQ,CAAC,CAAC,EAAE,CAAC,EAAE,CAAC,EAAE,CAAC,CAAC,CAAC;IAC1C,CAAC;IACL,uBAAC;AAAD,CAAC,AAfD,IAeC"}

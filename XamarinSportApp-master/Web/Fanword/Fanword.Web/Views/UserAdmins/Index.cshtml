@@ -1,0 +1,22 @@
+﻿
+@{
+    ViewBag.Title = "User Admins";
+}
+
+@section StyleSheets {
+    <style>
+        .k-selectable tbody tr {
+            cursor: pointer !important;
+        }
+    </style>
+}
+
+
+
+<div ui-view="mainview">
+
+</div>
+
+@section CustomScripts {
+    @Scripts.Render("~/Bundles/UserAdmins")
+}

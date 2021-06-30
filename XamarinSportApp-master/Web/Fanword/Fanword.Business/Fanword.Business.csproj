@@ -1,0 +1,307 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{83EE3F15-2FD6-4B3A-8884-C2B0C7808EB2}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Fanword.Business</RootNamespace>
+    <AssemblyName>Fanword.Business</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Beta|AnyCPU'">
+    <OutputPath>bin\Beta\</OutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutoMapper, Version=5.1.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.5.1.1\lib\net45\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ExtensionClasses">
+      <HintPath>..\packages\Agilx.Extensions.2016.12.28.1\lib\net46\ExtensionClasses.dll</HintPath>
+    </Reference>
+    <Reference Include="ExtensionClasses.AutoMapper">
+      <HintPath>..\packages\Agilx.Extensions.AutoMapper.2017.3.30.1\lib\net46\ExtensionClasses.AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="FileUploads.Azure">
+      <HintPath>..\packages\FileUploads.Azure.2016.8.16.1\lib\FileUploads.Azure.dll</HintPath>
+    </Reference>
+    <Reference Include="FileUploads.Core">
+      <HintPath>..\packages\Agilx.FileUploads.Core.2016.8.16.1\lib\FileUploads.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="GenericRepository">
+      <HintPath>..\packages\GenericRepository.2017.1.27.1\lib\net46\GenericRepository.dll</HintPath>
+    </Reference>
+    <Reference Include="Hangfire.Core, Version=1.6.12.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Hangfire.Core.1.6.12\lib\net45\Hangfire.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Hangfire.Pro">
+      <HintPath>..\packages\Hangfire.Pro.1.4.7\lib\net45\Hangfire.Pro.dll</HintPath>
+    </Reference>
+    <Reference Include="Hangfire.SqlServer, Version=1.6.12.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Hangfire.SqlServer.1.6.12\lib\net45\Hangfire.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="HtmlAgilityPack, Version=1.4.9.5, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
+      <HintPath>..\packages\HtmlAgilityPack.1.4.9.5\lib\Net45\HtmlAgilityPack.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.1\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Azure.KeyVault.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Azure.KeyVault.Core.1.0.0\lib\net40\Microsoft.Azure.KeyVault.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Azure.NotificationHubs, Version=2.16.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Azure.NotificationHubs.1.0.8\lib\net45-full\Microsoft.Azure.NotificationHubs.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Data.Edm, Version=5.6.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Data.Edm.5.6.4\lib\net40\Microsoft.Data.Edm.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Data.OData, Version=5.6.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Data.OData.5.6.4\lib\net40\Microsoft.Data.OData.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Data.Services.Client, Version=5.6.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Data.Services.Client.5.6.4\lib\net40\Microsoft.Data.Services.Client.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Office.Interop.Excel.15.0.4795.1000\lib\net20\Microsoft.Office.Interop.Excel.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.Owin, Version=3.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.3.1.0\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb, Version=3.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.3.1.0\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAzure.Storage, Version=6.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\WindowsAzure.Storage.6.2.0\lib\net40\Microsoft.WindowsAzure.Storage.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Notifications">
+      <HintPath>..\packages\Notifications.2017.6.26.4\lib\net46\Notifications.dll</HintPath>
+    </Reference>
+    <Reference Include="Notifications.Api">
+      <HintPath>..\packages\Notifications.2017.6.26.4\lib\net46\Notifications.Api.dll</HintPath>
+    </Reference>
+    <Reference Include="Notifications.Business">
+      <HintPath>..\packages\Notifications.2017.6.26.4\lib\net46\Notifications.Business.dll</HintPath>
+    </Reference>
+    <Reference Include="Notifications.Data">
+      <HintPath>..\packages\Notifications.2017.6.26.4\lib\net46\Notifications.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Notifications.EF6">
+      <HintPath>..\packages\Notifications.2017.6.26.4\lib\net46\Notifications.EF6.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PushNotifications">
+      <HintPath>..\packages\PushNotifications.Azure.2017.6.22.7\lib\net46\PushNotifications.dll</HintPath>
+    </Reference>
+    <Reference Include="PushNotifications.Azure">
+      <HintPath>..\packages\PushNotifications.Azure.2017.6.22.7\lib\net46\PushNotifications.Azure.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Spatial, Version=5.6.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Spatial.5.6.4\lib\net40\System.Spatial.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Http, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Builders\Advertisers\AdvertiserBuilder.cs" />
+    <Compile Include="Builders\Campaigns\CampaignBuilder.cs" />
+    <Compile Include="Builders\Comments\CommentBuilder.cs" />
+    <Compile Include="Builders\ContentManagement\PostBuilder.cs" />
+    <Compile Include="Builders\ContentSources\ContentSourceBuilder.cs" />
+    <Compile Include="Builders\Events\EventBuilder.cs" />
+    <Compile Include="Builders\Likes\LikeBuilder.cs" />
+    <Compile Include="Builders\Mobile\AthleteItem\AthleteItemBuilder.cs" />
+    <Compile Include="Builders\Mobile\Athlete\AthletesBuilder.cs" />
+    <Compile Include="Builders\Mobile\Base\BaseBuilder.cs" />
+    <Compile Include="Builders\Mobile\CommentLikes\CommentLikesBuilder.cs" />
+    <Compile Include="Builders\Mobile\Comments\CommentsBuilder.cs" />
+    <Compile Include="Builders\Mobile\ContentSoureProfiles\ContentSourceProfileBuilder.cs" />
+    <Compile Include="Builders\Mobile\EventProfile\EventProfileBuilder.cs" />
+    <Compile Include="Builders\Mobile\EventTeams\EventTeamsBuilder.cs" />
+    <Compile Include="Builders\Mobile\Favorites\FavoritesBuilder.cs" />
+    <Compile Include="Builders\Mobile\Feed\FeedBuilder.cs" />
+    <Compile Include="Builders\Mobile\Followers\FollowersBuilder.cs" />
+    <Compile Include="Builders\Mobile\Follows\FollowsBuilder.cs" />
+    <Compile Include="Builders\Mobile\MyProfileDetails\MyProfileDetailsBuilder.cs" />
+    <Compile Include="Builders\Mobile\PostLikes\PostLikesBuilder.cs" />
+    <Compile Include="Builders\Mobile\PostShares\PostSharesBuilder.cs" />
+    <Compile Include="Builders\Mobile\Posts\PostsBuilder.cs" />
+    <Compile Include="Builders\Mobile\PostTags\PostTagsBuilder.cs" />
+    <Compile Include="Builders\Mobile\Rankings\RankingsBuilder.cs" />
+    <Compile Include="Builders\Mobile\SchoolProfiles\SchoolProfileBuilder.cs" />
+    <Compile Include="Builders\Mobile\Scores\ScoresBuilder.cs" />
+    <Compile Include="Builders\Mobile\SearchEvents\SearchEventsBuilder.cs" />
+    <Compile Include="Builders\Mobile\SearchProfiles\SearchProfileBuilder.cs" />
+    <Compile Include="Builders\Mobile\Search\SearchBuilder.cs" />
+    <Compile Include="Builders\Mobile\SportProfile\SportProfileBuilder.cs" />
+    <Compile Include="Builders\Mobile\TeamProfile\TeamProfileBuilder.cs" />
+    <Compile Include="Builders\Mobile\TeamRankings\TeamRankingsBuilder.cs" />
+    <Compile Include="Builders\Mobile\Teams\TeamsBuilder.cs" />
+    <Compile Include="Builders\Mobile\UserProfiles\UserProfileBuilder.cs" />
+    <Compile Include="Builders\Mobile\User\UsersBuilder.cs" />
+    <Compile Include="Builders\NewsNotifications\NewsNotificationBuilder.cs" />
+    <Compile Include="Builders\NotificationHandler\NotificationHandlerBuilder.cs" />
+    <Compile Include="Builders\Rankings\RankingsBuilder.cs" />
+    <Compile Include="Builders\RssFeeds\RssFeedBuilder.cs" />
+    <Compile Include="Builders\RssFeeds\RssFeedDateTimeParser.cs" />
+    <Compile Include="Builders\RssFeeds\RssFeedHtmlCleaner.cs" />
+    <Compile Include="Builders\RssFeeds\RssFeedKeywordParser.cs" />
+    <Compile Include="Builders\RssKeywords\RssKeywordBuilder.cs" />
+    <Compile Include="Builders\RssKeywordTypes\RssKeywordTypeBuilder.cs" />
+    <Compile Include="Builders\UserAdmins\SchoolAdminBuilder.cs" />
+    <Compile Include="Builders\UserAdmins\TeamAdminBuilder.cs" />
+    <Compile Include="CustomNotification\Notifications.cs" />
+    <Compile Include="CustomNotification\PushMsgNotification.cs" />
+    <Compile Include="CustomNotification\PushMsgNotificationModel.cs" />
+    <Compile Include="Hangfire\PushNotifications\PushNotificationWorker.cs" />
+    <Compile Include="Hangfire\RssFeeds\RssFeedWorker.cs" />
+    <Compile Include="ViewModels\Advertisers\AdvertiserRecord.cs" />
+    <Compile Include="ViewModels\Advertisers\AdvertiserViewModel.cs" />
+    <Compile Include="ViewModels\Campaigns\CampaignRecord.cs" />
+    <Compile Include="ViewModels\Campaigns\CampaignViewModel.cs" />
+    <Compile Include="ViewModels\Comments\CommentRecord.cs" />
+    <Compile Include="ViewModels\ContentManagement\PostImageViewModel.cs" />
+    <Compile Include="ViewModels\ContentManagement\PostLinkViewModel.cs" />
+    <Compile Include="ViewModels\ContentManagement\PostRecord.cs" />
+    <Compile Include="ViewModels\ContentManagement\PostVideoViewModel.cs" />
+    <Compile Include="ViewModels\ContentManagement\PostViewModel.cs" />
+    <Compile Include="ViewModels\ContentSources\ContentSourceRecord.cs" />
+    <Compile Include="ViewModels\ContentSources\ContentSourceViewModel.cs" />
+    <Compile Include="ViewModels\Events\EventManagementViewModel.cs" />
+    <Compile Include="ViewModels\Events\EventRecord.cs" />
+    <Compile Include="ViewModels\Events\EventFilter.cs" />
+    <Compile Include="ViewModels\Events\EventTeamViewModel.cs" />
+    <Compile Include="ViewModels\Events\EventViewModel.cs" />
+    <Compile Include="ViewModels\Events\EventManagementPinViewModel.cs" />
+    <Compile Include="ViewModels\Events\PurchaseTicketUrlViewModel.cs" />
+    <Compile Include="ViewModels\Likes\LikeRecord.cs" />
+    <Compile Include="ViewModels\NewsNotifications\NewsNotificationRecord.cs" />
+    <Compile Include="ViewModels\NewsNotifications\NewsNotificationViewModel.cs" />
+    <Compile Include="ViewModels\Rankings\RankingMenuItem.cs" />
+    <Compile Include="ViewModels\Rankings\RankingTeamViewModel.cs" />
+    <Compile Include="ViewModels\Rankings\RankingViewModel.cs" />
+    <Compile Include="ViewModels\Registration\AdvertiserRegistrationViewModel.cs" />
+    <Compile Include="ViewModels\Registration\ContentSourceRegistrationViewModel.cs" />
+    <Compile Include="ViewModels\Registration\RegistrationIndexViewModel.cs" />
+    <Compile Include="ViewModels\RssFeeds\MappingOption.cs" />
+    <Compile Include="ViewModels\RssFeeds\RssFeedItem.cs" />
+    <Compile Include="Builders\RssFeeds\RssFeedXmlGenerator.cs" />
+    <Compile Include="Builders\Schools\SchoolsBuilder.cs" />
+    <Compile Include="Builders\Teams\TeamsBuilder.cs" />
+    <Compile Include="Builders\Users\UserBuilder.cs" />
+    <Compile Include="ViewModels\RssFeeds\RssFeedRecord.cs" />
+    <Compile Include="ViewModels\RssFeeds\RssFeedViewModel.cs" />
+    <Compile Include="ViewModels\RssKeywords\RssKeywordRecord.cs" />
+    <Compile Include="ViewModels\RssKeywords\RssKeywordViewModel.cs" />
+    <Compile Include="ViewModels\RssKeywordTypes\RssKeywordTypeViewModel.cs" />
+    <Compile Include="ViewModels\Schools\SchoolViewModel.cs" />
+    <Compile Include="Builders\Sports\SportsBuilder.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\Schools\SchoolRecord.cs" />
+    <Compile Include="ViewModels\Sports\SportRecord.cs" />
+    <Compile Include="ViewModels\Sports\SportViewModel.cs" />
+    <Compile Include="ViewModels\Teams\AddFromSportAndSchoolViewModel.cs" />
+    <Compile Include="ViewModels\Teams\TeamRecord.cs" />
+    <Compile Include="ViewModels\Teams\TeamViewModel.cs" />
+    <Compile Include="ViewModels\UserAdmins\SchoolAdminRecord.cs" />
+    <Compile Include="ViewModels\UserAdmins\SchoolAdminViewModel.cs" />
+    <Compile Include="ViewModels\UserAdmins\TeamAdminRecord.cs" />
+    <Compile Include="ViewModels\UserAdmins\TeamAdminViewModel.cs" />
+    <Compile Include="ViewModels\Users\AtheleteRecord.cs" />
+    <Compile Include="ViewModels\Users\UserRecord.cs" />
+    <Compile Include="ViewModels\Users\UserViewModel.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\Fanword.Data\Fanword.Data.csproj">
+      <Project>{fc7059f9-9dc2-4a90-83d1-f7b4b26ba731}</Project>
+      <Name>Fanword.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Fanword.Poco\Fanword.Poco.csproj">
+      <Project>{e29f1562-7674-43c1-84aa-d819552e825f}</Project>
+      <Name>Fanword.Poco</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

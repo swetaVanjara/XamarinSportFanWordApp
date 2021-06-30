@@ -1,0 +1,14 @@
+﻿
+<div class="col-sm-8">
+    <h4>{{ranking.sportName}} </h4>
+    <div class="form-group">
+        <button type="button" class="btn btn-success" ng-click="save()" promise-btn>Save</button>
+    </div>
+    <div class="text-danger" ng-repeat="error in modelState['invalidTeams']">{{error}}</div>
+    <ol style="margin-top: 20px;">
+        <li ng-repeat="item in ranking.rankingTeams" style="margin-bottom: 10px;">
+            <select k-options="teamOptions" kendo-drop-down-list k-ng-model="item.teamId" style="width: 250px;"></select>
+        </li>
+    </ol>
+   
+</div>

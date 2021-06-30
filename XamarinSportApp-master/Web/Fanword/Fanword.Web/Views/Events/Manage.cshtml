@@ -1,0 +1,14 @@
+﻿@{
+    ViewBag.Title = "Manage Events";
+}
+@{
+    Layout = "~/Views/Shared/_LayoutBody.cshtml";
+}
+
+
+<div ui-view="manageview" style="margin-top: 15px;"></div>
+
+@section CustomScripts {
+    @Scripts.Render("~/Bundles/Events")
+}
+

@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+<!--<![endif]-->
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <meta content="" name="description" />
+    <meta content="Agilx" name="author" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet" type="text/css" />
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" type="text/css" rel="stylesheet" />
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/octicons/2.1.2/octicons.css">
+    @Styles.Render("~/Bundle/Content/css")
+    <link href="https://cdn.jsdelivr.net/sweetalert2/6.4.2/sweetalert2.min.css" rel="stylesheet" />
+    @RenderSection("MetronicPageLevelCss", required: false)
+    @Styles.Render("~/Bundle/Theme/MetronicGlobalCss")
+    <title>@ViewBag.Title</title>
+    <link rel="shortcut icon" href="/favicon.ico" />
+    @Scripts.Render("~/bundles/Scripts/jquery")
+    @Scripts.Render("~/Bundles/Scripts/jqueryval")
+    @Html.Partial("_KendoCSS")
+    @RenderSection("StyleSheets", required: false)
+    <style>
+        .k-hidden {
+            display: none !important;
+        }
+    </style>
+    @Scripts.Render("~/Bundles/Scripts/DefaultJs")
+    <script src="https://cdn.jsdelivr.net/sweetalert2/6.4.2/sweetalert2.min.js"></script>
+</head>
+<body class="page-header-fixed page-sidebar-closed-hide-logo page-content-white" ng-app="FanwordApp">
+    <div class="page-container" style="margin-top: 0px !important">
+        <div class="page-content-wrapper" style="margin-left: 0px !important">
+            <div style="margin-top: 0; min-height: 100vh; padding: 25px 20px 10px; background-color: #fff; margin: 0; height: 100%">
+                @RenderBody()
+            </div>
+        </div>
+    </div>
+    @*@Html.Action("Footer", "Layout")*@
+    @Scripts.Render("~/Bundles/PocoModels")
+    @Scripts.Render("~/Bundles/Scripts/bootstrap")
+    @Scripts.Render("~/Bundles/Theme/MetronicGlobalJs")
+    @Scripts.Render("~/Bundles/Scripts/AngularJs")
+    @Html.Partial("_KendoJS")
+    @Scripts.Render("~/Bundles/FanwordAngularAppJs")
+    @Scripts.Render("~/Bundles/Directives")
+    @RenderSection("CustomScripts", required: false)
+</body>
+
+</html>
+
+

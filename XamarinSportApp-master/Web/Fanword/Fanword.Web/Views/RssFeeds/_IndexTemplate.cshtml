@@ -1,0 +1,21 @@
+﻿
+<div style="margin-top: 10px;">
+    <div class="md-checkbox pull-right">
+        <input type="checkbox" id="checkbox2" class="md-check" ng-click="reloadGrid()" ng-model="showInactive">
+        <label for="checkbox2">
+            <span class="inc"></span>
+            <span class="check"></span>
+            <span class="box"></span>Show Inactive
+        </label>
+    </div>
+    <div class="md-checkbox pull-right" style="margin-right: 10px">
+        <input type="checkbox" id="checkbox3" class="md-check" ng-click="reloadGrid()" ng-model="showPending">
+        <label for="checkbox3">
+            <span class="inc"></span>
+            <span class="check"></span>
+            <span class="box"></span>Show Pending
+        </label>
+    </div>
+    <div class="clearfix"></div>
+    <div kendo-grid k-options="feedOptions"></div>
+</div>

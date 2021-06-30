@@ -1,0 +1,10 @@
+{
+  "compileOnSave": true,
+  "compilerOptions": {
+    "types": [],
+    "sourceMap": true,
+    "target": "es5",
+    "noEmitOnError": true
+  },
+  "exclude": [ "node_modules", "obj", "bin" ]
+}

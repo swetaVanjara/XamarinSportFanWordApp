@@ -1,0 +1,181 @@
+﻿
+<div class="content" ng-if="!isValidPin" style="width: 300px; margin: auto">
+    <div class="form-group">
+        <input type="text" class="k-textbox" ng-model="pinModel.pinNumber" style="width: 100%" placeholder="Enter Pin" />
+        <button type="button" class="btn btn-primary form-control text-center" ng-click="submitPin()" style="width: 100%; margin-top: 10px">Submit</button>
+        <div class="has-error text-danger" ng-repeat="errorMessage in pinModelState['model.PinNumber']">{{errorMessage}}</div>
+        <div class="has-error text-danger" ng-repeat="errorMessage in pinModelState['pinNumber']">{{errorMessage}}</div>
+    </div>
+</div>
+
+<fieldset ng-show="isValidPin">
+    <div class="row">
+        <div class="form-group pull-left" style="margin-right: 15px;">
+            <label class="control-label">Sport:</label><br />
+            <select kendo-drop-down-list k-options="sportOptions" k-ng-model="filters.sportId" style="width: 200px;"></select>
+        </div>
+        <div class="form-group pull-left" style="margin-right: 15px;">
+            <label class="control-label">Team:</label><br />
+            <select kendo-drop-down-list k-options="filterTeamOptions" k-ng-model="filters.teamId" style="width:200px" id="hostTeamDropdown"></select>
+        </div>
+
+        <div class="form-group pull-left" style="margin-right: 15px;">
+            <label class="control-label">From Date:</label><br />
+            <input type='date' kendo-date-time-picker k-ng-model='startDate' style='margin-left:5px;' k-options='dateOptions' />
+        </div>
+
+        <div class="form-group pull-left" style="margin-right: 15px;">
+            <label class="control-label">To Date:</label><br />
+            <input type='date' kendo-date-time-picker k-ng-model='endDate' k-options='dateOptions' />
+        </div>
+        <div class="form-group pull-left">
+            <button type="button" ng-click="onSearchChange()" class="btn btn-success" style="margin-top: 27px; margin-right: 15px;"><i class="fa fa-search"></i></button>
+        </div>
+
+        <div class="form-group pull-left">
+            <button type="button" class="btn btn-primary" ng-click="addNewEvent()" style="margin-top: 27px;" ng-if="filters.sportId != ''">Add</button>
+        </div>
+
+        @*<input type='text' class='k-textbox agilx-name-lg pull-left' ng-model='searchText' ng-change='onSearchChange()' style='width:300px' placeholder='Search by name, sport or team' />*@
+
+        <div class="form-group pull-right" ng-if="events">
+            <label class="control-label"></label><br />
+            <button type="button" ng-click="save()" class="btn btn-success" ng-if="events.length">Save</button>
+        </div>
+    </div>
+    <div class="alert alert-danger" ng-if="error">
+        <div class="has-error text-danger" ng-repeat="errorMessage in modelState['eventTeams']">{{errorMessage}}</div>
+        <div class="has-error text-danger" ng-repeat="errorMessage in modelState['eventLocation']">{{errorMessage}}</div>
+        <div class="has-error text-danger" ng-repeat="errorMessage in modelState['dateOfEventInTimezone']">{{errorMessage}}</div>
+        <div class="has-error text-danger" ng-repeat="errorMessage in modelState['eventTimezone']">{{errorMessage}}</div>
+    </div>
+    
+
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th style="width: 5%"></th>
+                <th style="width: 20%">Name</th>
+                <th style="width: 15%">Sport</th>
+                <th style="width: 15%">Date</th>
+                <th style="width: 15%">Time Zone</th>
+                <th style="width: 15%">Location</th>
+                <th style="width: 15%">Actions</th>
+            </tr>
+        </thead>
+        <tbody ng-repeat="event in events track by event.id" ng-show="!event.isDeleted" ng-view>
+            <tr>
+                <td style="width: 5%">
+                    <button type="button" class="btn btn-primary" ng-click="showEventTeams(event)" ng-show="!event.showEventTeams"><i class="glyphicon glyphicon-menu-up"></i></button>
+                    <button type="button" class="btn btn-primary" ng-click="showEventTeams(event)" ng-show="event.showEventTeams"><i class="glyphicon glyphicon-menu-down"></i></button>
+                </td>
+                <td style="width: 20%">
+                    <input type="text" class="k-textbox" ng-model="event.name" style="width: 100%" />
+                </td>
+                <td style="width: 15%; padding-top: 11px;">
+                    {{event.sportDisplay}}
+                    @*<select kendo-drop-down-list k-options="sportOptions" k-ng-model="event.sportId" style="width: 100%;" ng-disabled="true"></select>*@
+                </td>
+                <td style="width: 15%">
+                    <input kendo-date-time-picker k-ng-model="event.dateOfEventInTimezone"/>
+                </td>
+                <td style="width: 15%">
+                    @*<div ng-if="event.editEvent == false">{{getTimezoneDisplay(event.timezoneId)}}</div>*@
+                    <select class="form-control" ng-model="event.timezoneId" @*ng-if="event.editEvent == true"*@>
+                        <option ng-repeat="timeZone in allTimezones" value="{{timeZone.id}}">
+                            {{timeZone.displayName}}
+                        </option>
+                    </select>
+                </td>
+                <td style="width: 15%">
+                    
+                    <input type="text" class="k-textbox" ng-model="event.location" style="width: 100%"/>
+                </td>
+                <td style="width: 15%; padding-top: 11px; padding-right: 0">
+                    <button type="button" class="btn btn-primary" ng-click="cloneEvent(event)">Clone Event</button>
+                    <button type="button" class="btn btn-danger" ng-click="removeEvent(event)"><i class="icon-trash"></i></button>
+                    <button type="button" class="btn btn-warning" ng-click="setTicketLink(event)"><i class="fa fa-ticket"></i></button>
+                </td>
+            </tr>
+            <tr ng-show="event.showEventTeams">
+                <td colspan="7">
+                    <div ng-show="event.sportId != undefined && event.sportId !== ''">
+                        <div class="panel panel-default" style="margin-top: 15px; width: 900px;">
+                            <div class="panel-heading">
+                                <div class="form-group pull-left" style="margin-right:15px">
+                                    <label class="control-label">Team:</label><br />
+                                    <select kendo-drop-down-list k-options="getTeamOptions(event)" k-ng-model="newEventTeam.teamId" style="width: 400px;"></select>
+                                </div>
+                                <div class="form-group pull-left">
+                                    <button type="button" class="btn btn-primary" ng-click="addTeamRow(event)" style="margin-top: 27px;">Add</button>
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="panel-body">
+                                <table class="table table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th>Team</th>
+                                            <th style="width: 200px;">Result</th>
+                                            <th style="width: 160px;">Score / Points / Place</th>
+                                            <th style="width: 50px;"></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr ng-repeat="team in event.eventTeams" ng-hide="team.isDeleted">
+                                            <td>
+                                                <select kendo-drop-down-list k-options="getTeamOptions(event)" k-ng-model="team.teamId" style="width:100%"></select>
+                                            </td>
+                                            <td>
+                                                <div class="md-radio-inline">
+                                                    <div class="md-radio has-success">
+                                                        <input type="radio" id="{{(team.id + '1')}}" name="{{team.id}}" ng-model="team.winLossTie" ng-value="0" class="md-radiobtn" ng-click="checkValue(team)">
+                                                        <label for="{{(team.id + '1')}}" class="bold" style="color: #27a4b0;">
+                                                            <span></span>
+                                                            <span class="check"></span>
+                                                            <span class="box"></span> W
+                                                        </label>
+                                                    </div>
+                                                    <div class="md-radio has-error">
+                                                        <input type="radio" id="{{(team.id + '2')}}" name="{{team.id}}" class="md-radiobtn" ng-model="team.winLossTie" ng-value="1" ng-click="checkValue(team)">
+                                                        <label for="{{(team.id + '2')}}" class="bold" style="color: #e73d4a;">
+                                                            <span></span>
+                                                            <span class="check"></span>
+                                                            <span class="box"></span> L
+                                                        </label>
+                                                    </div>
+                                                    <div class="md-radio">
+                                                        <input type="radio" id="{{(team.id + '3')}}" name="{{team.id}}" ng-model="team.winLossTie" ng-value="2" class="md-radiobtn" ng-click="checkValue(team)">
+                                                        <label for="{{(team.id + '3')}}" class="bold">
+                                                            <span></span>
+                                                            <span class="check" style="background: #666;"></span>
+                                                            <span class="box"></span> T
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <input type="text" ng-model="team.scorePointsOrPlace" class="form-control" />
+                                            </td>
+                                            <td>
+                                                <button type="button" class="btn btn-danger" ng-click="removeTeam(event, team)"><i class="icon-trash"></i></button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    @*<div class="content" style="width: 300px; margin: auto">
+        <a href="javascript:void(0);" ng-click="changePage(1)"><<</a>
+        <a href="javascript:void(0);" ng-click="changePage(filters.currentPage -1)" ng-if="filters.currentPage != 1">Previous</a>
+        <a href="javascript:void(0);" ng-click="">{{filters.currentPage}}</a>
+        <a href="javascript:void(0);" ng-click="changePage(filters.currentPage + 1)" ng-if="filters.currentPage != filters.totalPages">Next</a>
+        <a href="javascript:void(0);" ng-click="changePage(filters.totalPages)">>></a>
+    </div>*@
+</fieldset>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:minWidth="25px"
+    android:minHeight="25px">
+    <LinearLayout
+        android:orientation="horizontal"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:id="@+id/llContainer"
+        android:background="#ffffff"
+        android:layout_marginTop="35dp">
+        <TextView
+            android:text="Small Text"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/lblDate"
+            android:textColor="#212121"
+            android:gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="1" />
+        <TextView
+            android:text="1"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="24dp"
+            android:id="@+id/lblCount"
+            android:background="@drawable/countorangeroundedbackground"
+            android:textColor="#ffffff"
+            android:gravity="center"
+            android:layout_gravity="center_vertical"
+            android:padding="4dp"
+            android:textSize="12dp"
+            android:minWidth="24dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp" />
+    </LinearLayout>
+</LinearLayout>

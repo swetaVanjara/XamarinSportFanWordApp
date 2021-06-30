@@ -1,0 +1,21 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+
+@section Breadcrumb {
+    <div ui-view="breadcrumbview"></div>
+}
+
+<div class="row">
+    <div ng-controller="RankingsMenuController">
+        @Html.Partial("_MenuTemplate")
+    </div>
+
+    <div ui-view="mainview"></div>
+</div>
+
+@section CustomScripts {
+    @Scripts.Render("~/Bundles/Rankings")
+}

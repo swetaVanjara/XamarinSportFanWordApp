@@ -1,0 +1,1498 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">iPhoneSimulator</Platform>
+    <ProjectGuid>{358A022A-F084-4810-9CB0-43B665BB7651}</ProjectGuid>
+    <ProjectTypeGuids>{FEACFBD2-3405-455C-9665-78FE426C6842};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>Fanword.iOS</RootNamespace>
+    <AssemblyName>Fanword.iOS</AssemblyName>
+    <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\iPhoneSimulator\Debug</OutputPath>
+    <DefineConstants>DEBUG;ENABLE_TEST_CLOUD;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodesignKey>iPhone Developer</CodesignKey>
+    <MtouchDebug>true</MtouchDebug>
+    <MtouchFastDev>true</MtouchFastDev>
+    <MtouchProfiling>true</MtouchProfiling>
+    <IOSDebuggerPort>58205</IOSDebuggerPort>
+    <MtouchLink>None</MtouchLink>
+    <MtouchArch>x86_64</MtouchArch>
+    <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
+    <MtouchTlsProvider>Default</MtouchTlsProvider>
+    <DeviceSpecificBuild>false</DeviceSpecificBuild>
+    <MtouchSdkVersion>10.3</MtouchSdkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
+    <DebugType>
+    </DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\iPhone\Release</OutputPath>
+    <DefineConstants>
+    </DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodesignKey>iPhone Distribution</CodesignKey>
+    <MtouchFloat32>true</MtouchFloat32>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <MtouchLink>SdkOnly</MtouchLink>
+    <MtouchArch>ARMv7, ARM64</MtouchArch>
+    <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
+    <MtouchTlsProvider>Default</MtouchTlsProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\iPhoneSimulator\Release</OutputPath>
+    <DefineConstants>
+    </DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodesignKey>iPhone Distribution</CodesignKey>
+    <MtouchLink>None</MtouchLink>
+    <MtouchArch>x86_64</MtouchArch>
+    <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
+    <MtouchTlsProvider>Default</MtouchTlsProvider>
+    <CodesignProvision>Automatic:AppStore</CodesignProvision>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhone' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\iPhone\Debug</OutputPath>
+    <DefineConstants>DEBUG;ENABLE_TEST_CLOUD;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodesignKey>iPhone Developer</CodesignKey>
+    <DeviceSpecificBuild>true</DeviceSpecificBuild>
+    <MtouchDebug>true</MtouchDebug>
+    <MtouchFastDev>true</MtouchFastDev>
+    <MtouchProfiling>false</MtouchProfiling>
+    <MtouchFloat32>true</MtouchFloat32>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <MtouchLink>SdkOnly</MtouchLink>
+    <MtouchArch>ARMv7, ARM64</MtouchArch>
+    <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
+    <MtouchTlsProvider>Default</MtouchTlsProvider>
+    <MtouchSdkVersion>10.3</MtouchSdkVersion>
+    <CodesignProvision>
+    </CodesignProvision>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Ad-Hoc|iPhone' ">
+    <Optimize>true</Optimize>
+    <OutputPath>bin\iPhone\Ad-Hoc</OutputPath>
+    <DefineConstants>__UNIFIED__;__MOBILE__;__IOS__;</DefineConstants>
+    <WarningLevel>4</WarningLevel>
+    <CodesignKey>iPhone Distribution</CodesignKey>
+    <MtouchFloat32>true</MtouchFloat32>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <MtouchArch>ARMv7, ARM64</MtouchArch>
+    <MtouchHttpClientHandler>
+    </MtouchHttpClientHandler>
+    <MtouchTlsProvider>
+    </MtouchTlsProvider>
+    <CodesignProvision>Automatic:AdHoc</CodesignProvision>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="Xamarin.iOS" />
+    <Reference Include="HockeySDK">
+      <HintPath>..\packages\HockeySDK.Xamarin.4.1.2\lib\Xamarin.iOS10\HockeySDK.dll</HintPath>
+    </Reference>
+    <Reference Include="HockeySDK.iOSBindings">
+      <HintPath>..\packages\HockeySDK.Xamarin.4.1.2\lib\Xamarin.iOS10\HockeySDK.iOSBindings.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Plugin.Connectivity.Abstractions">
+      <HintPath>..\packages\Xam.Plugin.Connectivity.2.3.0\lib\Xamarin.iOS10\Plugin.Connectivity.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Connectivity">
+      <HintPath>..\packages\Xam.Plugin.Connectivity.2.3.0\lib\Xamarin.iOS10\Plugin.Connectivity.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Settings.Abstractions">
+      <HintPath>..\packages\Xam.Plugins.Settings.2.5.4\lib\Xamarin.iOS10\Plugin.Settings.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Settings">
+      <HintPath>..\packages\Xam.Plugins.Settings.2.5.4\lib\Xamarin.iOS10\Plugin.Settings.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="Polly">
+      <HintPath>..\packages\Polly.5.0.6\lib\netstandard1.0\Polly.dll</HintPath>
+    </Reference>
+    <Reference Include="WebP.Touch">
+      <HintPath>..\packages\WebP.Touch.1.0.3\lib\Xamarin.iOS10\WebP.Touch.dll</HintPath>
+    </Reference>
+    <Reference Include="FFImageLoading.Platform">
+      <HintPath>..\packages\Xamarin.FFImageLoading.2.2.9\lib\Xamarin.iOS10\FFImageLoading.Platform.dll</HintPath>
+    </Reference>
+    <Reference Include="FFImageLoading.Transformations">
+      <HintPath>..\packages\Xamarin.FFImageLoading.Transformations.2.2.9\lib\Xamarin.iOS10\FFImageLoading.Transformations.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Media.Abstractions">
+      <HintPath>..\packages\Xam.Plugin.Media.2.6.2\lib\Xamarin.iOS10\Plugin.Media.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Media">
+      <HintPath>..\packages\Xam.Plugin.Media.2.6.2\lib\Xamarin.iOS10\Plugin.Media.dll</HintPath>
+    </Reference>
+    <Reference Include="PCLStorage.Abstractions">
+      <HintPath>..\packages\PCLStorage.1.0.2\lib\portable-Xamarin.iOS+Xamarin.Mac\PCLStorage.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="PCLStorage">
+      <HintPath>..\packages\PCLStorage.1.0.2\lib\portable-Xamarin.iOS+Xamarin.Mac\PCLStorage.dll</HintPath>
+    </Reference>
+    <Reference Include="FFImageLoading">
+      <HintPath>..\packages\Xamarin.FFImageLoading.2.2.9\lib\Xamarin.iOS10\FFImageLoading.dll</HintPath>
+    </Reference>
+    <Reference Include="Humanizer">
+      <HintPath>..\packages\Humanizer.Core.2.1.0\lib\netstandard1.0\Humanizer.dll</HintPath>
+    </Reference>
+    <Reference Include="IQKeyboardManager">
+      <HintPath>..\packages\Xamarin.IQKeyboardManager.1.2\lib\Xamarin.iOS10\IQKeyboardManager.dll</HintPath>
+    </Reference>
+    <Reference Include="Facebook">
+      <HintPath>..\packages\Xamarin.Facebook.iOS.4.24.0\lib\Xamarin.iOS10\Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Share.Abstractions">
+      <HintPath>..\packages\Plugin.Share.7.0.1\lib\Xamarin.iOS10\Plugin.Share.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Share">
+      <HintPath>..\packages\Plugin.Share.7.0.1\lib\Xamarin.iOS10\Plugin.Share.dll</HintPath>
+    </Reference>
+    <Reference Include="Mixpanel">
+      <HintPath>..\lib_iOS\Mixpanel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAzure.Messaging.iOS">
+      <HintPath>..\Xamrin_mobile_lib\Fanword.iOS\Microsoft.WindowsAzure.Messaging.iOS.dll</HintPath>
+    </Reference>
+    <Reference Include="Mobile.Extensions">
+      <HintPath>..\Xamrin_mobile_lib\Fanword.iOS\Mobile.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Mobile.Extensions.iOS">
+      <HintPath>..\Xamrin_mobile_lib\Fanword.iOS\Mobile.Extensions.iOS.dll</HintPath>
+    </Reference>
+    <Reference Include="ModernHttpClient">
+      <HintPath>..\Xamrin_mobile_lib\Fanword.iOS\ModernHttpClient.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\Xamrin_mobile_lib\Fanword.iOS\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Dialog.Abstractions">
+      <HintPath>..\Xamrin_mobile_lib\Fanword.iOS\Plugin.Dialog.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Dialog">
+      <HintPath>..\Xamrin_mobile_lib\Fanword.iOS\Plugin.Dialog.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.PushNotifications.Abstractions">
+      <HintPath>..\Xamrin_mobile_lib\Fanword.iOS\Plugin.PushNotifications.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.PushNotifications">
+      <HintPath>..\Xamrin_mobile_lib\Fanword.iOS\Plugin.PushNotifications.dll</HintPath>
+    </Reference>
+    <Reference Include="TimeZoneConverter">
+      <HintPath>..\packages\TimeZoneConverter.2.2.1\lib\netstandard2.0\TimeZoneConverter.dll</HintPath>
+    </Reference>
+    <Reference Include="TimeZoneNames">
+      <HintPath>..\packages\TimeZoneNames.3.2.0\lib\netstandard2.0\TimeZoneNames.dll</HintPath>
+    </Reference>
+    <Reference Include="Fanword.Poco">
+      <HintPath>..\Xamrin_mobile_lib\Fanword.iOS\Fanword.Poco.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconChecked.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconUnchecked.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\DefaultProfile.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconUser.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconLock.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconEmail.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconArrowLeft.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconTrash.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconMenu.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconChecked.imageset\CheckYES.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconChecked.imageset\CheckYES%402x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconChecked.imageset\CheckYES%403x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconUnchecked.imageset\CheckNO.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconUnchecked.imageset\CheckNO%402x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconUnchecked.imageset\CheckNO%403x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\DefaultProfile.imageset\DefProfPic.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\DefaultProfile.imageset\DefProfPic%402x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\DefaultProfile.imageset\DefProfPic%403x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconUser.imageset\User.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconUser.imageset\User%402x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconUser.imageset\User%403x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconLock.imageset\Lock.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconLock.imageset\Lock%402x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconLock.imageset\Lock%403x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconEmail.imageset\Email.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconEmail.imageset\Email%402x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconEmail.imageset\Email%403x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconArrowLeft.imageset\ArrowLeft.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconArrowLeft.imageset\ArrowLeft%402x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconArrowLeft.imageset\ArrowLeft%403x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconTrash.imageset\Trash.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconTrash.imageset\Trash%402x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconTrash.imageset\Trash%403x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconMenu.imageset\Menu.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconMenu.imageset\Menu%402x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconMenu.imageset\Menu%403x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\LoginHeader.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\LoginHeader.imageset\LoginOrange.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\LoginHeader.imageset\LoginOrange%402x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\LoginHeader.imageset\LoginOrange%403x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\FanwordIcon.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\FanwordLoading.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\FanwordLoading.imageset\icon_loading_image.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\FanwordLoading.imageset\icon_loading_image%402x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\FanwordLoading.imageset\icon_loading_image%403x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconSearch.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconSearch.imageset\Search.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconSearch.imageset\Search%402x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconSearch.imageset\Search%403x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconNotifications.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconSearchWhite.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconFavorite.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\Splash.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\Splash.imageset\Splash.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\Splash.imageset\Splash%402x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\Splash.imageset\Splash%403x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconFavorite.imageset\Favorite.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconFavorite.imageset\Favorite%402x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconFavorite.imageset\Favorite%403x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconSearchWhite.imageset\SearchWhite.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconSearchWhite.imageset\SearchWhite%402x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconSearchWhite.imageset\SearchWhite%403x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconNotifications.imageset\Notifications.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconNotifications.imageset\Notifications%402x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconNotifications.imageset\Notifications%403x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\AppIcon.appiconset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\AppIcon.appiconset\Icon-Small.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\AppIcon.appiconset\Icon-Small%402x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\AppIcon.appiconset\Icon-Small%403x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\AppIcon.appiconset\Icon-Spotlight-40%402x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\AppIcon.appiconset\Icon-Spotlight-40%403x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\AppIcon.appiconset\Icon-60%402x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\AppIcon.appiconset\Icon-60%403x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconArrowDown.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconArrowDown.imageset\ArrowDown.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconArrowDown.imageset\ArrowDown%402x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconArrowDown.imageset\ArrowDown%403x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconLike.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconComment.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconShare.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconTag.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconCommented.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconLike.imageset\Like.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconLike.imageset\Like%402x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconLike.imageset\Like%403x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconComment.imageset\Comment.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconComment.imageset\Comment%402x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconComment.imageset\Comment%403x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconShare.imageset\Share.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconShare.imageset\Share%402x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconShare.imageset\Share%403x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconTag.imageset\Tag.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconTag.imageset\Tag%402x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconTag.imageset\Tag%403x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconCommented.imageset\Commented.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconCommented.imageset\Commented%402x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconCommented.imageset\Commented%403x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconArrowLeftWhite.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconArrowLeftWhite.imageset\ArrowLeftWhite.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconArrowLeftWhite.imageset\ArrowLeftWhite%402x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconArrowLeftWhite.imageset\ArrowLeftWhite%403x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconLiked.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconLiked.imageset\Liked.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconLiked.imageset\Liked%402x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconLiked.imageset\Liked%403x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconPencil.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconDots.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconTicket.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconFilter.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconPencil.imageset\Pencil.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconPencil.imageset\Pencil%402x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconPencil.imageset\Pencil%403x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconDots.imageset\Dots.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconDots.imageset\Dots%402x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconDots.imageset\Dots%403x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconTicket.imageset\Ticket.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconTicket.imageset\Ticket%402x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconTicket.imageset\Ticket%403x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconFilter.imageset\Filter.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconFilter.imageset\Filter%402x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconFilter.imageset\Filter%403x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconIsLiked.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconIsLiked.imageset\Liked.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconIsLiked.imageset\Liked%402x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconIsLiked.imageset\Liked%403x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconPencilWhite.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconPencilWhite.imageset\PencilWhite.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconPencilWhite.imageset\PencilWhite%402x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconPencilWhite.imageset\PencilWhite%403x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconCameraGrey.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconCameraOrange.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconLinkGrey.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconLinkOrange.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconCancel.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconCameraGrey.imageset\CameraGrey.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconCameraGrey.imageset\CameraGrey%402x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconCameraGrey.imageset\CameraGrey%403x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconCameraOrange.imageset\CameraOrange.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconCameraOrange.imageset\CameraOrange%402x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconCameraOrange.imageset\CameraOrange%403x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconLinkGrey.imageset\LinkGrey.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconLinkGrey.imageset\LinkGrey%402x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconLinkGrey.imageset\LinkGrey%403x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconLinkOrange.imageset\LinkOrange.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconLinkOrange.imageset\LinkOrange%402x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconLinkOrange.imageset\LinkOrange%403x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconLinkBlack.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconLinkBlack.imageset\Link.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconLinkBlack.imageset\Link%402x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconLinkBlack.imageset\Link%403x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconCameraBlack.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconCameraBlack.imageset\CameraBlack.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconCameraBlack.imageset\CameraBlack%402x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconCameraBlack.imageset\CameraBlack%403x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconCancel.imageset\cancel.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconCancel.imageset\cancel%402x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconCancel.imageset\cancel%403x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconNoImage.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconNoImage.imageset\NoImageGraphic.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconNoImage.imageset\NoImageGraphic%402x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconNoImage.imageset\NoImageGraphic%403x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconPlay.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconPlay.imageset\VideoPlay.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconPlay.imageset\VideoPlay%402x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconPlay.imageset\VideoPlay%403x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconFacebook.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconTwitter.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconInstagram.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconInstagram.imageset\instagram.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconInstagram.imageset\instagram%402x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconInstagram.imageset\instagram%403x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconTwitter.imageset\Twitter.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconTwitter.imageset\Twitter%402x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconTwitter.imageset\Twitter%403x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconFacebook.imageset\Facebook.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconFacebook.imageset\Facebook%402x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconFacebook.imageset\Facebook%403x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconAdvertiser.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconContentSource.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconFeedback.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconHome.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconLogout.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconSchools.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconSettings.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconSports.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconTeams.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\LogoGrey.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\LogoGrey.imageset\LogoGrey.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\LogoGrey.imageset\LogoGrey%402x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\LogoGrey.imageset\LogoGrey%403x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconTeams.imageset\IconTeams.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconTeams.imageset\IconTeams%402x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconTeams.imageset\IconTeams%403x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconSports.imageset\IconSports.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconSports.imageset\IconSports%402x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconSports.imageset\IconSports%403x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconSettings.imageset\IconSettings.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconSettings.imageset\IconSettings%402x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconSettings.imageset\IconSettings%403x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconSchools.imageset\IconSchools.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconSchools.imageset\IconSchools%402x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconSchools.imageset\IconSchools%403x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconLogout.imageset\IconLogout.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconLogout.imageset\IconLogout%402x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconLogout.imageset\IconLogout%403x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconHome.imageset\IconHome.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconHome.imageset\IconHome%402x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconHome.imageset\IconHome%403x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconFeedback.imageset\IconFeedback.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconFeedback.imageset\IconFeedback%402x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconFeedback.imageset\IconFeedback%403x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconContentSource.imageset\IconContentSource.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconContentSource.imageset\IconContentSource%402x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconContentSource.imageset\IconContentSource%403x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconAdvertiser.imageset\IconAdvertiser.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconAdvertiser.imageset\IconAdvertiser%402x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconAdvertiser.imageset\IconAdvertiser%403x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconPlusWhite.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconPlusWhite.imageset\PlusWhite.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconPlusWhite.imageset\PlusWhite%402x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconPlusWhite.imageset\PlusWhite%403x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconFacebookGray.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconFacebookGray.imageset\FacebookGray.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconFacebookGray.imageset\FacebookGray%402x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconFacebookGray.imageset\FacebookGray%403x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconShareWhite.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconShareWhite.imageset\sharewhite.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconShareWhite.imageset\sharewhite%402x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconShareWhite.imageset\sharewhite%403x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconScoreOrange.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconTeamsOrange.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconSearchOrange.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconMenuOrange.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconCSOrange.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconEventsOrange.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconProfileOrange.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconEventsOrange.imageset\EventsOrange.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconEventsOrange.imageset\EventsOrange%402x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconEventsOrange.imageset\EventsOrange%403x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconCSOrange.imageset\CSOrange.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconCSOrange.imageset\CSOrange%402x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconCSOrange.imageset\CSOrange%403x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconTeamsOrange.imageset\TeamsOrange.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconTeamsOrange.imageset\TeamsOrange%402x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconTeamsOrange.imageset\TeamsOrange%403x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconSearchOrange.imageset\SearchOrange.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconSearchOrange.imageset\SearchOrange%402x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconSearchOrange.imageset\SearchOrange%403x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconScoreOrange.imageset\ScoreOrange.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconScoreOrange.imageset\ScoreOrange%402x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconScoreOrange.imageset\ScoreOrange%403x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconProfileOrange.imageset\ProfileOrange.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconProfileOrange.imageset\ProfileOrange%402x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconProfileOrange.imageset\ProfileOrange%403x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconMenuOrange.imageset\MenuOrange.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconMenuOrange.imageset\MenuOrange%402x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconMenuOrange.imageset\MenuOrange%403x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconPencilOrange.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconAdvertiserOrange.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconPencilOrange.imageset\PencilOrange.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconPencilOrange.imageset\PencilOrange%402x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconPencilOrange.imageset\PencilOrange%403x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconAdvertiserOrange.imageset\AdvertiserOrange.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconAdvertiserOrange.imageset\AdvertiserOrange%402x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\IconAdvertiserOrange.imageset\AdvertiserOrange%403x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\AppIcon.appiconset\AppIcon.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\Media.xcassets\DefaultProfile.imageset\" />
+    <Folder Include="Resources\Media.xcassets\FanwordIcon.imageset\" />
+    <Folder Include="Resources\Media.xcassets\FanwordLoading.imageset\" />
+    <Folder Include="Resources\Media.xcassets\IconAdvertiser.imageset\" />
+    <Folder Include="Resources\Media.xcassets\IconAdvertiserOrange.imageset\" />
+    <Folder Include="Resources\Media.xcassets\IconArrowDown.imageset\" />
+    <Folder Include="Resources\Media.xcassets\IconArrowLeft.imageset\" />
+    <Folder Include="Resources\Media.xcassets\IconArrowLeftWhite.imageset\" />
+    <Folder Include="Resources\Media.xcassets\IconCameraBlack.imageset\" />
+    <Folder Include="Resources\Media.xcassets\IconCameraGrey.imageset\" />
+    <Folder Include="Resources\Media.xcassets\IconCameraOrange.imageset\" />
+    <Folder Include="Resources\Media.xcassets\IconCancel.imageset\" />
+    <Folder Include="Resources\Media.xcassets\IconChecked.imageset\" />
+    <Folder Include="Resources\Media.xcassets\IconComment.imageset\" />
+    <Folder Include="Resources\Media.xcassets\IconCommented.imageset\" />
+    <Folder Include="Resources\Media.xcassets\IconContentSource.imageset\" />
+    <Folder Include="Resources\Media.xcassets\IconCSOrange.imageset\" />
+    <Folder Include="Resources\Media.xcassets\IconDots.imageset\" />
+    <Folder Include="Resources\Media.xcassets\IconEmail.imageset\" />
+    <Folder Include="Resources\Media.xcassets\IconEventsOrange.imageset\" />
+    <Folder Include="Resources\Media.xcassets\IconFacebook.imageset\" />
+    <Folder Include="Resources\Media.xcassets\IconFacebookGray.imageset\" />
+    <Folder Include="Resources\Media.xcassets\IconFavorite.imageset\" />
+    <Folder Include="Resources\Media.xcassets\IconFeedback.imageset\" />
+    <Folder Include="Resources\Media.xcassets\IconFilter.imageset\" />
+    <Folder Include="Resources\Media.xcassets\IconHome.imageset\" />
+    <Folder Include="Resources\Media.xcassets\IconInstagram.imageset\" />
+    <Folder Include="Resources\Media.xcassets\IconIsLiked.imageset\" />
+    <Folder Include="Resources\Media.xcassets\IconLike.imageset\" />
+    <Folder Include="Resources\Media.xcassets\IconLiked.imageset\" />
+    <Folder Include="Resources\Media.xcassets\IconLinkBlack.imageset\" />
+    <Folder Include="Resources\Media.xcassets\IconLinkGrey.imageset\" />
+    <Folder Include="Resources\Media.xcassets\IconLinkOrange.imageset\" />
+    <Folder Include="Resources\Media.xcassets\IconLock.imageset\" />
+    <Folder Include="Resources\Media.xcassets\IconLogout.imageset\" />
+    <Folder Include="Resources\Media.xcassets\IconMenu.imageset\" />
+    <Folder Include="Resources\Media.xcassets\IconMenuOrange.imageset\" />
+    <Folder Include="Resources\Media.xcassets\IconNoImage.imageset\" />
+    <Folder Include="Resources\Media.xcassets\IconNotifications.imageset\" />
+    <Folder Include="Resources\Media.xcassets\IconPencil.imageset\" />
+    <Folder Include="Resources\Media.xcassets\IconPencilOrange.imageset\" />
+    <Folder Include="Resources\Media.xcassets\IconPencilWhite.imageset\" />
+    <Folder Include="Resources\Media.xcassets\IconPlay.imageset\" />
+    <Folder Include="Resources\Media.xcassets\IconPlusWhite.imageset\" />
+    <Folder Include="Resources\Media.xcassets\IconProfileOrange.imageset\" />
+    <Folder Include="Resources\Media.xcassets\IconSchools.imageset\" />
+    <Folder Include="Resources\Media.xcassets\IconScoreOrange.imageset\" />
+    <Folder Include="Resources\Media.xcassets\IconSearch.imageset\" />
+    <Folder Include="Resources\Media.xcassets\IconSearchOrange.imageset\" />
+    <Folder Include="Resources\Media.xcassets\IconSearchWhite.imageset\" />
+    <Folder Include="Resources\Media.xcassets\IconSettings.imageset\" />
+    <Folder Include="Resources\Media.xcassets\IconShare.imageset\" />
+    <Folder Include="Resources\Media.xcassets\IconShareWhite.imageset\" />
+    <Folder Include="Resources\Media.xcassets\IconSports.imageset\" />
+    <Folder Include="Resources\Media.xcassets\IconTag.imageset\" />
+    <Folder Include="Resources\Media.xcassets\IconTeams.imageset\" />
+    <Folder Include="Resources\Media.xcassets\IconTeamsOrange.imageset\" />
+    <Folder Include="Resources\Media.xcassets\IconTicket.imageset\" />
+    <Folder Include="Resources\Media.xcassets\IconTrash.imageset\" />
+    <Folder Include="Resources\Media.xcassets\IconTwitter.imageset\" />
+    <Folder Include="Resources\Media.xcassets\IconUnchecked.imageset\" />
+    <Folder Include="Resources\Media.xcassets\IconUser.imageset\" />
+    <Folder Include="Resources\Media.xcassets\LoginHeader.imageset\" />
+    <Folder Include="Resources\Media.xcassets\LogoGrey.imageset\" />
+    <Folder Include="Resources\Media.xcassets\Splash.imageset\" />
+  </ItemGroup>
+  <ItemGroup>
+    <InterfaceDefinition Include="LaunchScreen.storyboard" />
+    <InterfaceDefinition Include="Main.storyboard" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Info.plist" />
+    <None Include="Entitlements.plist" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+    <ImageAsset Include="Resources\Media.xcassets\Images.imageset\Contents.json">
+      <Visible>false</Visible>
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\LogoWhite.imageset\Contents.json">
+      <Visible>false</Visible>
+      <InProject>false</InProject>
+    </ImageAsset>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Main.cs" />
+    <Compile Include="AppDelegate.cs" />
+    <Compile Include="ViewControllers\SignUpController\SignUpViewController.cs" />
+    <Compile Include="ViewControllers\SignUpController\SignUpViewController.designer.cs">
+      <DependentUpon>SignUpViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\LoginController\LoginViewController.cs" />
+    <Compile Include="ViewControllers\LoginController\LoginViewController.designer.cs">
+      <DependentUpon>LoginViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\BaseController\BaseViewController.cs" />
+    <Compile Include="ViewControllers\BaseController\ViewController.designer.cs">
+      <DependentUpon>BaseViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\OnboardingCreateProfileController\OnboardingCreateProfileViewController.cs" />
+    <Compile Include="ViewControllers\OnboardingCreateProfileController\OnboardingCreateProfileViewController.designer.cs">
+      <DependentUpon>OnboardingCreateProfileViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\LoadingScreenController\LoadingScreenViewController.cs" />
+    <Compile Include="ViewControllers\LoadingScreenController\LoadingScreenViewController.designer.cs">
+      <DependentUpon>LoadingScreenViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\OnboardingAltheteTeamController\OnboardingAthleteTeamViewController.cs" />
+    <Compile Include="ViewControllers\OnboardingAltheteTeamController\OnboardingAthleteTeamViewController.designer.cs">
+      <DependentUpon>OnboardingAthleteTeamViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cells\AthleteTeamCell.cs" />
+    <Compile Include="Cells\AthleteTeamCell.designer.cs">
+      <DependentUpon>AthleteTeamCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\OnboardingAthleteSeasonController\OnboardingAthleteSeasonViewController.cs" />
+    <Compile Include="ViewControllers\OnboardingAthleteSeasonController\OnboardingAthleteSeasonViewController.designer.cs">
+      <DependentUpon>OnboardingAthleteSeasonViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\SplashLogin\SplashLogin.cs" />
+    <Compile Include="ViewControllers\SplashLogin\SplashLogin.designer.cs">
+      <DependentUpon>SplashLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\TablePopoverController\TablePopoverViewController.cs" />
+    <Compile Include="ViewControllers\TablePopoverController\TablePopoverViewController.designer.cs">
+      <DependentUpon>TablePopoverViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ImageLoaderHelper\ImageLoaderHelper.cs" />
+    <Compile Include="ViewControllers\MainController\MainViewController.cs" />
+    <Compile Include="ViewControllers\MainController\MainViewController.designer.cs">
+      <DependentUpon>MainViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\FeedController\FeedViewController.cs" />
+    <Compile Include="ViewControllers\FeedController\FeedViewController.designer.cs">
+      <DependentUpon>FeedViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Extensions\StringExtensions.cs" />
+    <Compile Include="ViewControllers\HomeController\HomeViewController.cs" />
+    <Compile Include="ViewControllers\HomeController\HomeViewController.designer.cs">
+      <DependentUpon>HomeViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\MenuController\MenuViewController.cs" />
+    <Compile Include="ViewControllers\MenuController\MenuViewController.designer.cs">
+      <DependentUpon>MenuViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomViews\PreviousNexView.cs" />
+    <Compile Include="CustomViews\PreviousNexView.designer.cs">
+      <DependentUpon>PreviousNexView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cells\FeedCell.cs" />
+    <Compile Include="Cells\FeedCell.designer.cs">
+      <DependentUpon>FeedCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomViews\FeedTableView.cs" />
+    <Compile Include="CustomViews\FeedTableView.designer.cs">
+      <DependentUpon>FeedTableView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\IFeedCell.cs" />
+    <Compile Include="Sources\CustomCollectionSource.cs" />
+    <Compile Include="ViewControllers\LikesController\LikesViewController.cs" />
+    <Compile Include="ViewControllers\LikesController\LikesViewController.designer.cs">
+      <DependentUpon>LikesViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\PostDetailsController\PostDetailsViewController.cs" />
+    <Compile Include="ViewControllers\PostDetailsController\PostDetailsViewController.designer.cs">
+      <DependentUpon>PostDetailsViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\CommentsController\CommentsViewController.cs" />
+    <Compile Include="ViewControllers\CommentsController\CommentsViewController.designer.cs">
+      <DependentUpon>CommentsViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cells\LikeCell.cs" />
+    <Compile Include="Cells\LikeCell.designer.cs">
+      <DependentUpon>LikeCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cells\CommentCell.cs" />
+    <Compile Include="Cells\CommentCell.designer.cs">
+      <DependentUpon>CommentCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\ForgotPasswordController\ForgotPasswordViewController.cs" />
+    <Compile Include="ViewControllers\ForgotPasswordController\ForgotPasswordViewController.designer.cs">
+      <DependentUpon>ForgotPasswordViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\PostOptionsController\PostOptionsViewController.cs" />
+    <Compile Include="ViewControllers\PostOptionsController\PostOptionsViewController.designer.cs">
+      <DependentUpon>PostOptionsViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cells\RankingCell.cs" />
+    <Compile Include="Cells\RankingCell.designer.cs">
+      <DependentUpon>RankingCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\RankingsController\RankingsViewController.cs" />
+    <Compile Include="ViewControllers\RankingsController\RankingsViewController.designer.cs">
+      <DependentUpon>RankingsViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\ScoresController\ScoresViewController.cs" />
+    <Compile Include="ViewControllers\ScoresController\ScoresViewController.designer.cs">
+      <DependentUpon>ScoresViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\FollowFilterController\FollowFilterViewController.cs" />
+    <Compile Include="ViewControllers\FollowFilterController\FollowFilterViewController.designer.cs">
+      <DependentUpon>FollowFilterViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cells\ScoreCell.cs" />
+    <Compile Include="Cells\ScoreCell.designer.cs">
+      <DependentUpon>ScoreCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cells\ScoreHeaderCell.cs" />
+    <Compile Include="Cells\ScoreHeaderCell.designer.cs">
+      <DependentUpon>ScoreHeaderCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\AddContentOptionsController\AddContentOptionsViewController.cs" />
+    <Compile Include="ViewControllers\AddContentOptionsController\AddContentOptionsViewController.designer.cs">
+      <DependentUpon>AddContentOptionsViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\TagProfilesController\TagProfileViewController.cs" />
+    <Compile Include="ViewControllers\TagProfilesController\TagProfileViewController.designer.cs">
+      <DependentUpon>TagProfileViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\TagEventsController\TagEventsViewController.cs" />
+    <Compile Include="ViewControllers\TagEventsController\TagEventsViewController.designer.cs">
+      <DependentUpon>TagEventsViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cells\ProfileSearchCell.cs" />
+    <Compile Include="Cells\ProfileSearchCell.designer.cs">
+      <DependentUpon>ProfileSearchCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cells\EventProfileCell.cs" />
+    <Compile Include="Cells\EventProfileCell.designer.cs">
+      <DependentUpon>EventProfileCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cells\DateCell.cs" />
+    <Compile Include="Cells\DateCell.designer.cs">
+      <DependentUpon>DateCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\PostAsController\PostAsViewController.cs" />
+    <Compile Include="ViewControllers\PostAsController\PostAsViewController.designer.cs">
+      <DependentUpon>PostAsViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\ViewVideoController\ViewVideoViewController.cs" />
+    <Compile Include="ViewControllers\ViewVideoController\ViewVideoViewController.designer.cs" />
+    <Compile Include="ViewControllers\MyProfileController\MyProfileViewController.cs" />
+    <Compile Include="ViewControllers\MyProfileController\MyProfileViewController.designer.cs">
+      <DependentUpon>MyProfileViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\UserProfileController\UserProfileViewController.cs" />
+    <Compile Include="ViewControllers\UserProfileController\UserProfileViewController.designer.cs">
+      <DependentUpon>UserProfileViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cells\AdvertisementCell.cs" />
+    <Compile Include="Cells\AdvertisementCell.designer.cs">
+      <DependentUpon>AdvertisementCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\ContentSourceProfileController\ContentSourceProfileViewController.cs" />
+    <Compile Include="ViewControllers\ContentSourceProfileController\ContentSourceProfileViewController.designer.cs">
+      <DependentUpon>ContentSourceProfileViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\ContentSourceAboutController\ContentSourceAboutViewController.cs" />
+    <Compile Include="ViewControllers\ContentSourceAboutController\ContentSourceAboutViewController.designer.cs">
+      <DependentUpon>ContentSourceAboutViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Shared\Views.cs" />
+    <Compile Include="Shared\Follower.cs" />
+    <Compile Include="ViewControllers\TeamProfileController\TeamProfileViewController.cs" />
+    <Compile Include="ViewControllers\TeamProfileController\TeamProfileViewController.designer.cs">
+      <DependentUpon>TeamProfileViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\TeamProfileAboutcontroller\TeamProfileAboutViewController.cs" />
+    <Compile Include="ViewControllers\TeamProfileAboutcontroller\TeamProfileAboutViewController.designer.cs">
+      <DependentUpon>TeamProfileAboutViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\TeamProfileRankingsController\TeamProfileRankingsViewController.cs" />
+    <Compile Include="ViewControllers\TeamProfileRankingsController\TeamProfileRankingsViewController.designer.cs">
+      <DependentUpon>TeamProfileRankingsViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cells\TeamAthleteCell.cs" />
+    <Compile Include="Cells\TeamAthleteCell.designer.cs">
+      <DependentUpon>TeamAthleteCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cells\TeamRankingCell.cs" />
+    <Compile Include="Cells\TeamRankingCell.designer.cs">
+      <DependentUpon>TeamRankingCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\SchoolProfileController\SchoolProfileViewController.cs" />
+    <Compile Include="ViewControllers\SchoolProfileController\SchoolProfileViewController.designer.cs">
+      <DependentUpon>SchoolProfileViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\SchoolAboutController\SchoolAboutViewController.cs" />
+    <Compile Include="ViewControllers\SchoolAboutController\SchoolAboutViewController.designer.cs">
+      <DependentUpon>SchoolAboutViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\SchoolRankingsController\SchoolRankingsViewController.cs" />
+    <Compile Include="ViewControllers\SchoolRankingsController\SchoolRankingsViewController.designer.cs">
+      <DependentUpon>SchoolRankingsViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cells\SchoolAthleteCell.cs" />
+    <Compile Include="Cells\SchoolAthleteCell.designer.cs">
+      <DependentUpon>SchoolAthleteCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\SportProfileController\SportProfileViewController.cs" />
+    <Compile Include="ViewControllers\SportProfileController\SportProfileViewController.designer.cs">
+      <DependentUpon>SportProfileViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\SportAboutController\SportAboutViewController.cs" />
+    <Compile Include="ViewControllers\SportAboutController\SportAboutViewController.designer.cs">
+      <DependentUpon>SportAboutViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\SportRankingsController\SportRankingsViewController.cs" />
+    <Compile Include="ViewControllers\SportRankingsController\SportRankingsViewController.designer.cs">
+      <DependentUpon>SportRankingsViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cells\SportRankingCell.cs" />
+    <Compile Include="Cells\SportRankingCell.designer.cs">
+      <DependentUpon>SportRankingCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cells\SportAthleteCell.cs" />
+    <Compile Include="Cells\SportAthleteCell.designer.cs">
+      <DependentUpon>SportAthleteCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Shared\Navigator.cs" />
+    <Compile Include="ViewControllers\SearchController\SearchViewContrroller.cs" />
+    <Compile Include="ViewControllers\SearchController\SearchViewContrroller.designer.cs">
+      <DependentUpon>SearchViewContrroller.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cells\SearchCell.cs" />
+    <Compile Include="Cells\SearchCell.designer.cs">
+      <DependentUpon>SearchCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cells\SearchHeaderCell.cs" />
+    <Compile Include="Cells\SearchHeaderCell.designer.cs">
+      <DependentUpon>SearchHeaderCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cells\MenuHeaderCell.cs" />
+    <Compile Include="Cells\MenuHeaderCell.designer.cs">
+      <DependentUpon>MenuHeaderCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cells\MenuCell.cs" />
+    <Compile Include="Cells\MenuCell.designer.cs">
+      <DependentUpon>MenuCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cells\AdminCell.cs" />
+    <Compile Include="Cells\AdminCell.designer.cs">
+      <DependentUpon>AdminCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\NotificationController\NotificationsViewController.cs" />
+    <Compile Include="ViewControllers\NotificationController\NotificationsViewController.designer.cs">
+      <DependentUpon>NotificationsViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cells\NotificationCell.cs" />
+    <Compile Include="Cells\NotificationCell.designer.cs">
+      <DependentUpon>NotificationCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cells\FavoriteCell.cs" />
+    <Compile Include="Cells\FavoriteCell.designer.cs">
+      <DependentUpon>FavoriteCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\FavoritesController\FavoritesViewController.cs" />
+    <Compile Include="ViewControllers\FavoritesController\FavoritesViewController.designer.cs">
+      <DependentUpon>FavoritesViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\FavoriteController\FavoriteViewController.cs" />
+    <Compile Include="ViewControllers\FavoriteController\FavoriteViewController.designer.cs">
+      <DependentUpon>FavoriteViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\FavoriteUsersController\FavoriteUsersViewController.cs" />
+    <Compile Include="ViewControllers\FavoriteUsersController\FavoriteUsersViewController.designer.cs">
+      <DependentUpon>FavoriteUsersViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\BasicInfoController\BasicInfoViewContoller.cs" />
+    <Compile Include="ViewControllers\BasicInfoController\BasicInfoViewContoller.designer.cs">
+      <DependentUpon>BasicInfoViewContoller.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\SettingsController\SettingsViewController.cs" />
+    <Compile Include="ViewControllers\SettingsController\SettingsViewController.designer.cs">
+      <DependentUpon>SettingsViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\StudentAthleteInfoController\StudentAthleteInfoViewController.cs" />
+    <Compile Include="ViewControllers\StudentAthleteInfoController\StudentAthleteInfoViewController.designer.cs">
+      <DependentUpon>StudentAthleteInfoViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cells\EventTeamsCell.cs" />
+    <Compile Include="Cells\EventTeamsCell.designer.cs">
+      <DependentUpon>EventTeamsCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\EventProfileController\EventProfileViewController.cs" />
+    <Compile Include="ViewControllers\EventProfileController\EventProfileViewController.designer.cs">
+      <DependentUpon>EventProfileViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\ShowTeamsController\ShowTeamsViewController.cs" />
+    <Compile Include="ViewControllers\ShowTeamsController\ShowTeamsViewController.designer.cs">
+      <DependentUpon>ShowTeamsViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\ViewPostController\ViewPostViewController.cs" />
+    <Compile Include="ViewControllers\ViewPostController\ViewPostViewController.designer.cs">
+      <DependentUpon>ViewPostViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\ViewNotificationController\ViewNotificationViewController.cs" />
+    <Compile Include="ViewControllers\ViewNotificationController\ViewNotificationViewController.designer.cs">
+      <DependentUpon>ViewNotificationViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cells\FollowerCell.cs" />
+    <Compile Include="Cells\FollowerCell.designer.cs">
+      <DependentUpon>FollowerCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\FollowerController\FollowersViewController.cs" />
+    <Compile Include="ViewControllers\FollowerController\FollowersViewController.designer.cs">
+      <DependentUpon>FollowersViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\PostSharesController\PostSharesViewController.cs" />
+    <Compile Include="ViewControllers\PostSharesController\PostSharesViewController.designer.cs">
+      <DependentUpon>PostSharesViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\PostTagsController\PostTagsViewController.cs" />
+    <Compile Include="ViewControllers\PostTagsController\PostTagsViewController.designer.cs">
+      <DependentUpon>PostTagsViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cells\PostShareCell.cs" />
+    <Compile Include="Cells\PostShareCell.designer.cs">
+      <DependentUpon>PostShareCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cells\PostTagCell.cs" />
+    <Compile Include="Cells\PostTagCell.designer.cs">
+      <DependentUpon>PostTagCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\ShareOptionsController\ShareOptionsViewController.cs" />
+    <Compile Include="ViewControllers\ShareOptionsController\ShareOptionsViewController.designer.cs">
+      <DependentUpon>ShareOptionsViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Shared\ColorHelper.cs" />
+    <Compile Include="Shared\Sharer.cs" />
+    <Compile Include="ViewControllers\TutorialController\TutorialViewController.cs" />
+    <Compile Include="ViewControllers\TutorialController\TutorialViewController.designer.cs">
+      <DependentUpon>TutorialViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\AdminInfoController\AdminInformationViewController.cs" />
+    <Compile Include="ViewControllers\AdminInfoController\AdminInformationViewController.designer.cs">
+      <DependentUpon>AdminInformationViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\ContentSourceInfoController\ContentSourceInfoViewController.cs" />
+    <Compile Include="ViewControllers\ContentSourceInfoController\ContentSourceInfoViewController.designer.cs">
+      <DependentUpon>ContentSourceInfoViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Shared\Links.cs" />
+    <Compile Include="ViewControllers\EditPostController\EditPostViewController.cs" />
+    <Compile Include="ViewControllers\EditPostController\EditPostViewController.designer.cs">
+      <DependentUpon>EditPostViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AppTweaks.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Fanword.Shared\Fanword.Shared.csproj">
+      <Project>{E5CA2C62-35B1-4ABB-93DA-AB417FEE9431}</Project>
+      <Name>Fanword.Shared</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ImageAsset Include="Resources\Media.xcassets\Images.imageset\LogoWhite.png">
+      <Visible>false</Visible>
+      <InProject>false</InProject>
+    </ImageAsset>
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="ArrowLeft.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ImageAsset Include="Resources\Media.xcassets\LogoWhite.imageset\LogoWhite.png">
+      <Visible>false</Visible>
+      <InProject>false</InProject>
+    </ImageAsset>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
+</Project>

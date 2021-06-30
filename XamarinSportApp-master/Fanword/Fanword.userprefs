@@ -1,0 +1,18 @@
+﻿<Properties StartupConfiguration="{358A022A-F084-4810-9CB0-43B665BB7651}|Default" NuGet.AddPackagesDialog.IncludePrerelease="True">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Fanword.Shared/Helpers/CommentsHelper.cs">
+    <Files>
+      <File FileName="Fanword.Shared/Helpers/CommentsHelper.cs" Line="12" Column="31" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.Fanword.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.C5F00686-6ADC-4934-B39C-BB9D0FB8D1F7" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Breakpoint file="/Volumes/Drive D/Project/XamarinSportApp/Fanword/Fanword.iOS/ImageLoaderHelper/ImageLoaderHelper.cs" relfile="Fanword.iOS/ImageLoaderHelper/ImageLoaderHelper.cs" line="34" column="1" />
+      <Breakpoint file="/Volumes/Drive D/Project/XamarinSportApp/Fanword/Fanword.iOS/ViewControllers/LoginController/LoginViewController.cs" relfile="Fanword.iOS/ViewControllers/LoginController/LoginViewController.cs" line="84" column="1" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.Fanword.Android PreferredExecutionTarget="Android.Android_Accelerated_x86" />
+</Properties>

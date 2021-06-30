@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#e3e4e6">
+    <RelativeLayout
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/relativeLayout1">
+        <ImageButton
+            android:src="@drawable/filter"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:id="@+id/btnFilter"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/buttonbackground"
+            android:scaleType="fitCenter"
+            android:padding="12dp" />
+    <!-- <com.felipecsl.gifimageview.library.GifImageView
+            android:id="@+id/gifImageView"
+            android:scaleType="fitCenter"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_toLeftOf="@id/btnFilter" />-->
+        <WebView
+            android:id="@+id/webLoadingIcon"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:visibility="invisible"
+            android:layout_toLeftOf="@id/btnFilter" />
+        <LinearLayout
+            android:orientation="horizontal"
+            android:minWidth="25px"
+            android:minHeight="25px"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:id="@+id/linearLayout2">
+            <Button
+                android:text="PAST"
+                android:layout_width="55dp"
+                android:layout_height="match_parent"
+                android:id="@+id/btnPast"
+                android:background="@drawable/buttonbackground"
+                android:textColor="#212121"
+                android:textSize="13dp" />
+            <Button
+                android:text="TODAY"
+                android:layout_width="70dp"
+                android:layout_height="match_parent"
+                android:id="@+id/btnToday"
+                android:background="@drawable/buttonbackground"
+                android:textColor="#909090"
+                android:textSize="13dp" />
+            <Button
+                android:text="UPCOMING"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:id="@+id/btnUpcoming"
+                android:background="@drawable/buttonbackground"
+                android:textColor="#909090"
+                android:textSize="13dp" />
+        </LinearLayout>
+    </RelativeLayout>
+    <ListView xmlns:tools="http://schemas.android.com/tools"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/lvScores"
+        tools:listitem="@layout/scoreitem" />
+</LinearLayout>

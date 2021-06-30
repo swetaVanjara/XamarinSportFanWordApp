@@ -1,0 +1,23 @@
+﻿<div class="modal-header">
+    <h4 class="modal-title" id="myModalLabel">Add Teams?</h4>
+</div>
+
+<div class="modal-body">
+    <div class="note note-info">
+        <h4>Add Teams</h4>
+        <p>Would you like to add any Teams that have not yet been created?</p>
+    </div>
+    
+    <div class="form-group">
+        <label class="control-label">Sports</label><br/>
+        <select kendo-multi-select k-options="sportOptions" k-ng-model="selectedSportIds"></select>
+    </div>
+</div>
+
+<div class="modal-footer">
+    <button type="button" class="btn btn-default" ng-click="justSaveSchool();" ng-if="wasCreating">No, just save the school</button>
+    <button type="button" class="btn btn-success" ng-click="saveAndAddTeams()" promise-btn ng-if="wasCreating">Yes, Save and Add Selected Teams</button>
+    
+    <button type="button" class="btn btn-default" ng-click="justSaveSchool();" ng-if="!wasCreating">Cancel</button>
+    <button type="button" class="btn btn-success" ng-click="saveAndAddTeams()" promise-btn ng-if="!wasCreating">Add Teams</button>
+</div>

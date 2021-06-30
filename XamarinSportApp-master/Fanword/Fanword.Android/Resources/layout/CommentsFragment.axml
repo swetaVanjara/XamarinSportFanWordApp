@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff">
+    <RelativeLayout
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:id="@+id/relativeLayout1"
+        android:background="#e3e4e6" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/relativeLayout2">
+        <ListView xmlns:tools="http://schemas.android.com/tools"
+            android:minWidth="25px"
+            android:minHeight="25px"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/lvComments"
+            android:layout_above="@+id/relativeLayout3"
+            tools:listitem="@layout/commentitem"
+            android:divider="#e3e4e6"
+            android:dividerHeight="1dp" />
+        <RelativeLayout
+            android:minWidth="25px"
+            android:minHeight="25px"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:id="@+id/relativeLayout3"
+            android:layout_above="@+id/llComment"
+            android:background="#f4f4f4" />
+        <LinearLayout
+            android:orientation="horizontal"
+            android:minWidth="25px"
+            android:minHeight="25px"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:id="@+id/llComment"
+            android:layout_alignParentBottom="true">
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/txtComment"
+                android:layout_weight="1"
+                android:hint="Comment..."
+                android:textColor="#212121"
+                android:textColorHint="#909090"
+                android:background="#00000000"
+                android:padding="10dp"
+                android:textSize="14dp" />
+            <Button
+                android:text="Send"
+                android:src="@android:drawable/ic_menu_gallery"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:id="@+id/btnSend"
+                android:background="@drawable/buttonbackground"
+                android:textColor="#212121"
+                android:textAllCaps="false"
+                android:textSize="14dp" />
+        </LinearLayout>
+    </RelativeLayout>
+</LinearLayout>

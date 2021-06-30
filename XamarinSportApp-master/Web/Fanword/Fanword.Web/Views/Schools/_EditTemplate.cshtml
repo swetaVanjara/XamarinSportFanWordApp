@@ -1,0 +1,94 @@
+﻿<style>
+    .k-autocomplete.k-state-default, .k-dropdown-wrap.k-state-default, .k-numeric-wrap.k-state-default, .k-picker-wrap.k-state-default {
+        height: 31px;
+    }
+
+    
+</style>
+<div style="margin-top: 15px;">
+    <div class="form-group">
+        <label class="control-label">Profile Picture:</label><br />
+        <img style="width: 200px; height: 200px;" alt="" ng-src="{{profileImageSource}}" id="profileImage" /><br /><br />
+        <div class="text-danger" ng-repeat="error in modelState['model.ProfilePublicUrl']">{{error}}</div>
+        <button type="button" class="btn btn-default" ng-click="openUpload()" ng-disabled="isSaving">Upload</button>
+    </div>
+
+    <div style="display: none;">
+        <input type="file" kendo-upload k-options="profileUploadOptions" id="files" />
+    </div>
+    
+    <div class="row">
+        <div class="col-md-4">
+            <div class="form-group">
+                <label class="control-label">Name:</label>
+                <input type="text" ng-model="school.name" class="form-control" />
+                <div class="text-danger" ng-repeat="error in modelState['model.Name']">{{error}}</div>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Display Name:</label>
+                <input type="text" ng-model="school.nickname" class="form-control" />
+                <div class="text-danger" ng-repeat="error in modelState['model.Nickname']">{{error}}</div>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Primary Color:</label><br />
+                <div kendo-color-picker ng-model="school.primaryColor" k-preview="true"></div>
+                <div class="text-danger" ng-repeat="error in modelState['model.PrimaryColor']">{{error}}</div>
+            </div>
+            @*<div class="form-group">
+                <label class="control-label">Secondary Color:</label><br />
+                <div kendo-color-picker ng-model="school.secondaryColor" k-preview="true"></div>
+                <div class="text-danger" ng-repeat="error in modelState['model.Secondary']">{{error}}</div>
+            </div>*@
+        </div>
+        <div class="col-md-4">
+            <div class="form-group">
+                <label class="control-label">Facebook:</label>
+                <input type="text" ng-model="school.facebookUrl" class="form-control" placeholder="Insert Link" />
+                <div class="text-danger" ng-repeat="error in modelState['model.FacebookUrl']">{{error}}</div>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Twitter:</label>
+                <input type="text" ng-model="school.twitterUrl" class="form-control" placeholder="Insert Link" />
+                <div class="text-danger" ng-repeat="error in modelState['model.TwitterUrl']">{{error}}</div>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Instagram:</label>
+                <input type="text" ng-model="school.instagramUrl" class="form-control" placeholder="Insert Link" />
+                <div class="text-danger" ng-repeat="error in modelState['model.InstagramUrl']">{{error}}</div>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Website:</label>
+                <input type="text" ng-model="school.websiteUrl" class="form-control" placeholder="Insert Link" />
+                <div class="text-danger" ng-repeat="error in modelState['model.WebsiteUrl']">{{error}}</div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="form-group">
+                <div class="md-checkbox">
+                    <input type="checkbox" id="checkbox2" class="md-check" ng-model="school.isActive" ng-disabled="school.id=='NEW'">
+                    <label for="checkbox2">
+                        <span class="inc"></span>
+                        <span class="check"></span>
+                        <span class="box"></span> Is Active
+                    </label>
+                </div>
+            </div>
+            <div class="form-group">
+                <button type="button" class="btn btn-default" ng-click="cancel()">Cancel</button>
+                <button type="button" class="btn btn-danger" ng-disabled="isSaving" ng-click="delete()" ng-if="school.id != 'NEW'">Delete</button>
+                <button type="button" class="btn btn-success" ng-disabled="isSaving" ng-click="save()">{{saveText}}</button>
+
+            </div>
+        </div>
+    </div>
+    <hr ng-hide="school.id ==='NEW'"/>
+    <div class="row" ng-hide="school.id==='NEW'">
+        <div class="col-xs-12">
+            <h4>Manage Teams <span class="pull-right">{{teamOptions.dataSource.total()}} team(s)</span></h4>
+            <div class="clearfix"></div>
+            <div kendo-grid k-options="teamOptions"></div>
+        </div>
+    </div>
+</div>

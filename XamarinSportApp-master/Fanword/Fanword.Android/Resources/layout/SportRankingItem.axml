@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:minWidth="25px"
+    android:minHeight="25px">
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/linearLayout1"
+        android:background="#ffffff">
+        <TextView
+            android:text="1"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/lblRank"
+            android:textColor="#212121"
+            android:gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp" />
+        <FFImageLoading.Views.ImageViewAsync
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:id="@+id/imgProfile"
+            android:src="@drawable/defprofpic"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp" />
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/linearLayout2"
+            android:gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="1"
+            android:layout_marginRight="5dp">
+            <TextView
+                android:text="Small Text"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/lblName"
+                android:textSize="13dp"
+                android:textColor="#212121" />
+            <TextView
+                android:text="Small Text"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/lblRecord"
+                android:textSize="13dp"
+                android:textColor="#909090" />
+        </LinearLayout>
+        <RelativeLayout
+            android:minWidth="25px"
+            android:minHeight="25px"
+            android:layout_width="80dp"
+            android:layout_height="36dp"
+            android:id="@+id/relativeLayout1"
+            android:background="@drawable/followingroundedbackground"
+            android:layout_gravity="center_vertical"
+            android:layout_marginRight="10dp">
+            <Button
+                android:text="Following"
+                android:id="@+id/btnFollow"
+                android:textAllCaps="false"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/buttonroundedbackground"
+                android:textSize="13dp" />
+        </RelativeLayout>
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#e3e4e6">
+    <LinearLayout
+        android:orientation="horizontal"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:id="@+id/linearLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <Button
+            android:text="TEAMS"
+            android:layout_width="60dp"
+            android:layout_height="match_parent"
+            android:id="@+id/btnTeams"
+            android:background="@drawable/buttonbackground"
+            android:textColor="#212121"
+            android:textSize="13dp" />
+        <Button
+            android:text="ATHLETES"
+            android:layout_width="80dp"
+            android:layout_height="match_parent"
+            android:id="@+id/btnAthletes"
+            android:background="@drawable/buttonbackground"
+            android:textColor="#909090"
+            android:textSize="13dp" />
+    </LinearLayout>
+    <ListView
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/lvAthletes"
+        xmlns:tools="http://schemas.android.com/tools"
+        tools:listitem="@layout/sportteamsitem"
+        android:visibility="gone" />
+    <ListView
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/lvTeams"
+        xmlns:tools="http://schemas.android.com/tools"
+        tools:listitem="@layout/sportteamsitem" />
+</LinearLayout>

@@ -1,0 +1,13 @@
+﻿<div class="form-group" style="display: inline-block; width: 500px">
+    <label class="control-label">Events Management Pin:</label><br />
+    <input class="form-control k-textbox" type="text" placeholder="Enter Pin" ng-model="pinModel.pinNumber" style="display: inline; width: 60%;" />
+    <button ng-click="generatePin()" class="btn" style="display: inline; width: 18%;">Generate</button>
+    <button type="button" class="btn btn-primary form-control text-center" ng-click="savePin()" style="width: 18%; display: inline;">Save</button>
+
+    <a href="{{manageLink}}" target="_blank" style="width: 100px; margin-top: 5px">{{manageLinkText}}</a>
+
+    <div class="has-error text-danger" ng-repeat="errorMessage in modelState['model.PinNumber']">{{errorMessage}}</div>
+</div>
+<br />
+<label class="control-label">Events Grid</label>
+<div kendo-grid k-options="eventOptions"></div>

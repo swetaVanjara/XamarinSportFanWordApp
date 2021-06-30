@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:id="@+id/linearLayout1"
+        android:background="#212121">
+        <ImageButton
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:id="@+id/btnMenu"
+            android:background="@drawable/buttonbackground"
+            android:src="@drawable/menu"
+            android:scaleType="fitCenter"
+            android:padding="15dp" />
+        <TextView
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/lblTitle"
+            android:text="Home"
+            android:textColor="#ffffff"
+            android:gravity="center_vertical"
+            android:layout_weight="1" />
+        <ImageButton
+            android:src="@drawable/searchwhite"
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+            android:id="@+id/btnSearch"
+            android:background="@drawable/buttonbackground"
+            android:scaleType="fitCenter"
+            android:padding="10dp" />
+        <ImageButton
+            android:src="@drawable/favorite"
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+            android:id="@+id/btnExplore"
+            android:background="@drawable/buttonbackground"
+            android:scaleType="fitCenter"
+            android:padding="10dp" />
+        <RelativeLayout
+            android:minWidth="25px"
+            android:minHeight="25px"
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+            android:id="@+id/relativeLayout2">
+            <ImageButton
+                android:src="@drawable/notifications"
+                android:id="@+id/btnNotifications"
+                android:background="@drawable/buttonbackground"
+                android:scaleType="fitCenter"
+                android:padding="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/lblNotificationCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="2dp"
+                android:background="@drawable/orangenextbuttonbackground"
+                android:paddingTop="2dp"
+                android:paddingBottom="2dp"
+                android:paddingRight="5dp"
+                android:paddingLeft="5dp"
+                android:gravity="center"
+                android:textSize="11dp"
+                android:minWidth="18dp"
+                android:minHeight="18dp"
+                android:textColor="#ffffff" />
+        </RelativeLayout>
+    </LinearLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:id="@+id/relativeLayout1"
+        android:background="#212121">
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/linearLayout2">
+            <Button
+                android:text="FEED"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/btnFeed"
+                android:layout_weight="1"
+                android:background="@drawable/buttonbackground"
+                android:textColor="#ffffff"
+                android:textSize="14dp" />
+            <Button
+                android:text="SCORES"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/btnScores"
+                android:layout_weight="1"
+                android:background="@drawable/buttonbackground"
+                android:textColor="#909090"
+                android:textSize="14dp" />
+            <Button
+                android:text="RANKINGS"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/btnRankings"
+                android:layout_weight="1"
+                android:background="@drawable/buttonbackground"
+                android:textColor="#909090"
+                android:textSize="14dp" />
+        </LinearLayout>
+        <RelativeLayout
+            android:minWidth="25px"
+            android:minHeight="25px"
+            android:layout_width="130dp"
+            android:layout_height="2dp"
+            android:id="@+id/rlIndicator"
+            android:layout_alignParentBottom="true"
+            android:background="#ffffff" />
+    </RelativeLayout>
+    <android.support.v4.view.ViewPager
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/vpPager" />
+</LinearLayout>

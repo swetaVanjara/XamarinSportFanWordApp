@@ -1,0 +1,10 @@
+﻿
+<div class="page-bar">
+    <ul class="page-breadcrumb">
+        <li ng-repeat="crumb in crumbs">
+            <a href="{{crumb.url}}" ng-if="crumb.url">{{crumb.name}}</a>
+            <span ng-if="!crumb.url">{{crumb.name}}</span>
+            <i class="fa fa-circle" ng-hide="$index == (crumbs.length-1)"></i>
+        </li>
+    </ul>
+</div>

@@ -1,0 +1,27 @@
+﻿<div style="margin-top: 15px;">
+    <div class="form-group">
+        <label ng-model="user.firstName" class="control-label">Contact Name:</label>
+        <div>{{user.firstName + " " + user.lastName}}</div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label">Email:</label>
+        <div>{{user.email}}</div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label">School: </label><br />
+        <select kendo-drop-down-list k-options="schoolOptions" k-ng-model="userAdmin.schoolId" style="width:20%" ng-disabled="true"></select>
+        <div class="text-danger" ng-repeat="error in modelState['model.SchoolId']">{{error}}</div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label">Change Status</label><br />
+        <select kendo-drop-down-list k-options="statusOptions" k-ng-model="userAdmin.adminStatus" style="width: 10%"></select>
+    </div>
+
+    <div class="form-group">
+        <button type="button" class="btn btn-default" ng-click="cancel()">Cancel</button>
+        <button type="button" class="btn btn-success" ng-click="save()" promise-btn>Save</button>
+    </div>
+</div>

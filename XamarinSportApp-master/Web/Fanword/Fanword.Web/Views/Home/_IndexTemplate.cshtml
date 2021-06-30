@@ -1,0 +1,121 @@
+﻿@if (User.IsInRole("System_Admin"))
+{
+
+    //<h1 class="page-title">Admin Dashboard</h1>
+
+    <div class="col-md-6" style="float: left">
+        <h1 class="">Total Counts</h1>
+        <div class="col-md-3">
+            <div class="dashboard-stat2 bg-grey">
+                <h1 class="font-red-intense bold" ng-cloak>{{vm.userCountTotal}}</h1>
+                <small>Total Users</small>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="dashboard-stat2 bg-grey">
+                <h1 class="font-red-intense bold" ng-cloak>{{vm.userCountDay}}</h1>
+                <small>New Users Today</small>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="dashboard-stat2 bg-grey">
+                <h1 class="font-red-intense bold" ng-cloak>{{vm.userCountWeek}}</h1>
+                <small>New Users This Week</small>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="dashboard-stat2 bg-grey">
+                <h1 class="font-red-intense bold" ng-cloak>{{vm.userCountMonth}}</h1>
+                <small>New Users This Month</small>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="dashboard-stat2 bg-grey">
+                <h1 class="font-red-intense bold" ng-cloak>{{vm.contentSourceCount}}</h1>
+                <small>Content Sources</small>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="dashboard-stat2 bg-grey">
+                <h1 class="font-red-intense bold" ng-cloak> {{vm.athleteCount}}</h1>
+                <small>Athletes</small>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="dashboard-stat2 bg-grey">
+                <h1 class="font-red-intense bold" ng-cloak> {{vm.teamAdminCount}}</h1>
+                <small>Team Admins</small>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="dashboard-stat2 bg-grey">
+                <h1 class="font-red-intense bold" ng-cloak>{{vm.schoolAdminCount}}</h1>
+                <small>School Admins</small>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="dashboard-stat2 bg-grey">
+                <h1 class="font-red-intense bold" ng-cloak>{{vm.advertiserCount}}</h1>
+                <small>Advertisers</small>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="dashboard-stat2 bg-grey">
+                <h1 class="font-red-intense bold" ng-cloak>{{vm.campaignCount}}</h1>
+                <small>Campaigns</small>
+            </div>
+        </div>
+    </div>
+    <div style="width: 49%; float: right; padding-left: 5px">
+        <h1>Pending</h1>
+        <div class="col-md-6">
+            <div class="dashboard-stat2 bg-grey">
+                <a href="@Url.Action("Index", "Advertising")" class="nav-link">
+                    <h1 class="font-red-intense bold" ng-cloak>{{vm.campaignPendingCount}}</h1>
+                </a>
+                <small>Campaigns</small>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="dashboard-stat2 bg-grey">
+                <a href="@Url.Action("Index", "NewsNotifications")" class="nav-link">
+                    <h1 class="font-red-intense bold" ng-cloak>{{vm.newsNotificationPendingCount}}</h1>
+                </a>
+                <small>News Notifications</small>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="dashboard-stat2 bg-grey">
+                <a href="/RssFeeds?true" class="nav-link">
+                    <h1 class="font-red-intense bold" ng-cloak>{{vm.rssFeedPendingCount}}</h1>
+                </a>
+                <small>Rss Feeds</small>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="dashboard-stat2 bg-grey">
+                <a href="@Url.Action("Index", "ContentSourceAdmin")" class="nav-link">
+                    <h1 class="font-red-intense bold" ng-cloak> {{vm.contentSourcePendingCount}}</h1>
+                </a>
+                <small>Content Sources</small>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="dashboard-stat2 bg-grey">
+                <a href="@Url.Action("Index", "UserAdmins")" class="nav-link">
+                    <h1 class="font-red-intense bold" ng-cloak> {{vm.userAdminPendingCount}}</h1>
+                </a>
+                <small>User Admins</small>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="dashboard-stat2 bg-grey">
+                <a href="@Url.Action("Index", "UserManagement")" cl class="nav-link">
+                    <h1 class="font-red-intense bold" ng-cloak>{{vm.athletePendingCount}}</h1>
+                </a>
+                <small>Athletes</small>
+            </div>
+        </div>
+    </div>
+
+}

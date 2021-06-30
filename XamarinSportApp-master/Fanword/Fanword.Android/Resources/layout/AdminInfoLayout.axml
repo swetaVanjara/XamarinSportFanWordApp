@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:id="@+id/linearLayout1"
+        android:background="#ffffff">
+        <ImageButton
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:id="@+id/btnBack"
+            android:background="@drawable/buttonbackground"
+            android:src="@drawable/arrowleft"
+            android:scaleType="fitCenter"
+            android:padding="15dp" />
+        <RelativeLayout
+            android:minWidth="25px"
+            android:minHeight="25px"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/relativeLayout4">
+            <TextView
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:id="@+id/lblTitle"
+                android:textColor="#000000"
+                android:gravity="center_vertical"
+                android:text="Become an Admin/Upgrade"
+                android:tag="bold"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toLeftOf="@+id/relativeLayout2" />
+            <RelativeLayout
+                android:minWidth="25px"
+                android:minHeight="25px"
+                android:id="@+id/relativeLayout2"
+                android:background="@drawable/orangenextbuttonbackground"
+                android:layout_width="72dp"
+                android:layout_height="36dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10dp">
+                <Button
+                    android:text="Next"
+                    android:id="@+id/btnNext"
+                    android:background="@drawable/buttonbackground"
+                    android:layout_width="72dp"
+                    android:layout_height="match_parent"
+                    android:layout_centerVertical="true"
+                    android:textAllCaps="false"
+                    android:textSize="14dp"
+                    android:textColor="#ffffff" />
+            </RelativeLayout>
+        </RelativeLayout>
+    </LinearLayout>
+    <ScrollView
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/scrollView1">
+        <LinearLayout
+            android:orientation="vertical"
+            android:minWidth="25px"
+            android:minHeight="25px"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/linearLayout3">
+            <TextView
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:id="@+id/textView1"
+                android:textColor="#000000"
+                android:background="#CDCDCD"
+                android:gravity="center_vertical"
+                android:paddingLeft="10dp"
+                android:text="FEATURES" />
+            <TextView
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/lblContent"
+                android:background="#e4e4e4"
+                android:textColor="#000000"
+                android:padding="10dp"
+                android:text="test" />
+            <TextView
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:id="@+id/textView1"
+                android:textColor="#000000"
+                android:background="#CDCDCD"
+                android:gravity="center_vertical"
+                android:paddingLeft="10dp"
+                android:text="PRICING OPTIONS" />
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:id="@+id/linearLayout2"
+                android:background="#AEE3B5">
+                <TextView
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:id="@+id/lblMonthByMonth"
+                    android:layout_marginLeft="10dp"
+                    android:textSize="18dp"
+                    android:textColor="#199D30"
+                    android:gravity="center_vertical"
+                    android:text="MONTH-BY-MONTH"
+                    android:tag="bold" />
+                <TextView
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/textView3"
+                    android:layout_marginRight="10dp"
+                    android:gravity="right|center_vertical"
+                    android:textSize="18dp"
+                    android:textColor="#199D30"
+                    android:text="$60 / month"
+                    android:tag="bold" />
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:id="@+id/linearLayout2"
+                android:background="#ADE3D3">
+                <TextView
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:id="@+id/lblMonthByMonth"
+                    android:layout_marginLeft="10dp"
+                    android:textSize="18dp"
+                    android:textColor="#30745F"
+                    android:gravity="center_vertical"
+                    android:tag="bold"
+                    android:text="3-MONTHS" />
+                <TextView
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/textView3"
+                    android:layout_marginRight="10dp"
+                    android:gravity="right|center_vertical"
+                    android:textSize="18dp"
+                    android:textColor="#30745F"
+                    android:text="$52 / month"
+                    android:tag="bold" />
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:id="@+id/linearLayout2"
+                android:background="#AED3E3">
+                <TextView
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:id="@+id/lblMonthByMonth"
+                    android:layout_marginLeft="10dp"
+                    android:textSize="18dp"
+                    android:textColor="#2D6179"
+                    android:gravity="center_vertical"
+                    android:tag="bold"
+                    android:text="9-MONTHS" />
+                <TextView
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/textView3"
+                    android:layout_marginRight="10dp"
+                    android:gravity="right|center_vertical"
+                    android:textSize="18dp"
+                    android:textColor="#2D6179"
+                    android:text="$45 / month"
+                    android:tag="bold" />
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="vertical"
+                android:minWidth="25px"
+                android:minHeight="25px"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/linearLayout4"
+                android:background="#ADADE3">
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:id="@+id/linearLayout2">
+                    <TextView
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:id="@+id/lblMonthByMonth"
+                        android:layout_marginLeft="10dp"
+                        android:textSize="18dp"
+                        android:textColor="#464777"
+                        android:gravity="center_vertical"
+                        android:tag="bold"
+                        android:text="MODERATOR" />
+                    <TextView
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:id="@+id/textView3"
+                        android:layout_marginRight="10dp"
+                        android:gravity="right|center_vertical"
+                        android:textSize="18dp"
+                        android:textColor="#464777"
+                        android:tag="bold"
+                        android:text="FREE" />
+                </LinearLayout>
+                <TextView
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textView4"
+                    android:textColor="#464777"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:text="Post as Official Team Name" />
+                <TextView
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textView4"
+                    android:textColor="#464777"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:text="Attach social media accounts to your posts"
+                    android:layout_marginTop="5dp" />
+                <TextView
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textView4"
+                    android:textColor="#464777"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:text="Implement a RSS Feed"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="10dp" />
+            </LinearLayout>
+            <RelativeLayout
+                android:minWidth="25px"
+                android:minHeight="25px"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/relativeLayout3"
+                android:background="#cdcdcd">
+                <TextView
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:id="@+id/textView5"
+                    android:textColor="#909090"
+                    android:text="If you have any questions, please do not hesitate to "
+                    android:textSize="11dp"
+                    android:gravity="center"
+                    android:textAllCaps="false" />
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/btnContact"
+                    android:layout_centerHorizontal="true"
+                    android:background="#00000000"
+                    android:textColor="#f95f06"
+                    android:textSize="11dp"
+                    android:text="contact us!"
+                    android:textAllCaps="false"
+                    android:layout_marginTop="18dp" />
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

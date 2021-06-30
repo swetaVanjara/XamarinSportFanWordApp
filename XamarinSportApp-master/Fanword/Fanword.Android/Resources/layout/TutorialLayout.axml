@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/backgroundwhiterounded">
+    <LinearLayout
+        android:orientation="vertical"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/linearLayout1">
+        <ImageView
+            android:src="@drawable/menuorange"
+            android:layout_width="match_parent"
+            android:layout_height="65dp"
+            android:id="@+id/imgImage"
+            android:layout_marginTop="50dp" />
+    </LinearLayout>
+    <TextView
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/lblTitle"
+        android:textSize="18dp"
+        android:text="Become an Admin"
+        android:textColor="#000000"
+        android:gravity="center"
+        android:layout_marginTop="50dp"
+        android:paddingRight="10dp"
+        android:paddingLeft="10dp" />
+    <TextView
+        android:text="Ready to advertise on FanWord? Preceisely determine specific audience and level of exposure to mathc your ad/ ad compaign objectives. compaign objectives. compaign objectives."
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/lblSubtitle"
+        android:textColor="#000000"
+        android:gravity="center"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="50dp"
+        android:lineSpacingMultiplier="1.4"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/relativeLayout1"
+        android:layout_marginBottom="50dp">
+        <RelativeLayout
+            android:minWidth="25px"
+            android:minHeight="25px"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/relativeLayout2"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/orangenextbuttonbackground">
+            <Button
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/btnOk"
+                android:background="@drawable/buttonroundedbackground"
+                android:text="Got It, Thanks!"
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF" />
+        </RelativeLayout>
+    </RelativeLayout>
+</LinearLayout>

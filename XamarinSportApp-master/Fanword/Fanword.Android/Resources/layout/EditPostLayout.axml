@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff">
+    <ScrollView
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/scrollView1">
+        <LinearLayout
+            android:orientation="vertical"
+            android:minWidth="25px"
+            android:minHeight="25px"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/linearLayout6">
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:id="@+id/linearLayout1"
+                android:background="#212121">
+                <ImageButton
+                    android:layout_width="50dp"
+                    android:layout_height="match_parent"
+                    android:id="@+id/btnBack"
+                    android:background="@drawable/buttonbackground"
+                    android:src="@drawable/arrowleftwhite"
+                    android:scaleType="fitCenter"
+                    android:padding="15dp" />
+                <TextView
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/lblTitle"
+                    android:text="Create Content"
+                    android:textColor="#ffffff"
+                    android:gravity="center_vertical"
+                    android:layout_weight="1" />
+                <RelativeLayout
+                    android:minWidth="25px"
+                    android:minHeight="25px"
+                    android:layout_width="wrap_content"
+                    android:layout_height="38dp"
+                    android:id="@+id/relativeLayout2"
+                    android:background="@drawable/orangenextbuttonbackground"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginRight="10dp">
+                    <Button
+                        android:text="Next"
+                        android:id="@+id/btnNext"
+                        android:background="@drawable/buttonbackground"
+                        android:layout_width="71.3dp"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:textAllCaps="false"
+                        android:textSize="14dp"
+                        android:textColor="#ffffff" />
+                </RelativeLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="horizontal"
+                android:minWidth="25px"
+                android:minHeight="25px"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:id="@+id/linearLayout2">
+                <ffimageloading.views.ImageViewAsync
+                    android:src="@drawable/defprofpic"
+                    android:layout_width="46dp"
+                    android:layout_height="46dp"
+                    android:id="@+id/imgProfile"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_gravity="center_vertical" />
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/linearLayout3"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1">
+                    <TextView
+                        android:text="Post as"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/lblPostAs"
+                        android:textColor="#909090"
+                        android:visibility="visible" />
+                    <TextView
+                        android:text="Jacob Krings"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/lblName"
+                        android:textColor="#212121" />
+                </LinearLayout>
+                <ImageButton
+                    android:src="@drawable/arrowdown"
+                    android:id="@+id/btnPostAs"
+                    android:layout_width="46dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/buttonbackground"
+                    android:visibility="visible"
+                    android:scaleType="fitCenter"
+                    android:padding="15dp" />
+            </LinearLayout>
+            <RelativeLayout
+                android:minWidth="25px"
+                android:minHeight="25px"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:id="@+id/relativeLayout3"
+                android:background="#f4f4f4" />
+            <LinearLayout
+                android:orientation="horizontal"
+                android:minWidth="25px"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/linearLayout4"
+                android:minHeight="25px">
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/txtContent"
+                    android:layout_weight="1"
+                    android:hint="Type your text..."
+                    android:textColorHint="#909090"
+                    android:textSize="13dp"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:textColor="#212121"
+                    android:background="#00000000"
+                    android:capitalize="sentences"
+                    android:minHeight="50dp"
+                    android:paddingBottom="5dp"
+                    android:paddingTop="5dp" />
+                <ImageButton
+                    android:src="@android:drawable/ic_menu_gallery"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:id="@+id/btnEmoji"
+                    android:background="@drawable/buttonbackground"
+                    android:visibility="gone" />
+            </LinearLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="108.0dp"
+                android:id="@+id/rlMedia">
+                <ffimageloading.views.ImageViewAsync
+                    android:src="@drawable/noimagegraphic"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/imgImage"
+                    android:scaleType="centerCrop" />
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:minWidth="25px"
+                    android:minHeight="25px"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:id="@+id/llLinkDetails"
+                    android:layout_alignParentBottom="true"
+                    android:background="#66000000"
+                    android:gravity="center"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp">
+                    <TextView
+                        android:text="Small Text"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/lblLinkHost"
+                        android:textColor="#ffffff"
+                        android:layout_marginBottom="5dp"
+                        android:textSize="12dp" />
+                    <TextView
+                        android:text="Small Text"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/lblLinkTitle"
+                        android:textColor="#ffffff"
+                        android:textSize="14dp" />
+                </LinearLayout>
+                <ImageButton
+                    android:src="@drawable/cancel"
+                    android:layout_width="46dp"
+                    android:layout_height="46dp"
+                    android:id="@+id/btnCancel"
+                    android:layout_alignParentRight="true"
+                    android:background="@drawable/buttonbackground"
+                    android:padding="12dp"
+                    android:scaleType="fitCenter" />
+            </RelativeLayout>
+            <RelativeLayout
+                android:minWidth="25px"
+                android:minHeight="25px"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:id="@+id/relativeLayout6"
+                android:background="#f4f4f4" />
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/linearLayout5">
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="46dp"
+                    android:id="@+id/llAddMedia">
+                    <ImageView
+                        android:src="@drawable/camerablack"
+                        android:layout_width="40dp"
+                        android:layout_height="match_parent"
+                        android:id="@+id/imgCamera"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:padding="8dp" />
+                    <TextView
+                        android:text="Add a Photo / Video"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:id="@+id/lblAddMedia"
+                        android:textColor="#212121"
+                        android:gravity="center_vertical" />
+                </LinearLayout>
+                <RelativeLayout
+                    android:minWidth="25px"
+                    android:minHeight="25px"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:id="@+id/relativeLayout6"
+                    android:background="#f4f4f4" />
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="46dp"
+                    android:id="@+id/llAddLink">
+                    <ImageView
+                        android:src="@drawable/link"
+                        android:layout_width="40dp"
+                        android:layout_height="match_parent"
+                        android:id="@+id/imgLink"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:padding="8dp" />
+                    <TextView
+                        android:text="Add a Link"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:id="@+id/lblLink"
+                        android:textColor="#212121"
+                        android:gravity="center_vertical"
+                        android:paddingRight="10dp" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

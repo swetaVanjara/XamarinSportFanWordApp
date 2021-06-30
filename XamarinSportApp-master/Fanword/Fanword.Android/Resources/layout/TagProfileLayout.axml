@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f4f4f4">
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:id="@+id/linearLayout1"
+        android:background="#212121">
+        <ImageButton
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:id="@+id/btnBack"
+            android:background="@drawable/buttonbackground"
+            android:src="@drawable/arrowleftwhite"
+            android:scaleType="fitCenter"
+            android:padding="15dp" />
+        <TextView
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/lblTitle"
+            android:text="Tag Profiles"
+            android:textColor="#ffffff"
+            android:gravity="center_vertical"
+            android:layout_weight="1" />
+        <RelativeLayout
+            android:minWidth="25px"
+            android:minHeight="25px"
+            android:layout_width="wrap_content"
+            android:layout_height="38dp"
+            android:id="@+id/relativeLayout2"
+            android:background="@drawable/orangenextbuttonbackground"
+            android:layout_gravity="center_vertical"
+            android:layout_marginRight="10dp">
+            <Button
+                android:text="Next"
+                android:id="@+id/btnNext"
+                android:background="@drawable/buttonbackground"
+                android:layout_width="71.3dp"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:textAllCaps="false"
+                android:textSize="14dp"
+                android:textColor="#ffffff" />
+        </RelativeLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:id="@+id/linearLayout2"
+        android:background="#ffffff"
+        android:gravity="center_vertical">
+        <ImageView
+            android:src="@drawable/tag"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:id="@+id/imageView1"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:padding="3dp" />
+        <TextView
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/lblProfiles"
+            android:textColor="#212121" />
+        <TextView
+            android:text="Small Text"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView2" />
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:id="@+id/linearLayout2"
+        android:background="#ffffff"
+        android:gravity="center_vertical"
+        android:layout_marginTop="15dp">
+        <ImageView
+            android:src="@drawable/search"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:id="@+id/imageView1"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:padding="3dp" />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/txtSearch"
+            android:background="#00000000"
+            android:textColor="#212121"
+            android:textColorHint="#909090"
+            android:textSize="14dp"
+            android:hint="Search" />
+        <TextView
+            android:text="Small Text"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView2" />
+    </LinearLayout>
+    <ListView xmlns:tools="http://schemas.android.com/tools"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/lvProfiles"
+        tools:listitem="@layout/profileitem" />
+</LinearLayout>

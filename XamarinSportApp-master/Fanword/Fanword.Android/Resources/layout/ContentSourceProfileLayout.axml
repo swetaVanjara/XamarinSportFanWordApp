@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:id="@+id/linearLayout1"
+        android:background="#212121">
+        <ImageButton
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:id="@+id/btnBack"
+            android:background="@drawable/buttonbackground"
+            android:src="@drawable/arrowleftwhite"
+            android:scaleType="fitCenter"
+            android:padding="15dp" />
+        <TextView
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/lblTitle"
+            android:text="Likes"
+            android:textColor="#ffffff"
+            android:gravity="center_vertical"
+            android:layout_weight="1" />
+    </LinearLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:id="@+id/relativeLayout1"
+        android:background="#212121">
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/linearLayout2">
+            <Button
+                android:text="PROFILE"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/btnProfile"
+                android:background="@drawable/buttonbackground"
+                android:textSize="14dp"
+                android:textColor="#ffffff"
+                android:layout_weight="1" />
+            <Button
+                android:text="ABOUT"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/btnAbout"
+                android:background="@drawable/buttonbackground"
+                android:textSize="14dp"
+                android:textColor="#ffffff"
+                android:layout_weight="1" />
+        </LinearLayout>
+        <RelativeLayout
+            android:minWidth="25px"
+            android:minHeight="25px"
+            android:layout_width="90dp"
+            android:layout_height="2dp"
+            android:id="@+id/rlIndicator"
+            android:layout_alignParentBottom="true"
+            android:background="#FFFFFF" />
+    </RelativeLayout>
+    <android.support.v4.view.ViewPager
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/vpPager" />
+</LinearLayout>

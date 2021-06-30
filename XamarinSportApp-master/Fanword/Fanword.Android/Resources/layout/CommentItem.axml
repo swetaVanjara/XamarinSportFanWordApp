@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff">
+    <TextView
+        android:text="Small Text"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/lblResponseTo"
+        android:textColor="#909090"
+        android:paddingLeft="10dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:textSize="13dp" />
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:id="@+id/linearLayout1">
+        <ffimageloading.views.ImageViewAsync
+            android:src="@drawable/defprofpic"
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+            android:id="@+id/imgProfile"
+            android:layout_marginLeft="10dp"
+            android:padding="6dp" />
+        <TextView
+            android:text="Small Text"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/lblName"
+            android:textColor="#212121"
+            android:gravity="center_vertical"
+            android:layout_weight="1"
+            android:layout_marginLeft="5dp" />
+        <ImageView
+            android:layout_width="20.0dp"
+            android:layout_height="match_parent"
+            android:id="@+id/imageView2" />
+        <TextView
+            android:text="5 minute ago"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/lblTimeAgo"
+            android:textColor="#909090"
+            android:gravity="center_vertical"
+            android:layout_marginRight="10dp" />
+    </LinearLayout>
+    <TextView
+        android:text="Small Text"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/lblContent"
+        android:textColor="#212121"
+        android:padding="10dp" />
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/linearLayout2">
+        <ImageButton
+            android:src="@drawable/like"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:id="@+id/btnLike"
+            android:background="@drawable/buttonbackground"
+            android:scaleType="fitCenter"
+            android:padding="13dp" />
+        <RelativeLayout
+            android:minWidth="25px"
+            android:minHeight="25px"
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:id="@+id/relativeLayout1">
+            <TextView
+                android:text="0"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:id="@+id/lblLikes"
+                android:gravity="center_vertical"
+                android:textColor="#909090"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/countgreyroundedbackground"
+                android:layout_centerVertical="true"
+                android:padding="5dp" />
+        </RelativeLayout>
+        <Button
+            android:text="Reply"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/btnReply"
+            android:background="@drawable/buttonbackground"
+            android:textColor="#909090"
+            android:textAllCaps="false"
+            android:textSize="14dp" />
+        <TextView
+            android:text="11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/lblReplies"
+            android:gravity="center_vertical"
+            android:textColor="#909090"
+            android:background="@drawable/countgreyroundedbackground"
+            android:padding="5dp" />
+    </LinearLayout>
+</LinearLayout>

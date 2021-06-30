@@ -1,0 +1,16 @@
+﻿
+<div style="margin-top: 15px;">
+    <h4 class="pull-left">News Notifications</h4>
+    <div class="form-group pull-right">
+        <button type="button" class="btn btn-primary" ng-click="addNew()">Add New</button>
+    </div>
+    <div class="clearfix"></div>
+    <uib-tabset active="activeTab">
+        <uib-tab index="0" heading="Sent">
+            <div kendo-grid k-options="sentOptions"></div>
+        </uib-tab>
+        <uib-tab index="1" heading="Upcoming">
+            <div kendo-grid k-options="upcomingOptions"></div>
+        </uib-tab>
+    </uib-tabset>
+</div>

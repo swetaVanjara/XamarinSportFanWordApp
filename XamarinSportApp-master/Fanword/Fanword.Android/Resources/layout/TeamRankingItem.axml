@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:minWidth="25px"
+    android:minHeight="25px">
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:id="@+id/linearLayout1"
+        android:background="#ffffff">
+        <TextView
+            android:text="30 OCt"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/lblDate"
+            android:textColor="#212121"
+            android:gravity="center_vertical"
+            android:layout_marginLeft="15dp"
+            android:layout_weight="1" />
+        <ImageView
+            android:layout_width="15dp"
+            android:layout_height="match_parent"
+            android:id="@+id/imgChange" />
+        <TextView
+            android:text="1"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:layout_width="20dp"
+            android:layout_height="match_parent"
+            android:id="@+id/lblChange"
+            android:textColor="#212121"
+            android:gravity="center_vertical"
+            android:textSize="12dp" />
+        <TextView
+            android:text="25"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:layout_width="30dp"
+            android:layout_height="match_parent"
+            android:id="@+id/lblRank"
+            android:textSize="15dp"
+            android:textColor="#212121"
+            android:gravity="center_vertical" />
+    </LinearLayout>
+</LinearLayout>

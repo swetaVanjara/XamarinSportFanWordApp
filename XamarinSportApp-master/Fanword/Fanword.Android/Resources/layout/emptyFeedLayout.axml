@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:orientation="vertical"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/emptyFeedLayout"
+        android:background="#e4e3e3"
+        android:visibility="visible">
+        <ImageView
+            android:src="@drawable/search"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:id="@+id/emptyFeedSearch"
+            android:layout_marginTop="50dp" />
+        <TextView
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/noContentTxt"
+            android:textSize="18dp"
+            android:text="No content yet"
+            android:textColor="#000000"
+            android:gravity="center"
+            android:layout_marginTop="50dp"
+            android:paddingRight="10dp"
+            android:paddingLeft="10dp" />
+        <TextView
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/noContentDesc"
+            android:textSize="10sp"
+            android:text="Start following some profiles to add content to your feed"
+            android:textColor="#000000"
+            android:gravity="center"
+            android:layout_marginTop="20dp"
+            android:paddingRight="10dp"
+            android:paddingLeft="10dp" />
+        <Button
+            android:id="@+id/btnFollowProfiles"
+            android:background="@drawable/orangenextbuttonbackground"
+            android:text="Follow Profiles"
+            android:textAllCaps="false"
+            android:textColor="#FFFFFF"
+            android:gravity="center"
+            android:layout_marginTop="30dp"
+            android:layout_width="147dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal" />
+    </LinearLayout>
+</LinearLayout>

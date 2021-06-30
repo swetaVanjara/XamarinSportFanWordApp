@@ -1,0 +1,249 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.swal2-modal .swal2-styled.swal2-loading {
+    margin: 14px 30px !important;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+.agilx-name {
+    max-width: 150px;
+}
+
+.agilx-name-lg {
+    max-width: 300px;
+}
+
+.agilx-addressline {
+    max-width: 300px;
+}
+
+.agilx-city {
+    max-width: 300px;
+}
+
+.agilx-state {
+    max-width: 220px;
+}
+
+.agilx-phone {
+    max-width: 200px;
+}
+
+.agilx-zip {
+    max-width: 100px;
+}
+
+.agilx-zip-lg {
+    max-width: 200px;
+}
+
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
+}
+
+.field-validation-error {
+    color: #e73d4a;
+}
+
+.validation-summary-valid {
+            display: none;
+        }
+
+.mail-categories .list-group .list-group-item {
+    padding: 0;
+}
+
+    .mail-categories .list-group .list-group-item.active > a {
+        border-left: 3px solid #1c7ebb;
+        color: #1c7ebb;
+        background-color: #fafafa;
+    }
+
+    .mail-categories .list-group .list-group-item > a {
+        display: block;
+        padding: 15px;
+        text-decoration: none;
+        -webkit-transition: all 0.25s ease-in-out;
+        -moz-transition: all 0.25s ease-in-out;
+        -o-transition: all 0.25s ease-in-out;
+        transition: all 0.25s ease-in-out;
+    }
+
+        .mail-categories .list-group .list-group-item > a:hover {
+            border-left: 3px solid #1c7ebb;
+            color: #1c7ebb;
+            background-color: #fafafa;
+        }
+
+        .mail-categories .list-group .list-group-item > a > i {
+            font-size: 16px;
+            width: 18px;
+            margin-right: 5px;
+        }
+
+            .mail-categories .list-group .list-group-item > a > i.fa-circle {
+                font-size: 14px;
+            }
+
+
+
+            .agilx-name {
+    max-width: 150px;
+}
+
+.agilx-name-lg {
+    max-width: 300px;
+}
+
+.agilx-addressline {
+    max-width: 300px;
+}
+
+.agilx-city {
+    max-width: 300px;
+}
+
+.agilx-state {
+    max-width: 220px;
+}
+
+.agilx-phone {
+    max-width: 200px;
+}
+
+.agilx-zip {
+    max-width: 100px;
+}
+
+.agilx-zip-lg {
+    max-width: 200px;
+}
+
+
+
+/*ANGULAR PROMISE BUTTONS*/
+
+@-webkit-keyframes three-quarters {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg); }
+
+  100% {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg); } }
+
+@-moz-keyframes three-quarters {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg); }
+
+  100% {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg); } }
+
+@-o-keyframes three-quarters {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg); }
+
+  100% {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg); } }
+
+@keyframes three-quarters {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg); }
+
+  100% {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg); } }
+
+/* Styles for old versions of IE */
+.btn-spinner {
+  font-family: sans-serif;
+  font-weight: 100; }
+
+/* :not(:required) hides this rule from IE9 and below */
+.btn-spinner:not(:required) {
+  -webkit-animation: three-quarters 1250ms infinite linear;
+  -moz-animation: three-quarters 1250ms infinite linear;
+  -ms-animation: three-quarters 1250ms infinite linear;
+  -o-animation: three-quarters 1250ms infinite linear;
+  animation: three-quarters 1250ms infinite linear;
+  border: 3px solid #8c8c8c;
+  border-right-color: transparent;
+  border-radius: 100%;
+  box-sizing: border-box;
+  display: inline-block;
+  position: relative;
+  vertical-align: middle;
+  overflow: hidden;
+  text-indent: -9999px;
+  width: 18px;
+  height: 18px; }
+
+.btn-spinner:not(:required) {
+  margin-left: -22px;
+  opacity: 0;
+  transition: 0.4s margin ease-out, 0.2s opacity ease-out; }
+
+.is-loading .btn-spinner {
+  transition: 0.2s margin ease-in, 0.4s opacity ease-in;
+  margin-left: 5px;
+  opacity: 1; }
+
+[promise-btn] {
+  text-align: left; }
+
+
+.icon-custom-team {
+    background: url('/Images/Icons/file_691dba20-4038-497e-9ecf-951e64b580ce.png') !important;
+}
+
+
+.mt-30 {
+    margin-top: 30px;
+}
+.k-selectable tbody tr {
+    cursor: pointer !important;
+}

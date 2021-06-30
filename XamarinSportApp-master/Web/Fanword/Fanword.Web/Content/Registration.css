@@ -1,0 +1,55 @@
+﻿
+.hidden-until-load {
+    display: none;
+}
+
+.logo img {
+    width: 250px;
+}
+
+.logo {
+    width: 400px;
+    background: rgba(0, 0, 0, .5);
+    border-top-left-radius: 7px !important;
+    border-top-right-radius: 7px !important;
+}
+
+.content {
+    background: rgba(0, 0, 0, .5) !important;
+    padding-top: 0px !important;
+    margin-top: 0px !important;
+    border-top-left-radius: 0px !important;
+    border-top-right-radius: 0px !important;
+}
+
+.login-btn {
+    width: 48%;
+}
+
+.reregister-btn {
+    width: 48%;
+    margin-left: 10px;
+}
+
+@media(max-width: 440px) {
+    .logo img {
+        width: 164px;
+    }
+    .logo {
+        width: 280px;
+    }
+    .login .content {
+        width: 280px;
+    }
+
+    .login-btn {
+        width: 100%;
+    }
+
+    .reregister-btn {
+        width: 100%;
+        margin-top: 10px !important;
+        margin-left: 0px;
+    }
+}
+

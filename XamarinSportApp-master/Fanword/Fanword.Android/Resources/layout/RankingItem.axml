@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:minWidth="25px"
+    android:minHeight="25px">
+    <LinearLayout
+        android:orientation="horizontal"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/linearLayout1"
+        android:background="#ffffff">
+        <TextView
+            android:text="15"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/lblRank"
+            android:textColor="#212121"
+            android:gravity="center"
+            android:textSize="20dp"
+            android:padding="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp" />
+        <ffimageloading.views.ImageViewAsync
+            android:src="@drawable/defprofpic"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:id="@+id/imgProfile"
+            android:scaleType="fitCenter"
+            android:layout_gravity="center_vertical"
+            android:padding="6dp" />
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/linearLayout2"
+            android:layout_weight="1"
+            android:padding="6dp">
+            <TextView
+                android:text="Nebraska Cornhuskers"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/lblTeamName"
+                android:textColor="#212121"
+                android:textSize="13dp" />
+            <TextView
+                android:text="Men's Tennis"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/lblSportName"
+                android:textColor="#909090"
+                android:textSize="13dp" />
+            <TextView
+                android:text="10W 3L"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/lblWinsLosses"
+                android:textColor="#909090"
+                android:textSize="13dp" />
+        </LinearLayout>
+        <RelativeLayout
+            android:minWidth="25px"
+            android:minHeight="25px"
+            android:layout_width="80dp"
+            android:layout_height="36dp"
+            android:id="@+id/relativeLayout1"
+            android:background="@drawable/followingroundedbackground"
+            android:layout_gravity="center_vertical"
+            android:layout_marginRight="10dp">
+            <Button
+                android:text="Following"
+                android:id="@+id/btnFollow"
+                android:textAllCaps="false"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/buttonroundedbackground"
+                android:textSize="13dp" />
+        </RelativeLayout>
+    </LinearLayout>
+    <RelativeLayout
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:id="@+id/relativeLayout4"
+        android:background="#e3e4e6" />
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:id="@+id/linearLayout3"
+        android:background="#f4f4f4">
+        <TextView
+            android:text="20 May"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/lblDate"
+            android:textColor="#909090"
+            android:gravity="center"
+            android:layout_marginLeft="10dp" />
+        <TextView
+            android:text="-"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/textView2"
+            android:textColor="#909090"
+            android:gravity="center"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="5dp" />
+        <Button
+            android:text="Show Men's Basketball Rankings"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/btnShowRankings"
+            android:textColor="#909090"
+            android:gravity="center_vertical"
+            android:background="@drawable/buttonbackground"
+            android:paddingLeft="5dp"
+            android:textSize="14dp" />
+    </LinearLayout>
+    <RelativeLayout
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="15dp"
+        android:id="@+id/relativeLayout2"
+        android:background="#e3e4e6" />
+</LinearLayout>

@@ -1,0 +1,17 @@
+﻿
+<div class="col-sm-4" style="overflow-y: auto; min-height: 250px; margin-top: 15px;">
+    <section class="panel panel-default mail-categories">
+        <div class="panel-heading">
+            <input type="text" ng-model="searchText" class="form-control" placeholder="Search by name"/>
+        </div>
+        <ul class="list-group">
+            <li class="list-group-item" ng-repeat="item in menuItems | orderBy: 'name' | filter:menuFilter" ng-class="getActiveClass(item)">
+                <a href="javascript:;" ng-click="viewRanking(item)">
+                    <div>
+                        {{item.name}}
+                    </div>
+                </a>
+            </li>
+        </ul>
+    </section>
+</div>

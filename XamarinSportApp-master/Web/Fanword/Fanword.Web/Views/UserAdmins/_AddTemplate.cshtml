@@ -1,0 +1,46 @@
+﻿<div style="margin-top: 15px;">
+    <div class="form-group">
+        <label class="control-label">For:</label><br />
+        <select kendo-drop-down-list k-options="forTypeOptions" k-ng-model="forType" style="width:30%" disabled class="disabled"></select>
+        <div class="text-danger" ng-show="forError && forError.length > 0">{{forError}}</div>
+    </div>
+
+    <div class="form-group" ng-show="forType == 'school'">
+        <label class="control-label">School:</label><br />
+        <select kendo-drop-down-list k-options="schoolOptions" k-ng-model="schoolAdmin.schoolId" style="width:30%"></select>
+        <div class="text-danger" ng-repeat="error in modelState['model.SchoolId']">{{error}}</div>
+    </div>
+    <div class="form-group" ng-show="forType=='team'">
+        <label class="control-label">Team:</label><br />
+        <select kendo-drop-down-list k-options="teamOptions" k-ng-model="teamAdmin.teamId" style="width:30%"></select>
+        <div class="text-danger" ng-repeat="error in modelState['model.TeamId']">{{error}}</div>
+    </div>
+
+    <div class="form-group" ng-show="forType == 'school'">
+        <label class="control-label">Email:</label><br />
+        <select kendo-drop-down-list k-options="userOptions" k-ng-model="schoolAdmin.userId" style="width:30%"></select>
+        <div class="text-danger" ng-repeat="error in modelState['model.ContactEmail']">{{error}}</div>
+    </div>
+    <div class="form-group" ng-show="forType == 'team'">
+        <label class="control-label">Email:</label><br />
+        <select kendo-drop-down-list k-options="userOptions" k-ng-model="teamAdmin.userId" style="width:30%"></select>
+        <div class="text-danger" ng-repeat="error in modelState['model.ContactEmail']">{{error}}</div>
+    </div>
+
+    <div class="form-group" ng-show="forType == 'school'">
+        <label class="control-label">Status:</label><br />
+        <select kendo-drop-down-list k-options="statusOptions" k-ng-model="schoolAdmin.adminStatus" style="width: 30%"></select>
+    </div>
+    <div class="form-group" ng-show="forType == 'team'">
+        <label class="control-label">Status:</label><br />
+        <select kendo-drop-down-list k-options="statusOptions" k-ng-model="teamAdmin.adminStatus" style="width: 30%"></select>
+    </div>
+
+    <div class="form-group">
+        <button type="button" class="btn btn-default" ng-click="cancel()" promise-btn>Cancel</button>
+
+        <button ng-show="forType == 'school'" type="button" class="btn btn-success" ng-click="saveSchool()" promise-btn>Save</button>
+
+        <button ng-show="forType == 'team'" type="button" class="btn btn-success" ng-click="saveTeam()" promise-btn>Save</button>
+    </div>
+</div>

@@ -1,0 +1,23 @@
+﻿
+@{
+    ViewBag.Title = "Advertising";
+}
+
+
+@section Breadcrumb {
+    <div ui-view="breadcrumbview"></div>
+}
+
+<div ui-view="mainview">
+
+</div>
+
+
+@section CustomScripts {
+    @Scripts.Render("~/Bundles/Admin/Advertising")
+}
+
+
+
+
+

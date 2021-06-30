@@ -1,0 +1,44 @@
+﻿
+
+<div style="margin-top: 15px;">
+    <div class="form-group">
+        <label class="control-label">Profile Picture:</label><br/>
+        <img style="width: 200px; height: 200px;" alt="" ng-src="{{profileImageSource}}" id="profileImage" /><br /><br />
+        <div class="text-danger" ng-repeat="error in modelState['model.IconPublicUrl']">{{error}}</div>
+        <button type="button" class="btn btn-default" ng-click="openUpload()" ng-disabled="isSaving">Upload</button>
+    </div>
+    
+    <div style="display: none;">
+        <input type="file" kendo-upload k-options="iconFileUploadOptions" id="files"/>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label">Name:</label>
+        <input type="text" ng-model="sport.name" class="form-control agilx-name-lg" />
+        <div class="text-danger" ng-repeat="error in modelState['model.Name']">{{error}}</div>
+    </div>
+    <div class="form-group">
+        <div class="md-checkbox">
+            <input type="checkbox" id="checkbox2" class="md-check" ng-model="sport.isActive" ng-disabled="sport.id=='NEW'">
+            <label for="checkbox2">
+                <span class="inc"></span>
+                <span class="check"></span>
+                <span class="box"></span> Is Active
+            </label>
+        </div>
+    </div>
+    <div class="form-group">
+        <button type="button" class="btn btn-default" ng-click="cancel()">Cancel</button>
+        <button type="button" class="btn btn-danger" ng-disabled="isSaving" ng-click="delete()" ng-if="sport.id != 'NEW'">Delete</button>
+        <button type="button" class="btn btn-success" ng-disabled="isSaving" ng-click="save()">{{saveText}}</button>
+        
+    </div>
+    
+    <hr ng-hide="sport.id ==='NEW'" />
+    <div class="row" ng-hide="sport.id==='NEW'">
+        <div class="col-xs-12">
+            <h4>Manage Teams <span class="pull-right">{{teamOptions.dataSource.total()}} team(s)</span></h4>
+            <div kendo-grid k-options="teamOptions"></div>
+        </div>
+    </div>
+</div>

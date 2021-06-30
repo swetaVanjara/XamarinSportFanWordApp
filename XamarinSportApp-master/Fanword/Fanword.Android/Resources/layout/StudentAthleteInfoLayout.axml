@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff">
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:id="@+id/linearLayout1"
+        android:background="#ffffff">
+        <ImageButton
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:id="@+id/btnBack"
+            android:background="@drawable/buttonbackground"
+            android:src="@drawable/arrowleft"
+            android:scaleType="fitCenter"
+            android:padding="15dp" />
+        <TextView
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/lblTitle"
+            android:text="Student-Athlete Information"
+            android:textColor="#212121"
+            android:gravity="center_vertical"
+            android:layout_weight="1" />
+    </LinearLayout>
+    <RelativeLayout
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:id="@+id/relativeLayout1"
+        android:background="#f4f4f4" />
+    <TextView
+        android:text="If you are changing your information, we will have to verify your student-athlete status again."
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:id="@+id/textView1"
+        android:textColor="#909090"
+        android:gravity="center"
+        android:textSize="13dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp" />
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/linearLayout2">
+        <RelativeLayout
+            android:minWidth="25px"
+            android:minHeight="25px"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:id="@+id/relativeLayout1"
+            android:background="#e3e4e6" />
+        <LinearLayout
+            android:orientation="horizontal"
+            android:minWidth="25px"
+            android:minHeight="25px"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:id="@+id/linearLayout3"
+            android:background="#f4f4f4">
+            <TextView
+                android:text="CURRENT"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/lblCurrent"
+                android:textColor="#212121"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:layout_marginLeft="10dp"
+                android:tag="Bold" />
+            <Button
+                android:text="EDIT"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:id="@+id/btnEdit"
+                android:background="@drawable/buttonbackground"
+                android:textColor="#f95f06"
+                android:textSize="14dp" />
+            <ImageButton
+                android:src="@drawable/trash"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:id="@+id/btnDelete"
+                android:background="@drawable/buttonbackground"
+                android:padding="13dp"
+                android:scaleType="fitCenter" />
+        </LinearLayout>
+        <RelativeLayout
+            android:minWidth="25px"
+            android:minHeight="25px"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:id="@+id/relativeLayout1"
+            android:background="#e3e4e6" />
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/llAthlete">
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:id="@+id/linearLayout1"
+            android:gravity="center_vertical">
+            <ffimageloading.views.ImageViewAsync
+                android:src="@drawable/defprofpic"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:id="@+id/imgProfile"
+                android:layout_marginLeft="10dp" />
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/linearLayout2"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp">
+                <TextView
+                    android:text="Small Text"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/lblSchoolName"
+                    android:textColor="#212121"
+                    android:tag="Bold" />
+                <TextView
+                    android:text="Small Text"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/lblSportName"
+                    android:textColor="#909090" />
+            </LinearLayout>
+        </LinearLayout>
+        <RelativeLayout
+            android:minWidth="25px"
+            android:minHeight="25px"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:id="@+id/relativeLayout1"
+            android:background="#f4f4f4" />
+        <LinearLayout
+            android:orientation="horizontal"
+            android:minWidth="25px"
+            android:minHeight="25px"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:id="@+id/linearLayout4"
+            android:gravity="center_vertical">
+            <TextView
+                android:text="Seasons: "
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView3"
+                android:layout_marginLeft="10dp"
+                android:textColor="#909090" />
+            <TextView
+                android:text="2008-2012"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/lblYears"
+                android:textColor="#212121"
+                android:tag="Bold" />
+        </LinearLayout>
+        <RelativeLayout
+            android:minWidth="25px"
+            android:minHeight="25px"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:id="@+id/relativeLayout1"
+            android:background="#f4f4f4" />
+    </LinearLayout>
+</LinearLayout>

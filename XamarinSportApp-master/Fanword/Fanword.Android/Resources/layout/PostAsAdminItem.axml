@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff">
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:id="@+id/llUser"
+        android:gravity="center_vertical"
+        android:background="@drawable/buttonbackground">
+        <ffimageloading.views.ImageViewAsync
+            android:src="@drawable/defprofpic"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:id="@+id/imgProfile"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp" />
+        <LinearLayout
+            android:orientation="vertical"
+            android:minWidth="25px"
+            android:minHeight="25px"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/linearLayout3">
+            <TextView
+                android:text="Jacob Krings"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:id="@+id/lblName"
+                android:textColor="#212121"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:text="Me"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/lblSubtitle"
+                android:textColor="#909090" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

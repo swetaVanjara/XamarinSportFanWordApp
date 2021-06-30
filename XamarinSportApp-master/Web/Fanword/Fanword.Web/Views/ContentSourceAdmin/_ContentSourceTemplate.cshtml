@@ -1,0 +1,75 @@
+﻿<div style="margin-top: 15px;">
+    <uib-tabset justified="true">
+        <uib-tab heading="Details">
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label class="control-label">Company Name</label>
+                        <input type="text" class="form-control" ng-model="contentSource.contentSourceName" />
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">Contact Name</label>
+                        <input type="text" class="form-control" ng-model="contentSource.contactName" />
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">Website Link</label>
+                        <input type="text" class="form-control" ng-model="contentSource.websiteLink" />
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">Facebook Link</label>
+                        <div class="checkbox pull-right">
+                            <input type="checkbox" ng-model="contentSource.facebookShow" />
+                            <label class="control-label">Show Facebook link on profile?</label>
+                        </div>
+                        <input type="text" class="form-control" ng-model="contentSource.facebookLink" />
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">Twitter Link</label>
+                        <div class="checkbox pull-right">
+                            <input type="checkbox" ng-model="contentSource.twitterShow" />
+                            <label class="control-label">Show Twitter link on profile?</label>
+                        </div>
+                        <input type="text" class="form-control" ng-model="contentSource.twitterLink" />
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">Instagram Link</label>
+                        <div class="checkbox pull-right">
+                            <input type="checkbox" ng-model="contentSource.instagramShow" />
+                            <label class="control-label">Show Instagram link on profile?</label>
+                        </div>
+                        <input type="text" class="form-control" ng-model="contentSource.instagramLink" />
+                    </div>
+                    <div class="form-group pull-left ">
+                        <input type="checkbox" ng-model="contentSource.isApproved" /> <label class="control-label">Approved</label>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label class="control-label">Content Source Information</label>
+                        <textarea ng-model="contentSource.contentSourceDescription" class="form-control" rows="4" cols="4"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">Logo</label><br />
+                        <img ng-src="{{logoImageSource}}" alt="" style="max-height: 250px; max-width: 250px; cursor: pointer;" id="logoImage" ng-click="openLogoUpload()" />
+                        <div style="display: none;">
+                            <input type="file" kendo-upload k-options="logoFileUpload" id="logoFile" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <button type="button" class="btn btn-success" ng-click="saveContentSource()" ng-disabled="isSaving">{{saveText}}</button>
+                    </div>
+                </div>
+            </div>
+        </uib-tab>
+        <uib-tab>
+            <uib-tab-heading>
+                Rss Feeds <span class="badge badge-info">{{rssFeedOptions.dataSource.total()}}</span>
+            </uib-tab-heading>
+            <div kendo-grid k-options="rssFeedOptions"></div>
+        </uib-tab>
+    </uib-tabset>
+</div>

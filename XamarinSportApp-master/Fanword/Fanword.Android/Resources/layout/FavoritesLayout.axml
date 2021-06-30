@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:id="@+id/linearLayout1"
+        android:background="#212121">
+        <ImageButton
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:id="@+id/btnBack"
+            android:background="@drawable/buttonbackground"
+            android:src="@drawable/arrowleftwhite"
+            android:scaleType="fitCenter"
+            android:padding="15dp" />
+        <TextView
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/lblTitle"
+            android:text="Favorites"
+            android:textColor="#ffffff"
+            android:gravity="center_vertical"
+            android:layout_weight="1"
+            android:textSize="14dp" />
+        <ImageButton
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:id="@+id/btnAdd"
+            android:background="@drawable/buttonbackground"
+            android:src="@drawable/pluswhite"
+            android:padding="15dp"
+            android:scaleType="fitCenter" />
+    </LinearLayout>
+    <HorizontalScrollView
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:id="@+id/horizontalScrollView2"
+        android:scrollbars="none">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/relativeLayout1"
+            android:background="#212121">
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/linearLayout2">
+                <Button
+                    android:text="TEAMS"
+                    android:layout_width="90dp"
+                    android:layout_height="match_parent"
+                    android:id="@+id/btnTeams"
+                    android:background="@drawable/buttonbackground"
+                    android:textSize="13dp"
+                    android:textColor="#ffffff"
+                    android:layout_weight="1" />
+                <Button
+                    android:text="SCHOOLS"
+                    android:layout_width="90dp"
+                    android:layout_height="match_parent"
+                    android:id="@+id/btnSchools"
+                    android:background="@drawable/buttonbackground"
+                    android:textSize="13dp"
+                    android:textColor="#ffffff"
+                    android:layout_weight="1" />
+                <Button
+                    android:text="SPORTS"
+                    android:layout_width="90dp"
+                    android:layout_height="match_parent"
+                    android:id="@+id/btnSports"
+                    android:background="@drawable/buttonbackground"
+                    android:textSize="13dp"
+                    android:textColor="#ffffff"
+                    android:layout_weight="1" />
+                <Button
+                    android:text="CONTENT SOURCES"
+                    android:layout_width="90dp"
+                    android:layout_height="match_parent"
+                    android:id="@+id/btnContentSources"
+                    android:background="@drawable/buttonbackground"
+                    android:textSize="13dp"
+                    android:textColor="#ffffff"
+                    android:layout_weight="1" />
+                <Button
+                    android:text="USERS"
+                    android:layout_width="90dp"
+                    android:layout_height="match_parent"
+                    android:id="@+id/btnUsers"
+                    android:background="@drawable/buttonbackground"
+                    android:textSize="13dp"
+                    android:textColor="#ffffff"
+                    android:layout_weight="1" />
+            </LinearLayout>
+            <RelativeLayout
+                android:minWidth="25px"
+                android:minHeight="25px"
+                android:layout_width="90dp"
+                android:layout_height="2dp"
+                android:id="@+id/rlIndicator"
+                android:layout_alignParentBottom="true"
+                android:background="#909090" />
+        </RelativeLayout>
+    </HorizontalScrollView>
+    <android.support.v4.view.ViewPager
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/vpPager" />
+</LinearLayout>

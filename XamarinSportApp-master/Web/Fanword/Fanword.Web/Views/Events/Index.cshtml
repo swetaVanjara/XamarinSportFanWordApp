@@ -1,0 +1,15 @@
+﻿
+@{
+    ViewBag.Title = "Events";
+}
+
+@section Breadcrumb {
+    <div ui-view="breadcrumbview"></div>
+}
+
+<div ui-view="mainview" style="margin-top: 15px;"></div>
+
+@section CustomScripts {
+    @Scripts.Render("~/Bundles/Events")
+}
+

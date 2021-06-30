@@ -1,0 +1,34 @@
+﻿<div style="margin-top: 15px;">
+    <uib-tabset justified="true">
+        @*<uib-tab heading="Details">
+            <uib-tab-heading>
+                School Admins <span class="badge badge-info">{{schoolAdminOptions.dataSource.total()}}</span>
+            </uib-tab-heading>
+            <div class="md-checkbox pull-right">
+                <input type="checkbox" id="checkbox1" class="md-check" ng-click="reloadGrid()" ng-model="vm.showPending">
+                <label for="checkbox1">
+                    <span class="inc"></span>
+                    <span class="check"></span>
+                    <span class="box"></span>Show Pending
+                </label>
+            </div>
+            <div class="clearfix"></div>
+            <kendo-grid k-options="schoolAdminOptions"></kendo-grid>
+        </uib-tab>*@
+        <uib-tab>
+            <uib-tab-heading>
+                Team Admins <span class="badge badge-info">{{teamAdminOptions.dataSource.total()}}</span>
+            </uib-tab-heading>
+            <div class="md-checkbox pull-right">
+                <input type="checkbox" id="checkbox1" class="md-check" ng-click="reloadGrid()" ng-model="vm.showPending">
+                <label for="checkbox1">
+                    <span class="inc"></span>
+                    <span class="check"></span>
+                    <span class="box"></span>Show Pending
+                </label>
+            </div>
+            <div class="clearfix"></div>
+            <kendo-grid k-options="teamAdminOptions"></kendo-grid>
+        </uib-tab>
+    </uib-tabset>
+</div>

@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html>
+
+<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+<!--<![endif]-->
+<head>
+    <meta charset="utf-8" />
+    <title>Fanword | @ViewBag.Title</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <meta content="" name="description" />
+    <meta content="" name="author" />
+    <!-- BEGIN GLOBAL MANDATORY STYLES -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+    @Styles.Render("~/Bundle/Content/css")
+    @Styles.Render("~/Bundle/Theme/MetronicGlobalCss")
+    @Html.Partial("_KendoCSS")
+    @RenderSection("MetronicPageLevelStyles", required: false)
+    <link rel="shortcut icon" href="/favicon.ico" />
+    @Scripts.Render("~/bundles/Scripts/jquery")
+    @Scripts.Render("~/Bundles/Scripts/jqueryval")
+    @Scripts.Render("~/Bundles/Scripts/DefaultJs")
+</head>
+<body ng-app="FanwordApp">
+    <div>
+        @RenderBody()
+    </div>
+    <!--[if lt IE 9]>
+    <script src="/Theme/assets/global/plugins/excanvas.min.js"></script>
+    <![endif]-->
+
+    @Scripts.Render("~/Bundles/PocoModels")
+    @Scripts.Render("~/Bundles/Scripts/bootstrap")
+    @Scripts.Render("~/Bundles/Theme/MetronicGlobalJs")
+    @Scripts.Render("~/Bundles/Scripts/AngularJs")
+    @Html.Partial("_KendoJS")
+    @Scripts.Render("~/Bundles/FanwordAngularAppJs")
+    @Scripts.Render("~/Bundles/Directives")
+    @RenderSection("MetronicPagePlugins", required: false)
+    <script>
+        $.validator.setDefaults({
+            highlight: function (element) {
+                $(element).closest('.form-group').addClass('has-error');
+            },
+            unhighlight: function (element) {
+                $(element).closest('.form-group').removeClass('has-error');
+            },
+            errorElement: 'span',
+            errorClass: 'help-block',
+            errorPlacement: function (error, element) {
+                if (element.parent('.input-group').length) {
+                    error.insertAfter(element.parent());
+                } else {
+                    error.insertAfter(element);
+                }
+            }
+        });
+    </script>
+    @RenderSection("CustomScripts", required: false)
+</body>
+</html>
